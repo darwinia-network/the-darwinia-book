@@ -154,6 +154,40 @@
                     <main>
                         <h1><a class="header" href="#introduction" id="introduction">Introduction</a></h1>
 <p>This <a href="https://darwinia-network.github.io/the-darwinia-book">book</a> is about <a href="https://github.com/darwinia-network/darwinia">Darwinia</a>, as an open application cross-chain protocol based on <a href="https://github.com/paritytech/substrate">Substrate</a>, <code>Darwinia</code> focuses on the construction of future Internet of Tokens, including the cross-chain of game tokens, NFT, Stablecoins, and Appchain.</p>
+<h2><a class="header" href="#background" id="background">Background</a></h2>
+<p>The world is being blockchainized and tokenized. Fungible tokens, which has been generally used in the financial industry, together with Non-fungible tokens, which are becoming more and more recognized in the game industry, will greatly enhance the openness and collaboration of finance and game sector.</p>
+<p>These tokens are being connected and merged, and the ways of such connection and merger are trends to diversified as well. Such connections might be performed with smart contracts, Dapp, or appchain protocols, that lead to the formation of an open token-network. Darwinia Network powered by polkadot app-parachain technology, via develop infrastructure and core-applications, to support the growth of the token-network. Darwinia focuses its major application in games and de-fi sector.</p>
+<h2><a class="header" href="#architecture-design" id="architecture-design">Architecture Design</a></h2>
+<p>In the process of using <code>blockchain</code> technology to create new <code>DAPP</code>, we found several problems for the mass promotion and utilization of <code>blockchain</code> technology:</p>
+<ol>
+<li>The current blockchain infrastructure is not yet able to meet the requirements of user experience.</li>
+<li>Traditional game vendors lack blockchain experience.</li>
+<li>Blockchain games are split among different public chains.</li>
+</ol>
+<p>However, <code>blockchain games</code> or Dapps can easily perform <code>cross-chain</code> interactions for game inventories and game operations through the <code>Darwinia Network</code>. For example, <code>Cryptokitties</code> can transform its NFT (Kitties) on the <code>Ethereum</code> into NFT on <code>EOS</code> through the <code>Darwinia chain</code>; players on the <code>Ethereum</code> and players on the <code>EOS</code> can play <code>Evolution Land</code> game simultaneously through the <code>Darwinia Network</code>. <strong>At the same time, thanks to the Polkadot ecosystem, Darwinia Network can link to a wider range of games and players.</strong></p>
+<p>The architecture relationship of Darwinia Relay Chain, Darwinia AppChain, Polkadot Relay Chain, etc. is shown as below. </p>
+<p><img src="https://github.com/darwinia-network/rfcs/raw/master/RFC/zh_CN/images/0007-darwinia-architecture.jpeg" alt="Darwinia architecture" /></p>
+<h2><a class="header" href="#darwinia-relay-chain" id="darwinia-relay-chain">Darwinia Relay Chain</a></h2>
+<p><strong>Darwinia Relay Chain is the most important part of the Darwinia Network</strong>, it is also the hub of each App- Parachain, to this end, we divided the operating mode of Darwinia relay chain into <code>Solo mode</code> and <code>Polkadot connection mode</code>.</p>
+<h3><a class="header" href="#solo-mode" id="solo-mode">Solo Mode</a></h3>
+<p>Darwinia Network can choose to operate as an independent public-chain network and is responsible for its own consensus security, with its core business and application services, including the cross-chain functionality of each application chain, controlled by Darwinia Network itself.</p>
+<h3><a class="header" href="#polkadot-connection-mode" id="polkadot-connection-mode">Polkadot Connection Mode</a></h3>
+<p>In Polkadot connection mode, in addition to operating as a relay chain for Darwinia Network, it also serves as a Parachain for Polkadot.</p>
+<h2><a class="header" href="#economic-model" id="economic-model">Economic Model</a></h2>
+<h3><a class="header" href="#ring" id="ring">RING</a></h3>
+<p>The native token for the Darwinia Network is <code>RING</code>, <code>RING</code> can be used as gas for transactions. Gas include transaction fees, contract execution fees, network bandwidth charges, storage fees, and more.</p>
+<p><img src="https://github.com/darwinia-network/rfcs/raw/master/RFC/zh_CN/images/reward.jpeg" alt="Benefits" /></p>
+<h3><a class="header" href="#kton" id="kton">KTON</a></h3>
+<p>To encourage users to make long term commitments and pledge, users can choose to <strong>lock <code>RING</code> for 3 - 36 months</strong> in the process of Staking, and the system will offer a <code>KTON</code> token as reward for users participating in Staking. During the committed pledge period, users cannot unlock their RING. (Unless they utilise triple the amount of KTON as penalty).</p>
+<h2><a class="header" href="#community-ecosystem" id="community-ecosystem">Community Ecosystem</a></h2>
+<h3><a class="header" href="#protocol-researcher" id="protocol-researcher">Protocol Researcher</a></h3>
+<p>The protocol and standard research’s work is divided into <strong>two parts</strong>. <strong>The first part</strong> comes from the community. <code>Darwinia Network</code> accepts any <code>RFC</code> submission from the community, including new additions, improvements and modifications. These <code>RFCs</code> will be open to the community for full discussion and research to reach a consensus. <strong>The second part</strong> is from the <code>core research team</code>, which is responsible for organizing <code>RFCs</code>, organizing <code>RFC</code> peer audits and security audits, using <code>Darwinia Network</code> governance models and tools for protocol governance and voting, and forming a final agreement design draft for delivery to the protocol development team.</p>
+<h3><a class="header" href="#developer" id="developer">Developer</a></h3>
+<p>Develop and improve <code>Darwinia Network</code>, <code>Darwinia AppChain</code> and <code>related services</code>, and develop applications and services using the <code>Darwinia Network</code> and the <code>Darwinia AppChain</code>. Early community open source software development, especially important infrastructure software development (including network protocol design, protocol implementation, node software, wallet, browser, etc.), will be sponsored and supported by the Darwinia Network oundation, currently the main <code>Darwinia Network</code> open source software developer is <a href="https://itering.io">Itering Tech</a>.</p>
+<h3><a class="header" href="#dapp-developer" id="dapp-developer">Dapp Developer</a></h3>
+<p><code>Dapp developers</code> include developers who develop applications based on the <code>Darwinia Web Smart Contracts module</code>, as well as developers who develop Dapp on the public chain, such as blockchain games or Defi applications on platforms such as <code>Ethereum</code>, <code>TRON</code> or <code>EOS</code>. For the Dapp and game inventories on the public chain, bridge parachain of Darwinia Network can be connected to the Darwinia Network for <code>cross-chain</code> transfer operations.</p>
+<h3><a class="header" href="#appchain-developer" id="appchain-developer">AppChain Developer</a></h3>
+<p><code>Application chain developers</code> developing with the <code>Darwinia Web Application</code> Suite (Darwinia AppChain).</p>
 
                     </main>
 
