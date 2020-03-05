@@ -1,0 +1,14 @@
+[book]
+authors = ["darwinia-team"]
+language = "en"
+multilingual = false
+src = "src"
+title = "the-darwinia-book"
+
+[build]
+build-dir = "docs"
+
+[output.html]
+default-theme = "dark"
+preferred-dark-theme = "ayu"
+git-repository-url = "https://github.com/darwinia-network/the-darwinia-book"

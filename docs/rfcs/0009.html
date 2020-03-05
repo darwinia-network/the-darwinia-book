@@ -1,0 +1,329 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js dark">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>0009 - the-darwinia-book</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "ayu" : "dark";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('dark')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div id="sidebar-scrollbox" class="sidebar-scrollbox">
+                <ol class="chapter"><li class="expanded affix "><a href="../index.html">Introduction</a></li><li class="spacer"></li><li class="expanded "><a href="../concepts/index.html"><strong aria-hidden="true">1.</strong> Concepts</a></li><li class="expanded "><a href="../source/index.html"><strong aria-hidden="true">2.</strong> Source Code Trip</a></li><li class="expanded "><a href="../rfcs/index.html"><strong aria-hidden="true">3.</strong> RFCs</a></li><li><ol class="section"><li class="expanded "><a href="../rfcs/0001.html"><strong aria-hidden="true">3.1.</strong> 0001</a></li><li class="expanded "><a href="../rfcs/0007.html"><strong aria-hidden="true">3.2.</strong> 0007</a></li><li class="expanded "><a href="../rfcs/0009.html" class="active"><strong aria-hidden="true">3.3.</strong> 0009</a></li><li class="expanded "><a href="../rfcs/0010.html"><strong aria-hidden="true">3.4.</strong> 0010</a></li><li class="expanded "><a href="../rfcs/0011.html"><strong aria-hidden="true">3.5.</strong> 0011</a></li><li class="expanded "><a href="../rfcs/0012.html"><strong aria-hidden="true">3.6.</strong> 0012</a></li><li class="expanded "><a href="../rfcs/0013.html"><strong aria-hidden="true">3.7.</strong> 0013</a></li><li class="expanded "><a href="../rfcs/0014.html"><strong aria-hidden="true">3.8.</strong> 0014</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">the-darwinia-book</h1>
+
+                        <div class="right-buttons">
+                            <a href="../print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                            <a href="https://github.com/darwinia-network/the-darwinia-book" title="Git repository" aria-label="Git repository">
+                                <i id="git-repository-button" class="fa fa-github"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#0009" id="0009">0009</a></h1>
+<ul>
+<li>功能描述: 给流动KTON分发RING收益</li>
+<li>开始时间: 2019-05-13</li>
+<li>RFC PR: None</li>
+<li>Github Issue: None</li>
+</ul>
+<h1><a class="header" href="#概要" id="概要">概要</a></h1>
+<p>在达尔文网络Solo模式设计中，需要给全部KTON进行RING收益的分发，这意味着收益分发前后KTON都是可以转账和流动的，即需要可以支持给流动KTON进行RING收益的分发。</p>
+<p>由于分发收益时，需要明确确定收益所有权的界限，因此在分发收益时，一般都需要锁定权益通证，以方便清算。但是在达尔文网络Solo模式中，需要支持KTON可以流动，因此RING收益如果想要做到实时，需要将颗粒度放小，在任何KTON发生转账前后进行清算。</p>
+<p>以太坊中的ERC20的转账，只需要记录balance的变化即可，但在KTON中，需要记录其当前收益的情况，以方便清算。可以理解为:</p>
+<h2><a class="header" href="#kton转账模型" id="kton转账模型">KTON转账模型</a></h2>
+<p>通常原生代币的转账可以理解为</p>
+<pre><code class="language-angular2">Normal_Transfer = Sender_Output + Receiver_Input
+</code></pre>
+<p>KTON的转账可以理解为</p>
+<pre><code class="language-angular2">KTON_Transfer = Reward_Settlement(Sender_KTON_Output) + Sender_KTON_Output + Receiver_KTON_Input + Reward_Settlement(Receiver_KTON_Input)
+</code></pre>
+<h3><a class="header" href="#参考以太坊p3d的reward_settlement做法" id="参考以太坊p3d的reward_settlement做法">参考以太坊P3D的Reward_Settlement做法</a></h3>
+<p>在P3D Token中，没有Transfer方法，只有Withdraw和Deposit方法，但实际上Transfer方法可以通过组合的方式得出，也就是说</p>
+<p>Transfer(sender, to) = sender.Withdraw + to.Deposit</p>
+<p>因为P3D中也存在收益分配的做法，因此Withdraw和Deposit中也需要进行Reward_Settlement操作.</p>
+<p>即</p>
+<pre><code class="language-angular2">sender.Withdraw = sender.Reward_Settlement(Output) + sender.normal_withdraw(Output)
+</code></pre>
+<pre><code class="language-angular2">to.Deposit = to.normal_deposit(Input) + to.Reward_Settlement(Input)
+</code></pre>
+<p>在KTON没有发生转账的情况下，也有可能会发生Reward_Settlement:</p>
+<pre><code>- 有收益进账，需要进行分配
+    对于这种情况，如果每一次收益分配时，都对每个KTON持有者的收益余额进行计算，会消耗大量的计算资源，因此不切实际。改进的办法是，KTON持有者的收益都放入一个池子，在需要清算时再针对单个KTON持有者进行计算。
+    因此，收益进账后，只有收益池的总额发生了变化。
+- KTON持有者Claim收益
+    但某一个KTON持有者希望Claim收益时，会根据收益池RING总量，该持有者的KTON数量，KTON总量，按比例计算出可以Claim的收益，并将该次收益提现记录进该账户已提现的总量。
+    
+    该账户可提现数量 = 该账户可提现数量(已清算 + 未清算) - 该账户已提现数量
+</code></pre>
+<h1><a class="header" href="#动机和目的" id="动机和目的">动机和目的</a></h1>
+<ul>
+<li>提供一个可以给流动性原生通证清算收益的技术方案</li>
+</ul>
+<h1><a class="header" href="#参考和实现" id="参考和实现">参考和实现</a></h1>
+<h2><a class="header" href="#代码库" id="代码库">代码库</a></h2>
+<p>https://github.com/darwinia-network/darwinia/tree/master/srml/kton</p>
+<h2><a class="header" href="#主要特性wip" id="主要特性wip">主要特性[WIP]</a></h2>
+<ul>
+<li>支持转账</li>
+<li>支持Staking收益分配</li>
+<li>支持领取收益</li>
+<li>收益分配可以实时进行</li>
+</ul>
+<h1><a class="header" href="#缺点" id="缺点">缺点</a></h1>
+<ul>
+<li>转账时需要多出一定的链上收益清算计算量</li>
+<li>如果KTON持有者的账户是合约账户，那么目前的RING收益只能该合约账户去领取，但是合约账户是否支持是个问题。</li>
+<li>本解决方案范围不包括在其他公链(例如以太坊或者波场)上的KTON收益分配，对于其他网络上的KTON，应该会统一在达尔文中继链上创建一个账户，用于领取收益，具体的收益则在对应公链上发生，例如目前进化星球基于状态通道的收益分配方式并不会发生变化，好处是相应的KTON也可以得到收益。</li>
+</ul>
+<h1><a class="header" href="#理由" id="理由">理由</a></h1>
+<p>具体Staking的设计参考RFC-0007。具体的技术方案则参考了P3D的实现。P3D没有支持转账方法，有其业务层面的考虑，也有可能因为转账操作的燃料费消耗考虑。
+但对于KTON这样的原生通证，可以再SRML层面实现。</p>
+<h1><a class="header" href="#现有技术" id="现有技术">现有技术</a></h1>
+<h1><a class="header" href="#以太坊上一些常见的收益分配方案可以作为参考" id="以太坊上一些常见的收益分配方案可以作为参考">以太坊上一些常见的收益分配方案可以作为参考</a></h1>
+<h2><a class="header" href="#erc-20回购销毁分红法" id="erc-20回购销毁分红法">ERC-20回购销毁分红法</a></h2>
+<p>对通证进行销毁，其实是一种变相等价的分红方法，其他通证持有人手上的通证数量没有变化，但是比例上升，且供应量减少但对应系统的价值没有变化，本质上其实也是一种分红，具体案例参考BNB回购销毁分红。</p>
+<p>该方法的缺点在于，需要分红通证和权益通证之间有较好的流通性市场，才能通过回购的方式将分红通证兑换成权益通证，进而将权益通证销毁进行分红，否则不适合使用此方法。</p>
+<p>另外，虽然数学上回购销毁几乎等同于分红，但是从市场感知上不明显，从普通用户视角来看，不如看到账面上余额数字的增加来得容易感知。所以，实际效果上回购销毁不如直接分发。</p>
+<h2><a class="header" href="#erc-20冻结转账p3d分红方法" id="erc-20冻结转账p3d分红方法">ERC-20冻结转账(P3D)分红方法</a></h2>
+<p>将主要以P3D为例解释这种通过合约进行分红的方法。</p>
+<p>P3D严格意义上不同于ERC20通证，因为不支持通证转账功能，只存在购入和卖出两种方式变更通证持有者的余额。P3D因为这种简化反而对分红方法带来了简化，也就是只需要在通证持有者余额变化时更新持有者的分红数量，实现精确的合约分红。</p>
+<p>具体实现是，维护以下账本，以权益通证P3D和分红币ETH为例：</p>
+<p>Total_ETH_Dividends_Balance,  所有历史分红的总和，只会增加不会减少。每次分红的时候会增加。
+My_ETH_Dividends_Balance_Claimed[address], 某P3D持有者放在系统保险箱里的ETH分红余额，刚开始为0，但是每次持有者P3D余额变化（购入，卖出）的时候ETH分红余额会更新并增加，持有者可以从中领取分红到自己的钱包，并相应减少。</p>
+<p>Last_Claim_Total_ETH_Dividends_Balance[address], 某P3D持有者上一次Claim时，Total_ETH_Dividends_Balance的值，每次持有者余额变化（购入，卖出）的时候会更新。
+每次持有者余额变化（购入，卖出）的时候，操作之前的P3D余额为balance_before, P3D总额为balance_total_before，操作之后的P3D余额为balance_after, P3D总额为balance_total_after，持有者的地址为address。则首先会进行第2、3账本的更新。</p>
+<pre><code>My_ETH_Dividends_Balance_Claimed[address] += {Total_ETH_Dividends_Balance - Last_Claim_Total_ETH_Dividends_Balance[address]} * [balance_before/balance_total_before]
+Last_Claim_Total_ETH_Dividends_Balance[address] = Total_ETH_Dividends_Balance
+</code></pre>
+<p>进行其他P3D余额的变化</p>
+<p>优点，去中心化方式，合约分账分红。缺点，可能需要锁定转账功能。</p>
+<p>ERC20中持有者余额变化频繁，可以通过转账，发行，销毁等方式进行，如果每次转账都需要触发分红合约，会增加不必要燃料费，并增加合约复杂度，并且大多数ERC20通证并不支持在转账交易中做额外的事情。(部分ERC223可能支持，KTON的具体实现也比较复杂，友好支持程度偏悲观)。除非要求ERC20代币锁定之后，可以使用这个方法。</p>
+<p>https://etherscan.io/address/0xb3775fb83f7d12a36e0475abdd1fca35c091efbe#code</p>
+<h1><a class="header" href="#问题" id="问题">问题</a></h1>
+<p>[WIP]</p>
+<h1><a class="header" href="#未来的可能性" id="未来的可能性">未来的可能性</a></h1>
+<ul>
+<li>做成一个通用的SRML</li>
+</ul>
+<h1><a class="header" href="#参考" id="参考">参考</a></h1>
+<ul>
+<li>[1] <a href="https://github.com/darwinia-network/rfcs/issues/6">RFC Issue</a></li>
+<li>[2] <a href="https://etherscan.io/address/0xb3775fb83f7d12a36e0475abdd1fca35c091efbe#code">P3D代码实现</a></li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../rfcs/0007.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../rfcs/0010.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="../rfcs/0007.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="../rfcs/0010.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3001");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload(true); // force reload from server (not from cache)
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

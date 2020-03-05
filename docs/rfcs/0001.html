@@ -1,0 +1,285 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js dark">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>0001 - the-darwinia-book</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "ayu" : "dark";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('dark')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div id="sidebar-scrollbox" class="sidebar-scrollbox">
+                <ol class="chapter"><li class="expanded affix "><a href="../index.html">Introduction</a></li><li class="spacer"></li><li class="expanded "><a href="../concepts/index.html"><strong aria-hidden="true">1.</strong> Concepts</a></li><li class="expanded "><a href="../source/index.html"><strong aria-hidden="true">2.</strong> Source Code Trip</a></li><li class="expanded "><a href="../rfcs/index.html"><strong aria-hidden="true">3.</strong> RFCs</a></li><li><ol class="section"><li class="expanded "><a href="../rfcs/0001.html" class="active"><strong aria-hidden="true">3.1.</strong> 0001</a></li><li class="expanded "><a href="../rfcs/0007.html"><strong aria-hidden="true">3.2.</strong> 0007</a></li><li class="expanded "><a href="../rfcs/0009.html"><strong aria-hidden="true">3.3.</strong> 0009</a></li><li class="expanded "><a href="../rfcs/0010.html"><strong aria-hidden="true">3.4.</strong> 0010</a></li><li class="expanded "><a href="../rfcs/0011.html"><strong aria-hidden="true">3.5.</strong> 0011</a></li><li class="expanded "><a href="../rfcs/0012.html"><strong aria-hidden="true">3.6.</strong> 0012</a></li><li class="expanded "><a href="../rfcs/0013.html"><strong aria-hidden="true">3.7.</strong> 0013</a></li><li class="expanded "><a href="../rfcs/0014.html"><strong aria-hidden="true">3.8.</strong> 0014</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">the-darwinia-book</h1>
+
+                        <div class="right-buttons">
+                            <a href="../print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                            <a href="https://github.com/darwinia-network/the-darwinia-book" title="Git repository" aria-label="Git repository">
+                                <i id="git-repository-button" class="fa fa-github"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#0001" id="0001">0001</a></h1>
+<ul>
+<li>功能描述: 达尔文网络的开发架构描述</li>
+<li>开始时间: 2019-04-28</li>
+<li>RFC PR: None</li>
+<li>Github Issue: None</li>
+</ul>
+<h2><a class="header" href="#概要" id="概要">概要</a></h2>
+<p>达尔文网络（DARWINIA）基于Substrate开发的跨链应用枢纽和资产互联网络。</p>
+<p>达尔文网络是开放的应用跨链协议，主要专注于建设未来资产互联网络，包括游戏资产和非标资产的跨链，稳定币的跨链，应用链跨链等业务。</p>
+<p>通过达尔文网络，用户将可以使用达尔文网络来实现资产的跨链转账和流通，开发者可以通过使用达尔文网络便捷的跨链基础服务，实现应用链资产的跨链互联。</p>
+<h2><a class="header" href="#动机和目的" id="动机和目的">动机和目的</a></h2>
+<p>达尔文网络需要一个很好的跨链技术架构来支撑进化星球的业务体系。</p>
+<h2><a class="header" href="#guide-level-explanation" id="guide-level-explanation">Guide-level explanation</a></h2>
+<p>关于Polkdot的网络拓扑可以参考其白皮书，其网络拓扑的发展会有点像分形结构，即局部的网络拓扑和整体的网络拓扑会是同构且比较相似。下面的图片列出了达尔文网络可能在网络中的位置。</p>
+<p><img src="https://github.com/darwinia-network/rfcs/blob/master/RFC/zh_CN/images/0001-darwinia.png?raw=true" alt="Polkadot and Darwinia networks" /></p>
+<h2><a class="header" href="#reference-level-explanation" id="reference-level-explanation">Reference-level explanation</a></h2>
+<p>关于Substrate框架的详细介绍，可以参考下面的一些代码库和文档。</p>
+<ul>
+<li><a href="Substrate">https://github.com/paritytech/substrate</a></li>
+<li><a href="Polkadot%E5%92%8CSubstrate%E5%B7%A5%E5%85%B7%EF%BC%8C%E6%8E%A5%E5%8F%A3%E5%92%8CJS%E5%BA%93">https://polkadot.js.org/</a>.</li>
+<li><a href="Substrate%E6%96%87%E6%A1%A3%E5%92%8C%E4%B8%8A%E6%89%8B%E8%B5%84%E6%96%99">https://docs.substrate.dev/</a></li>
+</ul>
+<h2><a class="header" href="#缺点" id="缺点">缺点</a></h2>
+<p>比较依赖Substrate的开发设计和进度。</p>
+<h2><a class="header" href="#理由" id="理由">理由</a></h2>
+<ul>
+<li>Substrate是Polkadot底层的框架，符合达尔文网络跨链的理念</li>
+<li>最新的技术框架，比较好的底层模块解耦和支持，可以定制SRML</li>
+<li>可以很方便的接入Polkadot，站在巨人的肩膀上</li>
+</ul>
+<h2><a class="header" href="#拓展的模块" id="拓展的模块">拓展的模块</a></h2>
+<ul>
+<li>RING模块</li>
+<li>KTON模块</li>
+<li>Staking模块</li>
+<li>eth-relay模块</li>
+<li>eth-backing模块</li>
+</ul>
+<h2><a class="header" href="#参考" id="参考">参考</a></h2>
+<ul>
+<li>[1] https://github.com/cosmos/cosmos/blob/master/WHITEPAPER.md</li>
+<li>[2] https://github.com/w3f/polkadot-white-paper/raw/master/PolkaDotPaper.pdf</li>
+<li>[3] https://www.parity.io/substrate/</li>
+<li>[4] https://imgland.l2me.com/files/evolutionland/whitepaper_en.pdf</li>
+<li>[5] https://en.wikipedia.org/wiki/Triffin_dilemma</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../rfcs/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../rfcs/0007.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="../rfcs/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="../rfcs/0007.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3001");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload(true); // force reload from server (not from cache)
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

@@ -1,0 +1,471 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js dark">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>0012 - the-darwinia-book</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "ayu" : "dark";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('dark')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div id="sidebar-scrollbox" class="sidebar-scrollbox">
+                <ol class="chapter"><li class="expanded affix "><a href="../index.html">Introduction</a></li><li class="spacer"></li><li class="expanded "><a href="../concepts/index.html"><strong aria-hidden="true">1.</strong> Concepts</a></li><li class="expanded "><a href="../source/index.html"><strong aria-hidden="true">2.</strong> Source Code Trip</a></li><li class="expanded "><a href="../rfcs/index.html"><strong aria-hidden="true">3.</strong> RFCs</a></li><li><ol class="section"><li class="expanded "><a href="../rfcs/0001.html"><strong aria-hidden="true">3.1.</strong> 0001</a></li><li class="expanded "><a href="../rfcs/0007.html"><strong aria-hidden="true">3.2.</strong> 0007</a></li><li class="expanded "><a href="../rfcs/0009.html"><strong aria-hidden="true">3.3.</strong> 0009</a></li><li class="expanded "><a href="../rfcs/0010.html"><strong aria-hidden="true">3.4.</strong> 0010</a></li><li class="expanded "><a href="../rfcs/0011.html"><strong aria-hidden="true">3.5.</strong> 0011</a></li><li class="expanded "><a href="../rfcs/0012.html" class="active"><strong aria-hidden="true">3.6.</strong> 0012</a></li><li class="expanded "><a href="../rfcs/0013.html"><strong aria-hidden="true">3.7.</strong> 0013</a></li><li class="expanded "><a href="../rfcs/0014.html"><strong aria-hidden="true">3.8.</strong> 0014</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">the-darwinia-book</h1>
+
+                        <div class="right-buttons">
+                            <a href="../print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                            <a href="https://github.com/darwinia-network/the-darwinia-book" title="Git repository" aria-label="Git repository">
+                                <i id="git-repository-button" class="fa fa-github"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#0012" id="0012">0012</a></h1>
+<h2><a class="header" href="#i-abstract" id="i-abstract">I. Abstract</a></h2>
+<p>XClaim[5] 针对 ACCS 的缺点，设计了通用的、高效低成本的跨链框架，并提出了Cryptocurrency-Bakced Assets (CBAs)的概念。其设计主要分成三个部分：</p>
+<ul>
+<li>提出的CBA概念对跨链资产和原生资产的关系做了清晰的概括，是原生资产在另外一个区块链网络中存在形式的精简表达。</li>
+<li>在发行链(Issuing Blockchain)一端，通过借助Chain Relay对另外一个链上的交易证明进行存在性和共识性的直接验证，而无需信任第三方。</li>
+<li>在背书链(Backing Blockchain)一端，通过引入Vault、质押物(Collateral)和喂价等经济机制，对赎回过程的安全性实现了理性经济假设下的保证。由于存在质押物和喂价机制的约束，所以只能支持流动性较好的Fungible Token。</li>
+</ul>
+<p>XClaim 虽然某种程度上解决了 ACCS 的缺点，但是也存在其自身的局限性：只针对Fungible Token有效，不支持NFT和其他流动性较差无法喂价和平仓的Fungible Token。此外，XClaim方案中因为Vault的质押物在跨链资产赎回之前都是锁定的，导致存在较高的质押成本，抵押物可能存在收益率不足的问题。</p>
+<p>针对XClaim的以上问题，本文在保留CBA概念和大部分发行链的设计的同时，将背书链一端进行重新设计，增加对Backing Blockchain引入更多合理假设，即支持智能合约和Chain Relay(非BTC)，在背书链一端引入Chain Relay来验证发行链的交易，同时对背书锁定资产的赎回进行链上合约化的约束。通过这样的新方式，去除Vault、流动性质押、喂价等设计和模块，实现了对更广泛的Token的支持，包括NFT和流动性不好的Fungible Token。</p>
+<h2><a class="header" href="#ii-introduction" id="ii-introduction">II. Introduction</a></h2>
+<p>对于不同区块链上的token交换，目前虽然中心化交易所可以帮助执行，但是这样的服务需要高度的信任，且易发生主动作恶、单点故障等问题。随着Cosmos、Polkadot这样一批优秀的跨链项目的落地，架构在跨链基础设施之上的去中心化token流通协议/方案也成为重要的研究内容。</p>
+<p>在已有的方案中，atomic cross-chain swaps (ACCS) 是最早提出的可行性方案，但由于其跨链效率低、成本高，实际使用场景并不多。随后，XClaim (Cross Claim) 针对 ACCS 的缺点，提出了通用的、高效低成本的跨链框架，使用了Cryptocurrency-Bakced Assets (CBAs). </p>
+<p>XClaim 虽然某种程度上解决了 ACCS 的缺点，但是也存在其自身的局限性：只针对Fungible Token有效，并且。目前针对NFT的跨链流通还没有通用框架。本文以双链互跨为例，通过对Backing Blockchain引入更多假设，即假设Backing Blockchain支持智能合约，提出基于双Chain Relay的改进版通用XClaim方案（同时适用于Fungible Token和NFT）。</p>
+<p>该方案将展示Two chainRelay Model的设计思路和过程实现。<a href="https://eprint.iacr.org/2018/643.pdf">XClaim</a>跨链方案已经可以保证了在大部分场合下的NFT的跨链安全操作，但是依然无法保证通证资产价格产生剧烈波动时，整个系统的鲁棒性和可持续性。</p>
+<p>同时，本文还将着重分析chainRelay的实现成本和其改进方案，目前改进思路包括两个方案的探讨，其一，通过批量提交<em>block headers</em>，或对<em>block headers</em>构建<em>merkle tree</em>的方式压缩成本，其二，通过借助零知识证明的技术，将上传<em>block headers</em>成本降低，并提高链上验证交易的速度。</p>
+<h2><a class="header" href="#iii-overview" id="iii-overview">III. Overview</a></h2>
+<p>在这一章节，我们首先回顾和定义一些XClaim中与本文有关的概念，以及系统的模型和参与其中的角色。</p>
+<h3><a class="header" href="#a-cryptocurrency-backed-assetscba" id="a-cryptocurrency-backed-assetscba">A. Cryptocurrency-backed Assets(CBA)</a></h3>
+<p><strong>Definition.</strong> We define <em>cryptocurrency-backed assets</em> (CBAs) as assets deployed on top of a blockchain <em>I</em> that are backed by a cryptocurrency on blockchain <em>B</em>. We denote assets in <em>I</em> as <em>i</em>, and cryptocurrency on <em>B</em> as <em>b</em>. We use <em>i(b)</em> to further denote when an asset on <em>I</em> is backed by <em>b</em>. We describe a CBA through the following fields:</p>
+<ul>
+<li>
+<p><em>issuing blockchain</em>, the blockchain <em>I</em> on which the CBA <em>i(b)</em> is issued.</p>
+</li>
+<li>
+<p><em>backing blockchain</em>, the blockchain <em>B</em> that backs <em>i(b)</em> using cryptocurrency <em>b</em>.</p>
+</li>
+<li>
+<p><em>asset value</em>, the units of the backing cryptocurrency <em>b</em> used to generate the asset <em>i(b)</em>.</p>
+</li>
+<li>
+<p><em>asset redeemability</em>, whether or not <em>i(b)</em> can be redeemed on <em>B</em> for <em>b</em>.</p>
+</li>
+<li>
+<p><em>asset owner</em>, the current owner of <em>i(b)</em> on <em>I</em>.</p>
+</li>
+<li>
+<p><em>asset fungibility</em>, whether or not units of <em>i(b)</em> are inter-</p>
+<p>changeable.</p>
+</li>
+</ul>
+<h3><a class="header" href="#b-system-model-and-actors" id="b-system-model-and-actors">B. System Model and Actors</a></h3>
+<p>XCLAIM operates between a backing blockchain <em>B</em> of cryptocurrency <em>b</em> and an issuing blockchain <em>I</em> with underlying CBA <em>i(b)</em>. To operate CBAs, XCLAIM further differentiates between the following actors in the system:</p>
+<ul>
+<li>
+<p>CBA Requester. Locks b on B to request i(b) on I.</p>
+</li>
+<li>
+<p>CBA Sender. Owns i(b) and transfers ownership to another</p>
+<p>user on I.</p>
+</li>
+<li>
+<p>CBA Receiver. Receives and is assigned ownership over</p>
+<p>i(b) on I.</p>
+</li>
+<li>
+<p>CBA Redeemer. Destroys i(b) on I to request the corre-</p>
+<p>sponding amount of b on B.</p>
+</li>
+<li>
+<p>CBA Backing Smart Constract(bSC). A public smart contract responsible for trust-free locking/releasing <em>b</em> as protocol design requires and liable for fulfilling redeem requests of i(b) for b on B, with support of chain relay to honestly follow the instructions from redeem requests from I. <em>bSC</em> is registered on <em>I</em> so that the issuing contracts on <em>I</em> will know the transactions happen to bSC.</p>
+</li>
+<li>
+<p>Issuing Smart Contract (iSC). A public smart contract responsible for managing the correct issuing and exchange of i(b) on I. The <em>iSC</em> is required to register on <em>bSC</em> so that the backing contracts on <em>B</em> will know the transactions happen to <em>iSC</em>, in this way, <em>iSC</em> ensures correct behaviour of the <em>bSC</em>, e.g. the release action in redeem protocol.</p>
+<p>To perform these roles in XCLAIM, actors are identified on a blockchain using their public/private key pairs. As a result, the requester, redeemer must maintain key pairs for both blockchains B and I. The sender and receiver only need to maintain key pairs for the issuing blockchain <em>I</em>. <em>iSC</em> exists as a publicly verifiable smart contract on <em>I</em>, and <em>bSC</em> exists as a publicly verifiable smart contract on <em>B</em>.</p>
+</li>
+</ul>
+<h3><a class="header" href="#c-什么是-chain-relay" id="c-什么是-chain-relay">C. 什么是 <em>chain relay</em></a></h3>
+<p>XClaim 给出了对 <em>chain relay</em> [7]的定义：</p>
+<blockquote>
+<p>Chain relays: Cross-Chain State Verification. It is capable of interpreting the statte of the backing blockchain B and provide functionality comparable to an SPV or light client[10].</p>
+</blockquote>
+<p>因此，<em>chain relay</em> 可以被认为是由包含root of merkle tree的区块头组成。它为 iSC 提供了两种功能： <em>交易存在证明</em> 以及 <em>共识证明</em>。</p>
+<ul>
+<li><em><strong>交易存在证明</strong></em>： <em>chain relay</em> 存储着区块链的每一个区块头，以及区块头里的root of merkle tree. 在提供merkle tree路径的情况下，这已经足够可以证明一笔交易是否存在于这条链的某个区块中。</li>
+<li><em><strong>共识证明</strong></em>： 以比特币为例，因为每个节点通常不能即时看到全网的情况，因此经常会发生产生孤块，又在重组中被丢弃的情况。为了避免这种情况带来的攻击/漏洞，<em>chain relay</em> 必须要验证给定的区块头是否为完整区块链的一部分，例如被大部分节点认可。对于共识为Proof-of-Work的区块链，<em>chain relay</em> 必须：(i) 知道挖矿难度调整策略  (ii) 验证收到的区块头是否在具有最多累计工作量证明的链上。 对于共识为Proof-of-Stake的区块链，<em>chain relay</em> 必须：(i) 知道协议要求/staking的阶段，例如epoch  (ii) 验证区块头中验证人签名数量是否满足区块的阈值要求。 </li>
+</ul>
+<p><img src="https://github.com/darwinia-network/rfcs/raw/master/RFC/zh_CN/images/chain_relay.svg?sanitize=true" alt="Chain Relay" /></p>
+<p>[TODO: 图片来自于网络]</p>
+<h3><a class="header" href="#d-区块链模型和假设" id="d-区块链模型和假设">D. 区块链模型和假设</a></h3>
+<p>在目前已经上线的区块链项目中，几乎没有NFT作为链的原生资产的，所有的NFT几乎都是在智能合约内实现的。因此，对原生资产所在的chain $B$, 可以引入全新且合理的假设：</p>
+<ul>
+<li><em>Backing blockchain</em> 和 <em>Issuing blockchain</em>:  都支持图灵完备的智能合约</li>
+</ul>
+<p>这样我们就可以通过在 $B$ 和 $I$ 上放置独立的智能合约 bSC 和 iSC 来提供更强的技术约束，保证跨链的安全性。</p>
+<h3><a class="header" href="#e-system-goals" id="e-system-goals">E. System Goals</a></h3>
+<ol>
+<li>Support General Tokens
+<ul>
+<li>Workable for NFT</li>
+<li>Workable for Fungible Tokens without liquidations on outside exchanges.</li>
+</ul>
+</li>
+<li>Economic Feasible
+<ul>
+<li>Backing contract does not require to provide a lot of collateral for the safety of redeem protocol</li>
+<li>Feasible solutions for to support running low cost chain relay on backing blockchain.</li>
+</ul>
+</li>
+<li>Securty Properties(Ignore, refer the section in XClaim paper):
+<ul>
+<li>Audiability</li>
+<li>Consitency</li>
+<li>Redeemability</li>
+<li>Liveness</li>
+<li>Atomic Swaps</li>
+<li>Scale-out</li>
+<li>Compatiblity</li>
+</ul>
+</li>
+</ol>
+<h2><a class="header" href="#iv-backing-contract-solution" id="iv-backing-contract-solution">IV. Backing Contract Solution</a></h2>
+<p><strong>Backing Contract Solution</strong>(two chain relay model)通过在Backing Blockchain上引入一个支持chain relay的智能合约，以实现背书资产<em>b</em>的托管锁定和赎回释放功能。因为有了chain relay的支持，所以Backing Contract将可以忠实的执行发行链<em>I</em>上的赎回指令，而不需担心资产的安全问题，也不用要求Backing Contract需要质押资产，因为Backing Contract 是可审计的，并且注册在<em>iSC</em>中，因此避免了中间人信任风险和单点故障问题。</p>
+<p>相较于XClaim原始的方案，我们引入了完全无 $vault$ 质押的跨链方案，通过在backing blockchain上引入chain-relay来保证可赎回性和安全性。<em>chainRelay</em> 可以提供区块链的交易存在证明和共识证明，在XClaim的方案中，对chain $B$ 没有任何额外的要求，导致在 chain $B$ 上的安全只能由在 chain $I$ 上抵押 $i_col$ 的 $vault$ 来提供。通过III-D中对 chain $B$ 引入的新的假设约束，可以在转接桥中实现<em><strong>bSC + iSC</strong></em>双向互相验证和互操作。例如，在赎回协议中， chain $B$ 上的资产安全可以非互操作性地实现，降低对 $vault$ 的依赖。</p>
+<h3><a class="header" href="#a-protocols" id="a-protocols">A. Protocols</a></h3>
+<p>本方案提供五个协议：Register, Issue, Transfer, Swap and Redeem.</p>
+<p><strong>Protocol: Register.</strong> <em>bSC</em>需要在<em>iSC</em>中注册，<em>iSC</em>也需要在<em>bSC</em>中注册，这个相互注册过程需要公开可审计的，并通过注册完成之后的关闭外部(中心化的key的)注册权限的方式完成注册。Alice deploy an backing contract on B, and Dave deploy and issuing contract on I, and the backing contract and issuing contract require to register with each other.</p>
+<ol>
+<li>Deploy. First, Alice deploy the backing contract on B, and Dave deploy the issuing contract on I.</li>
+<li>Verify. Alice and Dave verify the counterpart's smart contracts.</li>
+<li>Register&amp;Setup. Alice register Backing contract on I and associate with Issuing contract. Dave register Issuing contract on B and associate with backing contract.</li>
+<li>Finish. Backing and Issuing Contracts finish the permission-less register process. (Some permission closing TX may be required.)</li>
+</ol>
+<p><strong>Protocol: Issue.</strong> Alice (<em>requester</em>) locks units of <em>b</em> with the <em>backing contract</em> on B to create <em>i(b)</em> on I:</p>
+<ol>
+<li>Lock. Alice generates a new pulic/private key pare on <em>I</em> and locks funds <em>b</em> with the backing contract on B in a publicly verifiable manner. i.e., by send <em>b</em> to the lock contract associated with backing contract. As part of locking these funds, Alice also specifies where the to-be-generated <em>i(b)</em> should be sent, i.e, Alice associates her public key on <em>I</em> with the transfer of <em>b</em> to the lock contract (linked to backing contract).</li>
+<li>Check Finalization. Alice (or her running client) check the the finalization vailid status of the lock transaction before she do the next step.</li>
+<li>Send Lock TX Proof. Alice send the lock transaction proof to <em>Issuing Contract</em> on <em>I</em> , the instruction in the proof and transaction also include the issue instructions.</li>
+<li>Verify &amp; Issue. After the issuing contract confirms via the TX proof and verify the validation that Alice has correctly locked her funds and forwards Alice's public key on I to iSC. The iSC verifies the proof, then issues and send i(b) to Alice, such that $||i(b)|| = ||b||$</li>
+</ol>
+<p>**Protocol: Transfer.**Alice (<em>sender</em>) transfers <em>i(b)</em> to Dave (<em>receiver</em>) on I: </p>
+<ol>
+<li><em>Transfer.</em> Alice notifies the iSC that she wishes to transfer her i(b) to Dave (public key) on I. The state of the iSC is updated and Dave becomes the new owner of i(b). </li>
+<li><em>Witness.</em> The backing contract witnesses the change of ownership on I through iSC, and no longer allows Alice to withdraw the associated amount of locked b on B. The process for any further transfers from Dave to other users is analogous. </li>
+</ol>
+<p><strong>Protocol: Swap</strong>.Alice (sender) atomically swaps i(b) against Dave’s (receiver) i on I: </p>
+<ol>
+<li>
+<p><em>Lock.</em> Alice locks i(b) with the iSC. </p>
+</li>
+<li>
+<p><em>Swap.</em> If Dave locks the agreed upon units of i (or any other asset on I) with the iSC within delay ∆swap, the iSC updates the balance of Dave, making him the new owner of i(b), and assigns Alice ownership over i. </p>
+</li>
+<li>
+<p><em>Revoke.</em> If Dave does not correctly lock i with the iSC within ∆swap, the iSC releases locked i(b) to Alice. </p>
+</li>
+<li>
+<p><em>Witness.</em> If the swap is successful, the backing contract witnesses the change of ownership of i(b) and no longer allows Alice to redeem the associated amount. </p>
+</li>
+</ol>
+<p>**Protocol: Redeem.**Dave (redeemer) burn i(b) with the iSC on I to receive b from the vault on B:</p>
+<ol>
+<li>
+<p>Burn &amp; Redeem. Dave creates a new public/private key pair on B. and locks <em>i(b)</em> with the <em>iSC</em> on I and requests the redemption of <em>i(b)</em>. There by, Dave also specifies his new public key on <em>B</em> as the target for the redeem.</p>
+</li>
+<li>
+<p>Check Finalization. Dave (or her running client) check the the finalization valid status of the lock transaction before she do the next step.</p>
+</li>
+<li>
+<p>Send Burn TX Proof. Dave send the burn transaction proof to <em>bSC</em> on <em>B</em> , the instruction in the proof and transaction also include the redeem instructions.</p>
+</li>
+<li>
+<p>Verify &amp; Release.  After the backing contract confirms via the TX proof and verify the validation that Dave has correctly locked her funds and forwards Dave's public key on B to <em>bSC</em>. The <em>bSC</em> verifies the proof, then release funds <em>b</em> to Dave's specified public key on <em>B</em>, such that $||b|| = ||i(b)||$</p>
+</li>
+</ol>
+<p><img src="https://github.com/darwinia-network/rfcs/raw/master/RFC/zh_CN/images/xclaim_new_protocol_overview.png" alt="Solution Protocols" /></p>
+<h3><a class="header" href="#b-issue-contract" id="b-issue-contract">B. Issue Contract</a></h3>
+<p>由于有了Backing Contract，并消除了只需要质押资产的部分，因为相较于原先XClaim的方案，新的Issuing Contract得到了很大的简化。</p>
+<p><img src="https://github.com/darwinia-network/rfcs/raw/master/RFC/zh_CN/images/issuing_contract.png" alt="Issuing Contract" /></p>
+<h3><a class="header" href="#c-backing-contract" id="c-backing-contract">C. Backing Contract</a></h3>
+<p>Backing Contract用于替换原先XClaim中Vault的部分，并增加了智能合约和chain relay支持，通过在Backing Blockchain中引入chain relay，当发生赎回时，Backing Contract能够监听到Issuing Blockchain上的销毁动作，并进行交易验证，确认之后进行相应的背书资产释放动作。</p>
+<p><img src="https://github.com/darwinia-network/rfcs/raw/master/RFC/zh_CN/images/backing_contract.png" alt="Backing Contract" /></p>
+<h4><a class="header" href="#d--chain-relay-如何去信任" id="d--chain-relay-如何去信任">D.  <em>chain relay</em> 如何去信任</a></h4>
+<p>这里以章节IV.A中的 <em>Protocol Issue</em> 为例，当 <em>requester</em> 把 $b$ 锁定在 $bSC$ 时，会产生一笔交易: $lock(backing_contract_address, lock_amount) - &gt; T_l$ ，随后backing chain relay的 <em>witness</em> 会向 <em>chain relay</em> 提交这笔交易$T_l$ ，之后 <em>chain relay</em> 会检验 $T_l$ 确实是存在于给定区块的交易中(交易存在证明)，这个区块也存在于最长链中并有良好的终结性（共识证明），那么就证明背书资产&amp;&amp;b已经被安全地锁定了。如果验证通过，会原子地触发 <em>iSC</em> 中的资产发行操作。</p>
+<h2><a class="header" href="#v-darwinia-bridge-core---chain-relay-topology-optimization" id="v-darwinia-bridge-core---chain-relay-topology-optimization">V. Darwinia Bridge Core - Chain Relay Topology Optimization</a></h2>
+<p>在两条公链中跨链转移token，需要在chain $I$ 维护 <em>chain relay</em> 的成本是很高的，例如以太坊上每笔交易需要gas。如果把两条公链之间的跨链行为扩展到任意 $n$ 公链的话，那么每条链上都需要单独维护 $n-1$ 个 iSC，总共将需要$C_n^2$个chain relay合约。为了降低系统的维护成本，考虑在基于substrate的平行链上实现跨链的核心功能。</p>
+<h3><a class="header" href="#a-darwinia-bridge-core-架构" id="a-darwinia-bridge-core-架构">A. <em>Darwinia Bridge Core</em> 架构</a></h3>
+<p>那么整个系统的架构如下：</p>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7fe8rjjzvj30kb0bfgmc.jpg" alt="chain-relay-framework" /></p>
+<p>图中 <strong>Bridge Core</strong> 即为平行链上包含通证跨链和各chain relay的核心模块；<strong>vSC</strong> 为 <strong>Bridge Core</strong> 的对应链的资产的发行模块。和以前的跨链方案不同的是，在上图的架构中，所有链的token需要先跨入<strong>Bridge Core</strong>, 而后在 <strong>Bridge Core</strong> 内部转换到目的公链对应的iSC 中，最后再在对应公链上发行对应的资产，整个跨链操作即完成。</p>
+<h3><a class="header" href="#b-overview" id="b-overview">B. Overview</a></h3>
+<p>[WIP]</p>
+<h2><a class="header" href="#vi-chain-relay-maintenance-cost-and-improments" id="vi-chain-relay-maintenance-cost-and-improments">VI. Chain Relay Maintenance Cost and Improments</a></h2>
+<p>与XClaim方案相比，最终的区别是在Backing Blockchain中引入了Chain Relay和智能合约，用于验证交易存在证明和共识证明。这个方案最大的一个挑战就是就是如何降低维护chain relay的成本，尤其是像以太坊这样的燃料费比较贵的区块链网络。</p>
+<p>为了验证交易，像Bitcoin和以太坊需要节点来验证一条链是有效的，其中牵涉到下载并并验证区块的有效性，可能会花费服务器数小时的时间和很多的带宽和存储，不用说链上的合约，即使是像普通的移动端这样仅有有限资源的客户端都无法支持。因此像Bitcoin和以太坊这样的大部分公链提供了轻客户端，也就是SPV(Simplified payment verification)客户端，可以只需要下载区块头就可以进行交易验证。但是即使如此，简单的SPV客户端仍需要下载很多的区块头数据，面对智能合约高昂的燃料费来说，实现起来仍然不切实际。</p>
+<p>因此，本章节将注重于对不同的Chain Relay实现进行评估和分析，以求找到链上成本最低的方案。</p>
+<h3><a class="header" href="#a-cost-estimation" id="a-cost-estimation">A. Cost Estimation</a></h3>
+<p>根据FlyClient[6]的描述，至2019年7月，一个以太坊的SPV客户端需要下载并存储4G的数据，如果采取类似的结构和设计，一个链上Chain Relay所需要下载并存储存储的数据也基本线性相关。</p>
+<p>另一个可以评估的方案是<a href="%5Bhttp://btcrelay.org%5D(http://btcrelay.org/)">BTCRelay</a>的成本。[WIP]</p>
+<h3><a class="header" href="#b-improvements-using-flyclient6" id="b-improvements-using-flyclient6">B. Improvements using FlyClient[6]</a></h3>
+<p>FlyClient[6]介绍了一种新的交易验证的轻客户端方案，可以支持多种区块链网络，包括POW区块链和POS区块链。</p>
+<p>目前阶段，主要SPV客户端和BTCRelay方案的是，因为需要存储每一个区块头，导致其算法需要的存储和带宽要求是线性增长的。Fly Client通过组合 Merkle Moutain Range(MMR)<a href="https://github.com/darwinia-network/rfcs/raw/master/RFC/zh_CN/images/issuing_contract.png">2</a>，最佳概率块抽样(Optimal probabilistic block sampling)，Fiat–Shamir heuristic等技术，可以实现算法性能达到对数级，也就是在每次执行校验期间只需要下载对数个区块头。</p>
+<p>详细设计可参考<a href="https://eprint.iacr.org/2019/226">FlyClient: Super-Light Clients for Cryptocurrencies</a></p>
+<p>FlyClient提供了super light client的方案，但是Chain Relay需要在区块链内置合约(模块)或者用户合约中实现super light client，因此在设计方案上需要增加一些考虑点：</p>
+<ul>
+<li>
+<p>Asymptotically and on Demand Proof Summit and Challenge Time</p>
+<p>ChainRelay提交块头的如果只是一个人，则无法确认是诚实或是作恶的，或者说即使是善意的，提交的头也可能由于自然分叉而无效。在轻钱包协议中一个重要假设是轻钱包可以和多个全节点连接获得数据，并且至少其中一个是诚实的。所以，在我们的实现中，只有一个人提交头类似与只有一条连接，不足以确保数据的有效性。因此在用户使用这个ChainRelay的最新区块头及相关默克尔证明之前，需要增加一个Challenge时间，也就是最新的区块头被提交后，处于质疑状态，需要有一个challenge时段，在此时间过后没有人提交反对块（符合块基本交易且拥有更高难度，但MMR中不包含质疑块）或者收到赞同块（难度更高，但是MMR包含质疑块），最新提交的区块才被确认。此时，用户将可以使用这个Chain Relay验证在此最新块之前发生的交易是否存在。</p>
+<p>为了防止攻击者攻击，在提交块时需要附带一定金额的押金，在块被信任后，押金返回并附带一定比例的手续费池金额作为奖励；如果块被否决，则押金扣除，扣除的押金一部分进入手续费池，一部分直接奖励否决块的提交人（否决块也需要被信任后才成为否决块）。</p>
+</li>
+<li>
+<p>External Blockchain HardFork和治理机制</p>
+<p>一些公链可能会出现硬分叉的情况，这些硬分叉可能会导致共识机制的改变，相应的，其轻节点也需要升级，但是Chain Relay一般以去中心化的智能合约形式存在，例如在跨链转接桥中为去中心化的背书技术提供支持。如果提供升级权限账户，就会削弱其去中心化程度并引入单点故障，如果不提供，则改Chain Relay将升级以应对外部链的硬分叉。因此需要引入治理机制来处理升级问题。</p>
+<p>一般来说建议在应用状态验证合约进行治理升级的支持，例如如果出现硬分叉，则实现一个新的Chain Relay并部署，这个新的Chain Relay的Genesis则指向硬分叉块，所有依赖这个Chain Relay的应用状态验证合约，通过调整其Chain Relay指向逻辑，在硬分叉时，将旧的Chain Relay替换为新的Chain Relay，从而在保证Chain Relay去中心化的同时，提供应用层面升级的灵活性，应用层面可以选择应用不同的治理机制以及在治理和去中心化之间进行权衡。</p>
+</li>
+<li>
+<p>On-chain Crypto Verification Support</p>
+<p>Chain Relay需要对外部链上的交易证明进行验证，但是由于是在不同的链上，Chain Relay所在链可能不支持外部链交易所需的加密库，例如Ethereum 1.0目前还不支持BLS算法。因此如果需要广泛的支持不同的公链，需要考虑Chain Relay运行链是否支持相应的加密库。</p>
+</li>
+<li>
+<p>Consensus Support</p>
+<p>在Fly Client中，只针对类似Bitcoin和Ethereum这样的POW链提供了设计，针对其他的区块链共识(Poof of X)，例如POS，DPOS, PBFT等则没有详细描述，因此需要针对这些共识算法，设计相应的Super Light Client解决方案。[WIP]</p>
+<p>对于Darwinia 来说，为了方便的在不同的公链上开发针对Darwinia的Chain Relay，并保证较低的成本和复杂度，因此需要将Darwinia的共识算法设计成Super Light Client Friendly的共识算法。[WIP]</p>
+</li>
+</ul>
+<h3><a class="header" href="#c-improvements-using-zero-knowledge-proofs" id="c-improvements-using-zero-knowledge-proofs">C. Improvements using Zero-knowledge Proofs</a></h3>
+<p>[WIP]</p>
+<h2><a class="header" href="#vi-参考" id="vi-参考">VI. 参考</a></h2>
+<ol>
+<li>https://github.com/sec-bit/zkPoD-lib</li>
+<li>https://github.com/mimblewimble/grin/blob/master/doc/mmr.md</li>
+<li>https://github.com/ipfs/specs/tree/master/merkledag</li>
+<li>https://hackernoon.com/ipfs-and-merkle-forest-a6b7f15f3537</li>
+<li>XClaim, https://eprint.iacr.org/2018/643.pdf</li>
+<li>FlyClient, https://eprint.iacr.org/2019/226</li>
+<li>https://zhuanlan.zhihu.com/p/72620891</li>
+<li>https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-May/012715.html</li>
+<li><a href="https://en.wikipedia.org/wiki/Fiat%E2%80%93Shamir_heuristic">Fiat Shamir heuristic</a></li>
+<li>https://medium.com/blockchain-research-newsletter/blockchain-research-newsletter-3-nipopow-and-flyclient-ac202f7624a7</li>
+<li>https://blog.kyber.network/waterloo-a-decentralized-practical-bridge-between-eos-and-ethereum-1c230ac65524</li>
+<li>https://medium.com/@loiluu/peacerelay-connecting-the-many-ethereum-blockchains-22605c300ad3</li>
+<li>https://steemit.com/eos/@attic-lab/eos-io-consensus-algorithm</li>
+</ol>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../rfcs/0011.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../rfcs/0013.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="../rfcs/0011.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="../rfcs/0013.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3001");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload(true); // force reload from server (not from cache)
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
