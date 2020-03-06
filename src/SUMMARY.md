@@ -5,6 +5,11 @@
 ---
 
 - [Concepts](./concepts/README.md)
+  - [Balances](./concepts/balances.md)
+  - [Election](./concepts/election.md)
+  - [Relay Chain](./concepts/relay_chain.md)
+  - [Staking](./concepts/staking.md)
+  - [Treasury](./concepts/treasury.md)
 - [Source Code Trip](./source/README.md)
   - [bin](./source/bin.md)
   - [client](./source/client.md)

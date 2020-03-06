@@ -34,3 +34,5 @@ candidate in the elected set.
 Ethereum primitives
 
 [0]: https://github.com/darwinia-network/darwinia/tree/develop/primitives
+[1]: https://github.com/w3f/consensus
+[2]: https://research.web3.foundation/en/latest/polkadot/NPoS/4.%20Sequential%20Phragm%C3%A9n%E2%80%99s%20method/
