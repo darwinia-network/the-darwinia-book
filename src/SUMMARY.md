@@ -6,6 +6,7 @@
 
 - [Concepts](./concepts/README.md)
   - [Balances](./concepts/balances.md)
+    - [ImBalance](./concepts/imbalance.md)
   - [Election](./concepts/election.md)
   - [Fee](./concepts/fee.md)
   - [Relay Chain](./concepts/relay_chain.md)
