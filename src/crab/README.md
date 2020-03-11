@@ -17,13 +17,9 @@ together!
 | [177][177] | Security: Check all the side effects caused by Err            | Review      |
 | [217][217] | Failed to submit extrinsic: Transaction pool error: ...       | Bug         |
 | [251][251] | Sync Stalls                                                   | Bug         |
-| [271][271] | Refactoring EthRelay                                          | Tests       |
 | [274][274] | Refactoring Staking/Eth-Backing Tests                         | In progress |
-| [284][284] | Update `types.json`                                           | Todo        |
 | [290][290] | Prepare for Crab Network, Settings                            | Todo        |
 | [298][298] | Claim Module for Crab                                         | Todo        |
-| [310][310] | Upgrade to Substrate alpha.3                                  | In progress |
-| [314][314] | Do Some Refactoring on Treasury                               | In progress |
 
 [0]: https://github.com/darwinia-network/darwinia/blob/develop/ROADMAP.md
 [55]: https://github.com/darwinia-network/darwinia/issues/55
