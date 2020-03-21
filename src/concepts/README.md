@@ -1,3 +1,0 @@
-# Concepts
-
-Concepts of darwinia.

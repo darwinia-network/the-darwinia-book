@@ -9,6 +9,7 @@
     - [ImBalance](./concepts/imbalance.md)
   - [Election](./concepts/election.md)
   - [Fee](./concepts/fee.md)
+  - [Power](./concepts/power.md)
   - [Relay Chain](./concepts/relay_chain.md)
   - [Staking](./concepts/staking.md)
   - [Treasury](./concepts/treasury.md)

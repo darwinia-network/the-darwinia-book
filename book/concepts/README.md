@@ -1,21 +1,8 @@
-# Balances
+# Concepts
 
-`Darwinia Balances` usually mean `KTON` and `RING`, like what we have already learned from the [introduction](../index.md): 
+Gather all Terminologies.
 
-+ `Ring` is the native token for the Darwinia Network, it can be used as gas for transactions.
-
-+ `Kton` is the other kind token in `darwnia` that can be awarded by locking `RING` for 3 - 36 months in the process of Staking.
-
-`KTON` **can be pledged to receive Staking power, so as to participate in POS mining as well**. Users may Stake via pledging `KTON`. However, if the user takes back his or her staking `KTON`, then the related POS mining will be stopped, and it will take 14 days for the unpledged `KTON` to arrive.
-
-
-## Burn
-> TODO
-
-## Weight
-> TODO
-
-## Terminology
+## Balances
 
 - **Existential Deposit:** The minimum balance required to create or keep an account open. This prevents
 "dust accounts" from filling storage. When the free plus the reserved balance (i.e. the total balance)
@@ -41,3 +28,27 @@ total balance has become zero (or, strictly speaking, less than the Existential 
 - **Lock:** A freeze on a specified amount of an account's free balance until a specified block number. Multiple
 locks always operate over the same funds, so they "overlay" rather than "stack".
 
+
+## Staking
+
+- **Staking**: The process of locking up funds for some time, placing them at risk of slashing
+(loss) in order to become a rewarded maintainer of the network.
+- **Validating**: The process of running a node to actively maintain the network, either by
+producing blocks or guaranteeing finality of the chain.
+- **Nominating**: The process of placing staked funds behind one or more validators in order to
+share in any reward, and punishment, they take.
+- **Stash account**: The account holding an owner's funds used for staking.
+- **Controller account**: The account that controls an owner's funds for staking.
+- **Era**: A (whole) number of sessions, which is the period that the validator set (and each
+validator's active nominator set) is recalculated and where rewards are paid out.
+- **Slash**: The punishment of a staker by reducing its funds.
+
+## Treasury
+
+- **Proposal:** A suggestion to allocate funds from the pot to a beneficiary.
+- **Beneficiary:** An account who will receive the funds from a proposal iff
+the proposal is approved.
+- **Deposit:** Funds that a proposer must lock when making a proposal. The
+deposit will be returned or slashed if the proposal is approved or rejected
+respectively.
+- **Pot:** Unspent funds accumulated by the treasury module.

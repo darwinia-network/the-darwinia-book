@@ -11,6 +11,21 @@ Consuming some weights should generally incur a [fee](./fee.md).
 Aside from affecting fees, the main purpose of the weight system is to **prevent a block from being filled with too many transactions**. While processing transactions within a block, the System pallet accumulates both the total length of the block (sum of encoded transactions in bytes) and the total weight of the block. 
 
 
+## Common used weights in darwinia
+
+| level | weight    |
+|-------|-----------|
+| 0     | 10,000    |
+| 1     | 50,000    |
+| 2     | 100,000   |
+| 3     | 150,000   |
+| 4     | 200,000   |
+| 5     | 500,000   |
+| 6     | 750,000   |
+| 7     | 1,000,000 |
+| 8     | 2,000,000 |
+
+
 ## Weights in darwinia
 
 | pallet             | function                  | weight    |

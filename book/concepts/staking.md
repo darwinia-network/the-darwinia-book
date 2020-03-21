@@ -1,20 +1,5 @@
 # Staking
 
-## Terminology
-
-- **Staking**: The process of locking up funds for some time, placing them at risk of slashing
-(loss) in order to become a rewarded maintainer of the network.
-- **Validating**: The process of running a node to actively maintain the network, either by
-producing blocks or guaranteeing finality of the chain.
-- **Nominating**: The process of placing staked funds behind one or more validators in order to
-share in any reward, and punishment, they take.
-- **Stash account**: The account holding an owner's funds used for staking.
-- **Controller account**: The account that controls an owner's funds for staking.
-- **Era**: A (whole) number of sessions, which is the period that the validator set (and each
-validator's active nominator set) is recalculated and where rewards are paid out.
-- **Slash**: The punishment of a staker by reducing its funds.
-
-
 ## Scenarios
 
 ### Staking

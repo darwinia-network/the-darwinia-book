@@ -2,7 +2,7 @@
 authors = ["Darwinia Network"]
 language = "en"
 multilingual = false
-src = "src"
+src = "book"
 title = "the-darwinia-book"
 
 [build]
