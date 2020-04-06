@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div id="sidebar-scrollbox" class="sidebar-scrollbox">
-                <ol class="chapter"><li class="expanded affix "><a href="index.html" class="active">Introduction</a></li><li class="spacer"></li><li class="expanded "><a href="concepts/index.html"><strong aria-hidden="true">1.</strong> Concepts</a></li><li><ol class="section"><li class="expanded "><a href="concepts/balances.html"><strong aria-hidden="true">1.1.</strong> Balances</a></li><li><ol class="section"><li class="expanded "><a href="concepts/imbalance.html"><strong aria-hidden="true">1.1.1.</strong> ImBalance</a></li></ol></li><li class="expanded "><a href="concepts/election.html"><strong aria-hidden="true">1.2.</strong> Election</a></li><li class="expanded "><a href="concepts/fee.html"><strong aria-hidden="true">1.3.</strong> Fee</a></li><li class="expanded "><a href="concepts/power.html"><strong aria-hidden="true">1.4.</strong> Power</a></li><li class="expanded "><a href="concepts/relay_chain.html"><strong aria-hidden="true">1.5.</strong> Relay Chain</a></li><li class="expanded "><a href="concepts/staking.html"><strong aria-hidden="true">1.6.</strong> Staking</a></li><li class="expanded "><a href="concepts/treasury.html"><strong aria-hidden="true">1.7.</strong> Treasury</a></li><li class="expanded "><a href="concepts/weights.html"><strong aria-hidden="true">1.8.</strong> Weights</a></li></ol></li><li class="expanded "><a href="crab/index.html"><strong aria-hidden="true">2.</strong> Darwinia Crab Network</a></li><li class="expanded "><a href="source/index.html"><strong aria-hidden="true">3.</strong> Source Code Trip</a></li><li><ol class="section"><li class="expanded "><a href="source/bin.html"><strong aria-hidden="true">3.1.</strong> bin</a></li><li class="expanded "><a href="source/client.html"><strong aria-hidden="true">3.2.</strong> client</a></li><li class="expanded "><a href="source/frame/index.html"><strong aria-hidden="true">3.3.</strong> frame</a></li><li><ol class="section"><li class="expanded "><a href="source/frame/balances.html"><strong aria-hidden="true">3.3.1.</strong> balances</a></li><li class="expanded "><a href="source/frame/chainrelay.html"><strong aria-hidden="true">3.3.2.</strong> chainrelay</a></li><li class="expanded "><a href="source/frame/elections_phragmen.html"><strong aria-hidden="true">3.3.3.</strong> elections-phragmen</a></li><li class="expanded "><a href="source/frame/staking.html"><strong aria-hidden="true">3.3.4.</strong> staking</a></li><li class="expanded "><a href="source/frame/support.html"><strong aria-hidden="true">3.3.5.</strong> support</a></li><li class="expanded "><a href="source/frame/treasury.html"><strong aria-hidden="true">3.3.6.</strong> treasury</a></li></ol></li><li class="expanded "><a href="source/primitives.html"><strong aria-hidden="true">3.4.</strong> primitives</a></li></ol></li><li class="expanded "><a href="rfcs.html"><strong aria-hidden="true">4.</strong> RFCs</a></li></ol>
+                <ol class="chapter"><li class="expanded affix "><a href="index.html" class="active">Introduction</a></li><li class="spacer"></li><li class="expanded "><a href="getting-started.html"><strong aria-hidden="true">1.</strong> Getting Started</a></li><li class="expanded "><a href="your-first-darwinia-node.html"><strong aria-hidden="true">2.</strong> Your First Darwinia Node</a></li><li class="expanded "><a href="communicate-with-darwinia.html"><strong aria-hidden="true">3.</strong> Communicate with Darwinia</a></li><li class="expanded "><a href="concepts/index.html"><strong aria-hidden="true">4.</strong> Common Darwinia Concepts</a></li><li><ol class="section"><li class="expanded "><a href="concepts/balances.html"><strong aria-hidden="true">4.1.</strong> Balances</a></li><li class="expanded "><a href="concepts/election.html"><strong aria-hidden="true">4.2.</strong> Election</a></li><li class="expanded "><a href="concepts/staking.html"><strong aria-hidden="true">4.3.</strong> Staking</a></li><li class="expanded "><a href="concepts/weights.html"><strong aria-hidden="true">4.4.</strong> Weights</a></li></ol></li><li class="expanded "><a href="understanding-staking.html"><strong aria-hidden="true">5.</strong> Understanding Staking</a></li><li class="expanded "><a href="roles-in-darwinia.html"><strong aria-hidden="true">6.</strong> Roles in Darwinia</a></li><li class="expanded "><a href="transaction-fees.html"><strong aria-hidden="true">7.</strong> Transaction Fees</a></li><li class="expanded "><a href="relay-system.html"><strong aria-hidden="true">8.</strong> Relay System</a></li><li class="expanded "><a href="common-tools.html"><strong aria-hidden="true">9.</strong> Common Tools</a></li><li class="expanded "><a href="rfcs.html"><strong aria-hidden="true">10.</strong> RFCs</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -154,37 +154,19 @@
                     <main>
                         <h1><a class="header" href="#introduction" id="introduction">Introduction</a></h1>
 <p>This <a href="https://darwinia-network.github.io/the-darwinia-book">book</a> is about <a href="https://github.com/darwinia-network/darwinia">Darwinia</a>, as an open application cross-chain protocol based on <a href="https://github.com/paritytech/substrate">Substrate</a>, <code>Darwinia</code> focuses on the construction of future Internet of Tokens, including the cross-chain of game tokens, NFT, Stablecoins, and Appchain.</p>
-<h2><a class="header" href="#architecture" id="architecture">Architecture</a></h2>
-<p>In the process of using <code>blockchain</code> technology to create new <code>DAPP</code>, we found several problems for the mass promotion and utilization of <code>blockchain</code> technology:</p>
-<ol>
-<li>The current blockchain infrastructure is not yet able to meet the requirements of user experience.</li>
-<li>Traditional game vendors lack blockchain experience.</li>
-<li>Blockchain games are split among different public chains.</li>
-</ol>
-<p>However, <code>blockchain games</code> or Dapps can easily perform <code>cross-chain</code> interactions for game inventories and game operations through the <code>Darwinia Network</code>. For example, <code>Cryptokitties</code> can transform its NFT (Kitties) on the <code>Ethereum</code> into NFT on <code>EOS</code> through the <code>Darwinia chain</code>; players on the <code>Ethereum</code> and players on the <code>EOS</code> can play <code>Evolution Land</code> game simultaneously through the <code>Darwinia Network</code>. <strong>At the same time, thanks to the Polkadot ecosystem, Darwinia Network can link to a wider range of games and players.</strong></p>
-<p>The architecture relationship of Darwinia Relay Chain, Darwinia AppChain, Polkadot Relay Chain, etc. is shown as below. </p>
-<p><img src="https://github.com/darwinia-network/rfcs/raw/master/RFC/zh_CN/images/0007-darwinia-architecture.jpeg" alt="Darwinia architecture" /></p>
-<h2><a class="header" href="#darwinia-relay-chain" id="darwinia-relay-chain">Darwinia Relay Chain</a></h2>
-<p><strong>Darwinia Relay Chain is the most important part of the Darwinia Network</strong>, it is also the hub of each App- Parachain, to this end, we divided the operating mode of Darwinia relay chain into <code>Solo mode</code> and <code>Polkadot connection mode</code>.</p>
-<h3><a class="header" href="#solo-mode" id="solo-mode">Solo Mode</a></h3>
-<p>Darwinia Network can choose to operate as an independent public-chain network and is responsible for its own consensus security, with its core business and application services, including the cross-chain functionality of each application chain, controlled by Darwinia Network itself.</p>
-<h3><a class="header" href="#polkadot-connection-mode" id="polkadot-connection-mode">Polkadot Connection Mode</a></h3>
-<p>In Polkadot connection mode, in addition to operating as a relay chain for Darwinia Network, it also serves as a Parachain for Polkadot.</p>
-<h2><a class="header" href="#economic-model" id="economic-model">Economic Model</a></h2>
-<h3><a class="header" href="#ring" id="ring">RING</a></h3>
-<p>The native token for the Darwinia Network is <code>RING</code>, <code>RING</code> can be used as gas for transactions. Gas include transaction fees, contract execution fees, network bandwidth charges, storage fees, and more.</p>
-<p><img src="https://github.com/darwinia-network/rfcs/raw/master/RFC/zh_CN/images/reward.jpeg" alt="Benefits" /></p>
-<h3><a class="header" href="#kton" id="kton">KTON</a></h3>
-<p>To encourage users to make long term commitments and pledge, users can choose to <strong>lock <code>RING</code> for 3 - 36 months</strong> in the process of Staking, and the system will offer a <code>KTON</code> token as reward for users participating in Staking. During the committed pledge period, users cannot unlock their RING. (Unless they utilise triple the amount of KTON as penalty).</p>
-<h2><a class="header" href="#community-ecosystem" id="community-ecosystem">Community Ecosystem</a></h2>
-<h3><a class="header" href="#protocol-researcher" id="protocol-researcher">Protocol Researcher</a></h3>
-<p>The protocol and standard research’s work is divided into <strong>two parts</strong>. <strong>The first part</strong> comes from the community. <code>Darwinia Network</code> accepts any <code>RFC</code> submission from the community, including new additions, improvements and modifications. These <code>RFCs</code> will be open to the community for full discussion and research to reach a consensus. <strong>The second part</strong> is from the <code>core research team</code>, which is responsible for organizing <code>RFCs</code>, organizing <code>RFC</code> peer audits and security audits, using <code>Darwinia Network</code> governance models and tools for protocol governance and voting, and forming a final agreement design draft for delivery to the protocol development team.</p>
-<h3><a class="header" href="#developer" id="developer">Developer</a></h3>
-<p>Develop and improve <code>Darwinia Network</code>, <code>Darwinia AppChain</code> and <code>related services</code>, and develop applications and services using the <code>Darwinia Network</code> and the <code>Darwinia AppChain</code>. Early community open source software development, especially important infrastructure software development (including network protocol design, protocol implementation, node software, wallet, browser, etc.), will be sponsored and supported by the Darwinia Network oundation, currently the main <code>Darwinia Network</code> open source software developer is <a href="https://itering.io">Itering Tech</a>.</p>
-<h3><a class="header" href="#dapp-developer" id="dapp-developer">Dapp Developer</a></h3>
-<p><code>Dapp developers</code> include developers who develop applications based on the <code>Darwinia Web Smart Contracts module</code>, as well as developers who develop Dapp on the public chain, such as blockchain games or Defi applications on platforms such as <code>Ethereum</code>, <code>TRON</code> or <code>EOS</code>. For the Dapp and game inventories on the public chain, bridge parachain of Darwinia Network can be connected to the Darwinia Network for <code>cross-chain</code> transfer operations.</p>
-<h3><a class="header" href="#appchain-developer" id="appchain-developer">AppChain Developer</a></h3>
-<p><code>Application chain developers</code> developing with the <code>Darwinia Web Application</code> Suite (Darwinia AppChain).</p>
+<h2><a class="header" href="#gene-paper" id="gene-paper">Gene Paper</a></h2>
+<p>If you're looking for our Gene Paper, <a href="https://evolution.l2me.com/darwinia/Darwinia_Genepaper_EN_200320.pdf">here</a> it is.</p>
+<h2><a class="header" href="#guide" id="guide">Guide</a></h2>
+<p>This book introduces the concepts in darwinia, including the design and the usages, for example, the anatomy of every concept chapter contains:</p>
+<ul>
+<li>Introduction</li>
+<li>Design explaination</li>
+<li>Usage in Darwinia
+<ul>
+<li>Real world examples</li>
+</ul>
+</li>
+</ul>
 
                     </main>
 
@@ -193,7 +175,7 @@
                         
 
                         
-                            <a rel="next" href="concepts/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="getting-started.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -207,7 +189,7 @@
                 
 
                 
-                    <a href="concepts/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a href="getting-started.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 
