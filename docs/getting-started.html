@@ -89,7 +89,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="intro.html">Introduction</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="getting-started.html" class="active"><strong aria-hidden="true">1.</strong> Getting Started</a></li><li class="chapter-item expanded "><a href="relay-system.html"><strong aria-hidden="true">2.</strong> Relay System</a></li><li class="chapter-item expanded "><a href="transaction-fees.html"><strong aria-hidden="true">3.</strong> Transaction Fees</a></li><li class="chapter-item expanded "><a href="common-tools.html"><strong aria-hidden="true">4.</strong> Common Tools</a></li><li class="chapter-item expanded "><a href="rfcs.html"><strong aria-hidden="true">5.</strong> RFCs</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="intro.html">Introduction</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="getting-started.html" class="active"><strong aria-hidden="true">1.</strong> Getting Started</a></li><li class="chapter-item expanded "><a href="relay-system.html"><strong aria-hidden="true">2.</strong> Relay System</a></li><li class="chapter-item expanded "><a href="common-tools.html"><strong aria-hidden="true">3.</strong> Common Tools</a></li><li class="chapter-item expanded "><a href="rfcs.html"><strong aria-hidden="true">4.</strong> RFCs</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -161,7 +161,18 @@
                     <main>
                         <h1><a class="header" href="#getting-started" id="getting-started">Getting Started</a></h1>
 <h2><a class="header" href="#download" id="download">Download</a></h2>
-<p>You can download the latest darwinia from <a href="https://github.com/darwinia-network/darwinia/releases">here</a></p>
+<p>You can download the latest darwinia node from the latest <a href="https://github.com/darwinia-network/darwinia/releases">release</a>.</p>
+<h2><a class="header" href="#run-the-node" id="run-the-node">Run the Node</a></h2>
+<pre><code>$ ./darwinia --dev
+</code></pre>
+<p>As developers, we strongly recommend you guys to clean the storge every you run the node,
+keep our node clean, for example:</p>
+<pre><code>$ rm -rf tmp &amp;&amp; ./darwinia --dev -d tmp
+</code></pre>
+<h2><a class="header" href="#chain-status" id="chain-status">Chain Status</a></h2>
+<p>You can visit <a href="https://apps.darwinia.network/#/account">Apps</a> and set the node address to your local node to view the chain status.</p>
+<h3><a class="header" href="#note" id="note">Note</a></h3>
+<p>Don't forget to update the <code>types.json</code> of your node, you can find the latest one <a href="https://github.com/darwinia-network/darwinia-common/blob/master/bin/node-template/runtime/darwinia_types.json">here</a>.</p>
 
                     </main>
 
