@@ -5,12 +5,19 @@
         <meta charset="UTF-8">
         <title>Introduction - the-darwinia-book</title>
         
+        
+
+
+        <!-- Custom HTML head -->
+        
+
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
+        <link rel="icon" href="favicon.svg">
         <link rel="shortcut icon" href="favicon.png">
         <link rel="stylesheet" href="css/variables.css">
         <link rel="stylesheet" href="css/general.css">
@@ -19,8 +26,9 @@
 
         <!-- Fonts -->
         <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
 
         <!-- Highlight.js Stylesheets -->
         <link rel="stylesheet" href="highlight.css">
@@ -80,8 +88,8 @@
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <div id="sidebar-scrollbox" class="sidebar-scrollbox">
-                <ol class="chapter"><li class="expanded affix "><a href="index.html" class="active">Introduction</a></li><li class="spacer"></li><li class="expanded "><a href="getting-started.html"><strong aria-hidden="true">1.</strong> Getting Started</a></li><li class="expanded "><a href="your-first-darwinia-node.html"><strong aria-hidden="true">2.</strong> Your First Darwinia Node</a></li><li class="expanded "><a href="communicate-with-darwinia.html"><strong aria-hidden="true">3.</strong> Communicate with Darwinia</a></li><li class="expanded "><a href="concepts/index.html"><strong aria-hidden="true">4.</strong> Common Darwinia Concepts</a></li><li><ol class="section"><li class="expanded "><a href="concepts/balances.html"><strong aria-hidden="true">4.1.</strong> Balances</a></li><li class="expanded "><a href="concepts/election.html"><strong aria-hidden="true">4.2.</strong> Election</a></li><li class="expanded "><a href="concepts/staking.html"><strong aria-hidden="true">4.3.</strong> Staking</a></li><li class="expanded "><a href="concepts/weights.html"><strong aria-hidden="true">4.4.</strong> Weights</a></li></ol></li><li class="expanded "><a href="understanding-staking.html"><strong aria-hidden="true">5.</strong> Understanding Staking</a></li><li class="expanded "><a href="roles-in-darwinia.html"><strong aria-hidden="true">6.</strong> Roles in Darwinia</a></li><li class="expanded "><a href="transaction-fees.html"><strong aria-hidden="true">7.</strong> Transaction Fees</a></li><li class="expanded "><a href="relay-system.html"><strong aria-hidden="true">8.</strong> Relay System</a></li><li class="expanded "><a href="common-tools.html"><strong aria-hidden="true">9.</strong> Common Tools</a></li><li><ol class="section"><li class="expanded "><a href="tools/darwinia.js/index.html"><strong aria-hidden="true">9.1.</strong> darwinia.js</a></li><li><ol class="section"><li class="expanded "><a href="tools/darwinia.js/api.html"><strong aria-hidden="true">9.1.1.</strong> api</a></li><li class="expanded "><a href="tools/darwinia.js/dactle.html"><strong aria-hidden="true">9.1.2.</strong> dactle</a></li><li class="expanded "><a href="tools/darwinia.js/dj.html"><strong aria-hidden="true">9.1.3.</strong> dj</a></li><li class="expanded "><a href="tools/darwinia.js/util.html"><strong aria-hidden="true">9.1.4.</strong> util</a></li></ol></li><li class="expanded "><a href="tools/darwinia.go/index.html"><strong aria-hidden="true">9.2.</strong> darwinia.go</a></li></ol></li><li class="expanded "><a href="rfcs.html"><strong aria-hidden="true">10.</strong> RFCs</a></li></ol>
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="intro.html">Introduction</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="getting-started.html"><strong aria-hidden="true">1.</strong> Getting Started</a></li><li class="chapter-item expanded "><a href="relay-system.html"><strong aria-hidden="true">2.</strong> Relay System</a></li><li class="chapter-item expanded "><a href="transaction-fees.html"><strong aria-hidden="true">3.</strong> Transaction Fees</a></li><li class="chapter-item expanded "><a href="common-tools.html"><strong aria-hidden="true">4.</strong> Common Tools</a></li><li class="chapter-item expanded "><a href="rfcs.html"><strong aria-hidden="true">5.</strong> RFCs</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -90,41 +98,40 @@
 
             <div class="page">
                 
-                <div id="menu-bar" class="menu-bar">
-                    <div id="menu-bar-sticky-container">
-                        <div class="left-buttons">
-                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                                <i class="fa fa-bars"></i>
-                            </button>
-                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                                <i class="fa fa-paint-brush"></i>
-                            </button>
-                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                                <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
-                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
-                            </ul>
-                            
-                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
-                                <i class="fa fa-search"></i>
-                            </button>
-                            
-                        </div>
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
 
-                        <h1 class="menu-title">the-darwinia-book</h1>
+                    <h1 class="menu-title">the-darwinia-book</h1>
 
-                        <div class="right-buttons">
-                            <a href="print.html" title="Print this book" aria-label="Print this book">
-                                <i id="print-button" class="fa fa-print"></i>
-                            </a>
-                            
-                            <a href="https://github.com/darwinia-network/the-darwinia-book" title="Git repository" aria-label="Git repository">
-                                <i id="git-repository-button" class="fa fa-github"></i>
-                            </a>
-                            
-                        </div>
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        <a href="https://github.com/darwinia-network/the-darwinia-book" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        
                     </div>
                 </div>
 
@@ -153,17 +160,27 @@
                 <div id="content" class="content">
                     <main>
                         <h1><a class="header" href="#introduction" id="introduction">Introduction</a></h1>
-<p>This <a href="https://darwinia-network.github.io/the-darwinia-book">book</a> is about <a href="https://github.com/darwinia-network/darwinia">Darwinia</a>, as an open application cross-chain protocol based on <a href="https://github.com/paritytech/substrate">Substrate</a>, <code>Darwinia</code> focuses on the construction of future Internet of Tokens, including the cross-chain of game tokens, NFT, Stablecoins, and Appchain.</p>
-<h2><a class="header" href="#gene-paper" id="gene-paper">Gene Paper</a></h2>
-<p>If you're looking for our Gene Paper, <a href="https://evolution.l2me.com/darwinia/Darwinia_Genepaper_EN_200320.pdf">here</a> it is.</p>
-<h2><a class="header" href="#guide" id="guide">Guide</a></h2>
-<p>This book introduces the concepts in darwinia, including the design and the usages, for example, the anatomy of every concept chapter contains:</p>
+<p>If you're reading this now, I mean, looking at these words on your screen, you might interest in our project <a href="https://github.com/darwinia-network/darwinia">Darwinia</a>, even want to contribute to us :)</p>
+<p>Deal, this <a href="https://darwinia-network.github.io/the-darwinia-book">book</a> is written for the Darwinia contributers!</p>
+<h2><a class="header" href="#getting-help" id="getting-help">Getting Help</a></h2>
 <ul>
-<li>Introduction</li>
-<li>Design explaination</li>
-<li>Usage in Darwinia
+<li>Ask a question in the <a href="https://matrix.to/#/!HIyWQGUzgpkxswYMNi:matrix.org?via=matrix.org">Darwinia Technical Element Channel</a></li>
+<li>Ask a question in our <a href="https://t.me/DarwiniaDev">telegram</a> group</li>
+<li>Just raise an <a href="https://github.com/darwinia-network/the-darwinia-book/issues/new">issue</a></li>
+</ul>
+<h2><a class="header" href="#references" id="references">References</a></h2>
+<p>In case of the content of this book can not solve your questions, you can check</p>
 <ul>
-<li>Real world examples</li>
+<li>Substrate
+<ul>
+<li>Substrate <a href="https://substrate.dev/recipes/">receipes</a>, the wonderful one</li>
+<li>The official API reference, <a href="https://substrate.dev/rustdocs/v2.0.0-rc6/sc_service/index.html">docs.rs</a></li>
+</ul>
+</li>
+<li>Darwinia
+<ul>
+<li><a href="https://docs.darwinia.network/docs/en/wp-home">WIKI</a> of Darwinia</li>
+<li>Run <code>cargo doc</code> under <code>darwinia</code> or <code>darwinia-common</code> project</li>
 </ul>
 </li>
 </ul>
@@ -189,7 +206,7 @@
                 
 
                 
-                    <a href="getting-started.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="getting-started.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 
@@ -200,11 +217,11 @@
         
         <!-- Livereload script (if served using the cli tool) -->
         <script type="text/javascript">
-            var socket = new WebSocket("ws://localhost:3001");
+            var socket = new WebSocket("ws://localhost:3000/__livereload");
             socket.onmessage = function (event) {
                 if (event.data === "reload") {
                     socket.close();
-                    location.reload(true); // force reload from server (not from cache)
+                    location.reload();
                 }
             };
 
@@ -217,10 +234,10 @@
         
 
         
-        
+
         
         <script type="text/javascript">
-            window.playpen_copyable = true;
+            window.playground_copyable = true;
         </script>
         
 

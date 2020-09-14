@@ -7,12 +7,19 @@
         
         <meta name="robots" content="noindex" />
         
+        
+
+
+        <!-- Custom HTML head -->
+        
+
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
+        <link rel="icon" href="favicon.svg">
         <link rel="shortcut icon" href="favicon.png">
         <link rel="stylesheet" href="css/variables.css">
         <link rel="stylesheet" href="css/general.css">
@@ -21,8 +28,9 @@
 
         <!-- Fonts -->
         <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
 
         <!-- Highlight.js Stylesheets -->
         <link rel="stylesheet" href="highlight.css">
@@ -82,8 +90,8 @@
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <div id="sidebar-scrollbox" class="sidebar-scrollbox">
-                <ol class="chapter"><li class="expanded affix "><a href="index.html">Introduction</a></li><li class="spacer"></li><li class="expanded "><a href="getting-started.html"><strong aria-hidden="true">1.</strong> Getting Started</a></li><li class="expanded "><a href="your-first-darwinia-node.html"><strong aria-hidden="true">2.</strong> Your First Darwinia Node</a></li><li class="expanded "><a href="communicate-with-darwinia.html"><strong aria-hidden="true">3.</strong> Communicate with Darwinia</a></li><li class="expanded "><a href="concepts/index.html"><strong aria-hidden="true">4.</strong> Common Darwinia Concepts</a></li><li><ol class="section"><li class="expanded "><a href="concepts/balances.html"><strong aria-hidden="true">4.1.</strong> Balances</a></li><li class="expanded "><a href="concepts/election.html"><strong aria-hidden="true">4.2.</strong> Election</a></li><li class="expanded "><a href="concepts/staking.html"><strong aria-hidden="true">4.3.</strong> Staking</a></li><li class="expanded "><a href="concepts/weights.html"><strong aria-hidden="true">4.4.</strong> Weights</a></li></ol></li><li class="expanded "><a href="understanding-staking.html"><strong aria-hidden="true">5.</strong> Understanding Staking</a></li><li class="expanded "><a href="roles-in-darwinia.html"><strong aria-hidden="true">6.</strong> Roles in Darwinia</a></li><li class="expanded "><a href="transaction-fees.html"><strong aria-hidden="true">7.</strong> Transaction Fees</a></li><li class="expanded "><a href="relay-system.html"><strong aria-hidden="true">8.</strong> Relay System</a></li><li class="expanded "><a href="common-tools.html"><strong aria-hidden="true">9.</strong> Common Tools</a></li><li><ol class="section"><li class="expanded "><a href="tools/darwinia.js/index.html"><strong aria-hidden="true">9.1.</strong> darwinia.js</a></li><li><ol class="section"><li class="expanded "><a href="tools/darwinia.js/api.html"><strong aria-hidden="true">9.1.1.</strong> api</a></li><li class="expanded "><a href="tools/darwinia.js/dactle.html"><strong aria-hidden="true">9.1.2.</strong> dactle</a></li><li class="expanded "><a href="tools/darwinia.js/dj.html"><strong aria-hidden="true">9.1.3.</strong> dj</a></li><li class="expanded "><a href="tools/darwinia.js/util.html"><strong aria-hidden="true">9.1.4.</strong> util</a></li></ol></li><li class="expanded "><a href="tools/darwinia.go/index.html"><strong aria-hidden="true">9.2.</strong> darwinia.go</a></li></ol></li><li class="expanded "><a href="rfcs.html"><strong aria-hidden="true">10.</strong> RFCs</a></li></ol>
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="intro.html">Introduction</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="getting-started.html"><strong aria-hidden="true">1.</strong> Getting Started</a></li><li class="chapter-item expanded "><a href="relay-system.html"><strong aria-hidden="true">2.</strong> Relay System</a></li><li class="chapter-item expanded "><a href="transaction-fees.html"><strong aria-hidden="true">3.</strong> Transaction Fees</a></li><li class="chapter-item expanded "><a href="common-tools.html"><strong aria-hidden="true">4.</strong> Common Tools</a></li><li class="chapter-item expanded "><a href="rfcs.html"><strong aria-hidden="true">5.</strong> RFCs</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -92,41 +100,40 @@
 
             <div class="page">
                 
-                <div id="menu-bar" class="menu-bar">
-                    <div id="menu-bar-sticky-container">
-                        <div class="left-buttons">
-                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                                <i class="fa fa-bars"></i>
-                            </button>
-                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                                <i class="fa fa-paint-brush"></i>
-                            </button>
-                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                                <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
-                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
-                            </ul>
-                            
-                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
-                                <i class="fa fa-search"></i>
-                            </button>
-                            
-                        </div>
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
 
-                        <h1 class="menu-title">the-darwinia-book</h1>
+                    <h1 class="menu-title">the-darwinia-book</h1>
 
-                        <div class="right-buttons">
-                            <a href="print.html" title="Print this book" aria-label="Print this book">
-                                <i id="print-button" class="fa fa-print"></i>
-                            </a>
-                            
-                            <a href="https://github.com/darwinia-network/the-darwinia-book" title="Git repository" aria-label="Git repository">
-                                <i id="git-repository-button" class="fa fa-github"></i>
-                            </a>
-                            
-                        </div>
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        <a href="https://github.com/darwinia-network/the-darwinia-book" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        
                     </div>
                 </div>
 
@@ -155,524 +162,39 @@
                 <div id="content" class="content">
                     <main>
                         <h1><a class="header" href="#introduction" id="introduction">Introduction</a></h1>
-<p>This <a href="https://darwinia-network.github.io/the-darwinia-book">book</a> is about <a href="https://github.com/darwinia-network/darwinia">Darwinia</a>, as an open application cross-chain protocol based on <a href="https://github.com/paritytech/substrate">Substrate</a>, <code>Darwinia</code> focuses on the construction of future Internet of Tokens, including the cross-chain of game tokens, NFT, Stablecoins, and Appchain.</p>
-<h2><a class="header" href="#gene-paper" id="gene-paper">Gene Paper</a></h2>
-<p>If you're looking for our Gene Paper, <a href="https://evolution.l2me.com/darwinia/Darwinia_Genepaper_EN_200320.pdf">here</a> it is.</p>
-<h2><a class="header" href="#guide" id="guide">Guide</a></h2>
-<p>This book introduces the concepts in darwinia, including the design and the usages, for example, the anatomy of every concept chapter contains:</p>
+<p>If you're reading this now, I mean, looking at these words on your screen, you might interest in our project <a href="https://github.com/darwinia-network/darwinia">Darwinia</a>, even want to contribute to us :)</p>
+<p>Deal, this <a href="https://darwinia-network.github.io/the-darwinia-book">book</a> is written for the Darwinia contributers!</p>
+<h2><a class="header" href="#getting-help" id="getting-help">Getting Help</a></h2>
 <ul>
-<li>Introduction</li>
-<li>Design explaination</li>
-<li>Usage in Darwinia
+<li>Ask a question in the <a href="https://matrix.to/#/!HIyWQGUzgpkxswYMNi:matrix.org?via=matrix.org">Darwinia Technical Element Channel</a></li>
+<li>Ask a question in our <a href="https://t.me/DarwiniaDev">telegram</a> group</li>
+<li>Just raise an <a href="https://github.com/darwinia-network/the-darwinia-book/issues/new">issue</a></li>
+</ul>
+<h2><a class="header" href="#references" id="references">References</a></h2>
+<p>In case of the content of this book can not solve your questions, you can check</p>
 <ul>
-<li>Real world examples</li>
+<li>Substrate
+<ul>
+<li>Substrate <a href="https://substrate.dev/recipes/">receipes</a>, the wonderful one</li>
+<li>The official API reference, <a href="https://substrate.dev/rustdocs/v2.0.0-rc6/sc_service/index.html">docs.rs</a></li>
+</ul>
+</li>
+<li>Darwinia
+<ul>
+<li><a href="https://docs.darwinia.network/docs/en/wp-home">WIKI</a> of Darwinia</li>
+<li>Run <code>cargo doc</code> under <code>darwinia</code> or <code>darwinia-common</code> project</li>
 </ul>
 </li>
 </ul>
 <h1><a class="header" href="#getting-started" id="getting-started">Getting Started</a></h1>
-<h1><a class="header" href="#setup-your-darwinia-node" id="setup-your-darwinia-node">Setup your Darwinia Node</a></h1>
-<h1><a class="header" href="#communicate-with-darwinia" id="communicate-with-darwinia">Communicate with Darwinia</a></h1>
-<h1><a class="header" href="#concepts" id="concepts">Concepts</a></h1>
-<p>Gather all Terminologies.</p>
-<pre><code class="language-text">                                                                               +--------------+                 +-----+
-                                                                   +-----+     | browser-demo |    +-----+      | src |
-                                                                   | bin |   * +--------------+    | res |    * +-----+   +-------+
-                                                                 * +-----+  *                      +-----+   *            | tests |
-                                                               *           *                     *          *           * +-------+
-                                                      +-----+ *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  
-                                                      | cli |
-                                                      +-----+                   +-----+                    +---------+
-                                                     *       +----------+       | rpc |    +---------+     | testing |
-                                                   *         | executor |     * +-----+    | runtime |   * +---------+
-                                                 *         * +----------+    *           * +---------+  * 
-                                               *          *                 *           *              *
-                                  +----------+  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *
-                                  | bin/node |
-                                  +----------+                  +------+
-                                 *                              | ring |      +------+
-                               *                              * +------+      | kton |
-                             *                               *              * +------+     +-------+ 
-                           *                   +----------+ *  *  *  *  *  *               | relay |      +--------+
-                         *                     | balances |                              * +-------+      | baking |
-                       *                     * +----------+                            *                * +--------+        +----------+
-                     *                     *                   +----------------+ *  *  *  *  *  *  *  *                    | treasury |
-                   *                     *                     | chainrelay/eth |                                         * +----------+
-                 *                     *                       +----------------+                                        *
-               *                     *                       *                                                          *
-             *           +-------+ *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  * 
-+----------+             | frame |     *              *                          *                 *                 *              *
-| darwinia |  *  *  *  * +-------+      * +--------+   *                          * +------------+  *                 * +---------+  *
-+----------+                              | claims |    * +--------------------+    | header-mmr |   * +---------+      | support |   * +---------+
-             *                            +--------+      | elections-phragmen |    +------------+     | staking |      +---------+     | vesting |
-               *                                          +--------------------+                       +---------+                      +---------+
-                 * 
-                   *
-                     * +-----------+
-                       | primtives |
-                       +-----------+ *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *
-                                         *                       *                 *                             *
-                                          * +----------------+    *                 * +----------------------+    *
-                                            | eth-primitives |     * +--------+       | merkle-patricia-trie |     * +----------+
-                                            +----------------+       | ethash |       +----------------------+       | phtagmen |
-                                                                     +--------+                                      +----------+
-</code></pre>
-<h2><a class="header" href="#balances" id="balances">Balances</a></h2>
-<ul>
-<li>
-<p><strong>Existential Deposit:</strong> The minimum balance required to create or keep an account open. This prevents
-&quot;dust accounts&quot; from filling storage. When the free plus the reserved balance (i.e. the total balance)
-fall below this, then the account is said to be dead; and it loses its functionality as well as any
-prior history and all information on it is removed from the chain's state.
-No account should ever have a total balance that is strictly between 0 and the existential
-deposit (exclusive). If this ever happens, it indicates either a bug in this module or an
-erroneous raw mutation of storage.</p>
-</li>
-<li>
-<p><strong>Total Issuance:</strong> The total number of units in existence in a system.</p>
-</li>
-<li>
-<p><strong>Reaping an account:</strong> The act of removing an account by resetting its nonce. Happens after its
-total balance has become zero (or, strictly speaking, less than the Existential Deposit).</p>
-</li>
-<li>
-<p><strong>Free Balance:</strong> The portion of a balance that is not reserved. The free balance is the only
-balance that matters for most operations.</p>
-</li>
-<li>
-<p><strong>Reserved Balance:</strong> Reserved balance still belongs to the account holder, but is suspended.
-Reserved balance can still be slashed, but only after all the free balance has been slashed.</p>
-</li>
-<li>
-<p><strong>Imbalance:</strong> A condition when some funds were credited or debited without equal and opposite accounting.</p>
-</li>
-<li>
-<p><strong>Lock:</strong> A freeze on a specified amount of an account's free balance until a specified block number. Multiple
-locks always operate over the same funds, so they &quot;overlay&quot; rather than &quot;stack&quot;.</p>
-</li>
-</ul>
-<h2><a class="header" href="#staking" id="staking">Staking</a></h2>
-<ul>
-<li><strong>Staking</strong>: The process of locking up funds for some time, placing them at risk of slashing
-(loss) in order to become a rewarded maintainer of the network.</li>
-<li><strong>Validating</strong>: The process of running a node to actively maintain the network, either by
-producing blocks or guaranteeing finality of the chain.</li>
-<li><strong>Nominating</strong>: The process of placing staked funds behind one or more validators in order to
-share in any reward, and punishment, they take.</li>
-<li><strong>Stash account</strong>: The account holding an owner's funds used for staking.</li>
-<li><strong>Controller account</strong>: The account that controls an owner's funds for staking.</li>
-<li><strong>Era</strong>: A (whole) number of sessions, which is the period that the validator set (and each
-validator's active nominator set) is recalculated and where rewards are paid out.</li>
-<li><strong>Slash</strong>: The punishment of a staker by reducing its funds.</li>
-</ul>
-<h2><a class="header" href="#treasury" id="treasury">Treasury</a></h2>
-<ul>
-<li><strong>Proposal:</strong> A suggestion to allocate funds from the pot to a beneficiary.</li>
-<li><strong>Beneficiary:</strong> An account who will receive the funds from a proposal iff
-the proposal is approved.</li>
-<li><strong>Deposit:</strong> Funds that a proposer must lock when making a proposal. The
-deposit will be returned or slashed if the proposal is approved or rejected
-respectively.</li>
-<li><strong>Pot:</strong> Unspent funds accumulated by the treasury module.</li>
-</ul>
-<h1><a class="header" href="#balances-1" id="balances-1">Balances</a></h1>
-<p><code>Darwinia Balances</code> usually mean <code>KTON</code> and <code>RING</code>, just like what we have already learned from the <a href="concepts/../index.html">introduction</a>: </p>
-<ul>
-<li>
-<p><code>Ring</code> is the native token for the Darwinia Network, it can be used as gas for transactions.</p>
-</li>
-<li>
-<p><code>Kton</code> is the other kind token in <code>darwnia</code> that can be awarded by locking <code>RING</code> for 3 - 36 months in the process of Staking.</p>
-</li>
-</ul>
-<p><code>KTON</code> <strong>can be pledged to receive Staking power, so as to participate in POS mining as well</strong>. Users may Stake via pledging <code>KTON</code>. However, if the user takes back his or her staking <code>KTON</code>, then the related POS mining will be stopped, and it will take 14 days for the unpledged <code>KTON</code> to arrive.</p>
-<h2><a class="header" href="#imbalance" id="imbalance">ImBalance</a></h2>
-<blockquote>
-<p>Balances module simply reduces or increases its total issuance.</p>
-</blockquote>
-<p><code>Imbalances</code> can either be <strong>Positive</strong>(funds were added somewhere without being subtracted elsewhere - e.g. a reward) or <strong>Negative</strong>(funds deducted somewhere without an equal and opposite addition - e.g. a slash or system fee payment).</p>
-<p>Since they are unsigned, the actual type is always <code>Positive</code> or <code>Negative</code>. The trait makes no distinction except to define the Opposite type.</p>
-<p>New instances of zero value can be created (zero) and destroyed (drop_zero).</p>
-<p><code>Existing instances</code> can be split and merged either consuming self with merge or mutating self with subsume. If the target is an Option, then maybe <em>merge and maybe</em> subsume might work better. <code>Instances</code> can also be offset with an Opposite that is less than or equal to in value.</p>
-<p>You can always retrieve the raw balance value using peek.</p>
-<h1><a class="header" href="#election" id="election">Election</a></h1>
-<h2><a class="header" href="#term-and-round" id="term-and-round">Term and Round</a></h2>
-<p>The election happens in <em>rounds</em>: every <code>N</code> blocks, all previous members are retired and a new
-set is elected (which may or may not have an intersection with the previous set). Each round
-lasts for some number of blocks defined by <code>TermDuration</code> storage item. The words <em>term</em> and
-<em>round</em> can be used interchangeably in this context.</p>
-<p><code>TermDuration</code> might change during a round. This can shorten or extend the length of the round.
-The next election round's block number is never stored but rather always checked on the fly.
-Based on the current block number and <code>TermDuration</code>, the condition <code>BlockNumber % TermDuration == 0</code> being satisfied will always trigger a new election round.</p>
-<h2><a class="header" href="#voting" id="voting">Voting</a></h2>
-<p>Voters can vote for any set of the candidates by providing a list of account ids. Invalid votes
-(voting for non-candidates) are ignored during election. Yet, a voter <em>might</em> vote for a future
-candidate. Voters reserve a bond as they vote. Each vote defines a <code>value</code>. This amount is
-locked from the account of the voter and indicates the weight of the vote. Voters can update
-their votes at any time. This keeps the bond untouched but can
-optionally change the locked <code>value</code>. After a round, votes are kept and might still be valid for
-further rounds.</p>
-<p>Voters also report other voters as being defunct to earn their bond. A voter is defunct once all
-of the candidates that they have voted for are neither a valid candidate anymore nor a member.
-Upon reporting, if the target voter is actually defunct, the reporter will be rewarded by the
-voting bond of the target. The target will lose their bond and get removed. If the target is not
-defunct, the reporter is slashed and removed. </p>
-<h2><a class="header" href="#candidacy-and-members" id="candidacy-and-members">Candidacy and Members</a></h2>
-<p>Candidates also reserve a bond as they submit candidacy. A candidate cannot take their candidacy
-back. A candidate can end up in one of the below situations:</p>
-<ul>
-<li><strong>Winner</strong>: A winner is kept as a <em>member</em>. They must still have a bond in reserve and they
-are automatically counted as a candidate for the next election.</li>
-<li><strong>Runner-up</strong>: Runners-up are the best candidates immediately after the winners. The number
-of runners_up to keep is configurable. Runners-up are used, in order that they are elected,
-as replacements when a candidate is kicked by <code>[remove_member]</code>, or when an active member
-renounces their candidacy. Runners are automatically counted as a candidate for the next
-election.</li>
-<li><strong>Loser</strong>: Any of the candidate who are not a winner are left as losers. A loser might be an
-<em>outgoing member or runner</em>, meaning that they are an active member who failed to keep their
-spot. An outgoing will always lose their bond.</li>
-</ul>
-<h3><a class="header" href="#renouncing-candidacy" id="renouncing-candidacy">Renouncing candidacy.</a></h3>
-<p>All candidates, elected or not, can renounce their candidacy. A call to [<code>renounce_candidacy</code>]
-will always cause the candidacy bond to be refunded.</p>
-<p>Note that with the members being the default candidates for the next round and votes persisting
-in storage, the election system is entirely stable given no further input. This means that if
-the system has a particular set of candidates <code>C</code> and voters <code>V</code> that lead to a set of members
-<code>M</code> being elected, as long as <code>V</code> and <code>C</code> don't remove their candidacy and votes, <code>M</code> will keep
-being re-elected at the end of each round.</p>
-<h1><a class="header" href="#staking-1" id="staking-1">Staking</a></h1>
-<h2><a class="header" href="#scenarios" id="scenarios">Scenarios</a></h2>
-<h3><a class="header" href="#staking-2" id="staking-2">Staking</a></h3>
-<p>Almost any interaction with the Staking module requires a process of <em><strong>bonding</strong></em> (also known as being a <em>staker</em>). To become <em>bonded</em>, a fund-holding account known as the <em>stash account</em>, which holds some or all of the funds that become frozen in place as part of the staking process, is paired with an active <strong>controller</strong> account, which issues instructions on how they shall be used.</p>
-<p>There are three possible roles that any staked account pair can be in: <code>Validator</code>, <code>Nominator</code> and <code>Idle</code> (defined in <code>StakerStatus</code>). There are three corresponding instructions to change between roles, namely: <code>validate</code>, <code>nominate</code>, and <code>chill</code>.</p>
-<h3><a class="header" href="#validating" id="validating">Validating</a></h3>
-<p>A <strong>validator</strong> takes the role of either validating blocks or ensuring their finality, maintaining the veracity of the network. A validator should avoid both any sort of malicious misbehavior and going offline. Bonded accounts that state interest in being a validator do NOT get immediately chosen as a validator. Instead, they are declared as a <em>candidate</em> and they <em>might</em> get elected at the <em>next era</em> as a validator. The result of the election is determined by nominators and their votes.</p>
-<h3><a class="header" href="#nomination" id="nomination">Nomination</a></h3>
-<p>A <strong>nominator</strong> does not take any <em>direct</em> role in maintaining the network, instead, it votes on a set of validators  to be elected. Once interest in nomination is stated by an account, it takes effect at the next election round. The funds in the nominator's stash account indicate the <em>weight</em> of its vote. Both the rewards and any punishment that a validator earns are shared between the validator and its nominators. This rule incentivizes the nominators to NOT vote for the misbehaving/offline validators as much as possible, simply because the nominators will also lose funds if they vote poorly.</p>
-<h3><a class="header" href="#rewards-and-slash" id="rewards-and-slash">Rewards and Slash</a></h3>
-<p>The <strong>reward and slashing</strong> procedure is the core of the Staking module, attempting to <em>embrace valid behavior</em> while <em>punishing any misbehavior or lack of availability</em>.</p>
-<p>Slashing can occur at any point in time, once misbehavior is reported. Once slashing is determined, a value is deducted from the balance of the validator and all the nominators who voted for this validator (values are deducted from the <em>stash</em> account of the slashed entity).</p>
-<p>Slashing logic is further described in the documentation of the <code>slashing</code> module.</p>
-<p>Similar to slashing, rewards are also shared among a validator and its associated nominators. Yet, the reward funds are not always transferred to the stash account and can be configured. See <a href="concepts/staking.html#reward-calculation">Reward Calculation</a> for more details.</p>
-<h3><a class="header" href="#chilling" id="chilling">Chilling</a></h3>
-<p>Finally, any of the roles above can choose to step back temporarily and just chill for a while. This means that if they are a nominator, they will not be considered as voters anymore and if they are validators, they will no longer be a candidate for the next election.</p>
-<h1><a class="header" href="#weights" id="weights">Weights</a></h1>
-<p>A number of resources in darwinia can be limited, such as storage or computation. Weights exist to prevent individual components of the chain from consuming too much of any resource.</p>
-<h2><a class="header" href="#fee" id="fee">Fee</a></h2>
-<p>Consuming some weights should generally incur a <a href="concepts/./fee.html">fee</a>. </p>
-<h2><a class="header" href="#block-weight-and-length-limit" id="block-weight-and-length-limit">Block Weight and Length Limit</a></h2>
-<p>Aside from affecting fees, the main purpose of the weight system is to <strong>prevent a block from being filled with too many transactions</strong>. While processing transactions within a block, the System pallet accumulates both the total length of the block (sum of encoded transactions in bytes) and the total weight of the block. </p>
-<h2><a class="header" href="#common-used-weights-in-darwinia" id="common-used-weights-in-darwinia">Common used weights in darwinia</a></h2>
-<table><thead><tr><th>level</th><th>weight</th></tr></thead><tbody>
-<tr><td>0</td><td>10,000</td></tr>
-<tr><td>1</td><td>50,000</td></tr>
-<tr><td>2</td><td>100,000</td></tr>
-<tr><td>3</td><td>150,000</td></tr>
-<tr><td>4</td><td>200,000</td></tr>
-<tr><td>5</td><td>500,000</td></tr>
-<tr><td>6</td><td>750,000</td></tr>
-<tr><td>7</td><td>1,000,000</td></tr>
-<tr><td>8</td><td>2,000,000</td></tr>
-</tbody></table>
-<h2><a class="header" href="#weights-in-darwinia" id="weights-in-darwinia">Weights in darwinia</a></h2>
-<table><thead><tr><th>pallet</th><th>function</th><th>weight</th></tr></thead><tbody>
-<tr><td>balances</td><td>force_transfer</td><td>1,000,000</td></tr>
-<tr><td>balances</td><td>set_balance</td><td>1,000,000</td></tr>
-<tr><td>balances</td><td>transfer</td><td>1,000,000</td></tr>
-<tr><td>balances</td><td>transfer_keep_alive</td><td>1,000,000</td></tr>
-<tr><td>-</td><td></td><td></td></tr>
-<tr><td>elections-phragmen</td><td>remove_member</td><td>2,000,000</td></tr>
-<tr><td>elections-phragmen</td><td>renounce_candidacy</td><td>2,000,000</td></tr>
-<tr><td>elections-phragmen</td><td>report_defunct_voter</td><td>1,000,000</td></tr>
-<tr><td>elections-phragmen</td><td>summit_candidacy</td><td>500,000</td></tr>
-<tr><td>elections-phragmen</td><td>vote</td><td>100,000</td></tr>
-<tr><td>elections-phragmen</td><td>remove_voter</td><td>10,000</td></tr>
-<tr><td>-</td><td></td><td></td></tr>
-<tr><td>staking</td><td>cancel_deferred_slashed</td><td>1,000,000</td></tr>
-<tr><td>staking</td><td>nominate</td><td>750,000</td></tr>
-<tr><td>staking</td><td>set_controller</td><td>750,000</td></tr>
-<tr><td>staking</td><td>validate</td><td>750,000</td></tr>
-<tr><td>staking</td><td>bond</td><td>500,000</td></tr>
-<tr><td>staking</td><td>bond_extra</td><td>500,000</td></tr>
-<tr><td>staking</td><td>chill</td><td>500,000</td></tr>
-<tr><td>staking</td><td>set_payee</td><td>500,000</td></tr>
-<tr><td>staking</td><td>unbond</td><td>400,000</td></tr>
-<tr><td>staking</td><td>force_unstake</td><td>10,000</td></tr>
-<tr><td>staking</td><td>set_invulnerables</td><td>10,000</td></tr>
-<tr><td>staking</td><td>force_new_era</td><td>5,000</td></tr>
-<tr><td>staking</td><td>force_new_era_always</td><td>5,000</td></tr>
-<tr><td>staking</td><td>force_no_eras</td><td>5,000</td></tr>
-<tr><td>staking</td><td>set_validator_count</td><td>5,000</td></tr>
-<tr><td>-</td><td></td><td></td></tr>
-<tr><td>treasury</td><td>propose_spend</td><td>500,000</td></tr>
-<tr><td>treasury</td><td>tip_new</td><td>150,000</td></tr>
-<tr><td>treasury</td><td>approve_proposal</td><td>100,000</td></tr>
-<tr><td>treasury</td><td>reject_proposal</td><td>100,000</td></tr>
-<tr><td>treasury</td><td>report_awesome</td><td>100,000</td></tr>
-<tr><td>treasury</td><td>close_tip</td><td>50,000</td></tr>
-<tr><td>treasury</td><td>retract_tip</td><td>50,000</td></tr>
-<tr><td>treasury</td><td>tip</td><td>50,000</td></tr>
-</tbody></table>
-<h1><a class="header" href="#understanding-staking" id="understanding-staking">Understanding Staking</a></h1>
-<h1><a class="header" href="#roles-in-darwinia" id="roles-in-darwinia">Roles in Darwinia</a></h1>
-<h1><a class="header" href="#transaction-fees" id="transaction-fees">Transaction Fees</a></h1>
+<h2><a class="header" href="#download" id="download">Download</a></h2>
+<p>You can download the latest darwinia from <a href="https://github.com/darwinia-network/darwinia/releases">here</a></p>
 <h1><a class="header" href="#relay-system" id="relay-system">Relay System</a></h1>
+<h1><a class="header" href="#transaction-fees" id="transaction-fees">Transaction Fees</a></h1>
+<p>[TODO]</p>
 <h1><a class="header" href="#common-tools" id="common-tools">Common Tools</a></h1>
 <p>Darwinia common tools</p>
-<h1><a class="header" href="#darwiniajs" id="darwiniajs">darwinia.js</a></h1>
-<h1 align="center">
-𝒹𝒶𝓇𝓌𝒾𝓃𝒾𝒶.𝒿𝓈
-</h1>
-<p><a href="https://github.com/darwinia-network/darwinia.js"><img src="https://github.com/darwinia-network/darwinia.js/workflows/Node.js%20CI/badge.svg" alt="Node.js CI" /></a></p>
-<h2><a class="header" href="#spec" id="spec">SPEC</a></h2>
-<p>Gather common javascript usages for <a href="https://darwinia.network">Darwinia Network</a>.</p>
-<table><thead><tr><th>type</th><th>name</th></tr></thead><tbody>
-<tr><td>cmd-tool</td><td><a href="tools/darwinia.js/./dj.html">@darwinia/dj</a></td></tr>
-<tr><td>cmd-tool</td><td><a href="tools/darwinia.js/./dactle.html">@darwinia/dactle</a></td></tr>
-<tr><td>library</td><td><a href="tools/darwinia.js/./api.html">@darwinia/api</a></td></tr>
-<tr><td>library</td><td><a href="tools/darwinia.js/./util.html">@darwinia/util</a></td></tr>
-</tbody></table>
-<h3><a class="header" href="#config" id="config">Config</a></h3>
-<p>The config part is shared with all projects building with <code>darwinia.js</code>, 
-we strongly recommand you to read this sample before you starting your
-<code>darwinia.js</code> trip!</p>
-<pre><code class="language-json">// ~/.darwinia/config.json
-{
-  &quot;shadow&quot;: &quot;shadow service api, refer github.com/darwini-network/darwinia.go&quot;,
-  &quot;node&quot;: &quot;darwinia node, should start with `ws://` or `wss://`, eg: ws://0.0.0.0:9944&quot;,
-  &quot;seed&quot;: &quot;darwinia account seed, eg: //Alice&quot;
-}n
-</code></pre>
-<h3><a class="header" href="#for-developers" id="for-developers">For Developers</a></h3>
-<p>If you want to use <code>darwinia.js</code> developing your own <code>darwinia.js</code> based apps, you might
-want to try <code>@darwinia/api</code> and <code>@darwinia/util</code>.</p>
-<h3><a class="header" href="#for-testers-and-users" id="for-testers-and-users">For Testers and Users</a></h3>
-<p>If you want to test Darwinia using <code>darwinia.js</code>, check the <code>@darwinia/dj</code> project.</p>
-<h2><a class="header" href="#license" id="license">LICENSE</a></h2>
-<p>GPL-3.0</p>
-<h1><a class="header" href="#darwiniaapi" id="darwiniaapi">@darwinia/api</a></h1>
-<p><a href="https://github.com/darwinia-network/darwinia.js"><img src="https://github.com/darwinia-network/darwinia.js/workflows/Node.js%20CI/badge.svg" alt="Node.js CI" /></a></p>
-<h2><a class="header" href="#spec-1" id="spec-1">SPEC</a></h2>
-<p>High-level darwinia.js api</p>
-<h2><a class="header" href="#usage" id="usage">Usage</a></h2>
-<pre><code>yarn add @darwinia/api
-</code></pre>
-<p>If you have global config at <code>~/.darwinia/config.json</code></p>
-<pre><code class="language-javascript">import { autoAPI } from &quot;@darwinia/api&quot;;
-
-(async () =&gt; {
-    const api = await autoAPI();
-    const balance = await api.getBalance(api.account.address);
-    log(balance);
-})();
-</code></pre>
-<table><thead><tr><th>method</th><th>params</th><th>return</th></tr></thead><tbody>
-<tr><td>getBalance</td><td>(addr: string)</td><td>string</td></tr>
-<tr><td>relay</td><td>(block: string/number)</td><td>ExResult</td></tr>
-<tr><td>transfer</td><td>(addr: string, amount: number)</td><td>ExResult</td></tr>
-<tr><td>redeem</td><td>(receipt: IReceipt)</td><td>ExResult</td></tr>
-<tr><td>getBlock</td><td>(block: number or string</td><td>SingendBlock</td></tr>
-<tr><td>getExtrinsic</td><td>(hash: string)</td><td>Extrinsic</td></tr>
-</tbody></table>
-<h2><a class="header" href="#license-1" id="license-1">LICENSE</a></h2>
-<p>GPL-3.0</p>
-<h1><a class="header" href="#darwiniadactle" id="darwiniadactle">@darwinia/dactle</a></h1>
-<p><a href="https://github.com/darwinia-network/darwinia.js"><img src="https://github.com/darwinia-network/darwinia.js/workflows/Node.js%20CI/badge.svg" alt="Node.js CI" /></a></p>
-<p>darwinia.js command-line tools</p>
-<h2><a class="header" href="#usage-1" id="usage-1">Usage</a></h2>
-<p>Install <code>dactle</code> globally</p>
-<pre><code class="language-shell">yarn global add @darwinia/dactle
-</code></pre>
-<p>Input <kbd>dactle</kbd> to your command-line.</p>
-<pre><code class="language-text">dactle &lt;hello@darwinia.network&gt;
-
-Commands:
-  dactle bot &lt;key&gt;                Run the bot
-
-Options:
-  --help, -h     Show help                                             [boolean]
-  --version, -V  Show version number                                   [boolean]
-</code></pre>
-<h2><a class="header" href="#license-2" id="license-2">LICENSE</a></h2>
-<p>GPL-3.0</p>
-<h1><a class="header" href="#darwiniadj" id="darwiniadj">@darwinia/dj</a></h1>
-<p><a href="https://github.com/darwinia-network/darwinia.js"><img src="https://github.com/darwinia-network/darwinia.js/workflows/Node.js%20CI/badge.svg" alt="Node.js CI" /></a></p>
-<p>darwinia.js command-line tools</p>
-<h2><a class="header" href="#usage-2" id="usage-2">Usage</a></h2>
-<p>Install <code>dj</code> globally</p>
-<pre><code class="language-shell">yarn global add @darwinia/dj
-</code></pre>
-<p>Input <kbd>dj</kbd> to your command-line.</p>
-<pre><code class="language-text"> 𝝺 ts-node index.ts 
-dj &lt;hello@darwinia.network&gt;
-
-Commands:
-  dj balance [address]            Get balance of account address
-  dj codec &lt;block&gt;                Get info of recipes
-  dj config [edit]                Show config
-  dj relay [block]                Relay eth header to darwinia
-  dj transfer &lt;address&gt; &lt;amount&gt;  Transfer RING to darwinia account
-  dj tx &lt;hash&gt;                    Get tx by hash
-
-Options:
-  --help, -h     Show help                                             [boolean]
-  --version, -V  Show version number                                   [boolean]
-</code></pre>
-<h2><a class="header" href="#license-3" id="license-3">LICENSE</a></h2>
-<p>GPL-3.0</p>
-<h1><a class="header" href="#darwiniautil" id="darwiniautil">@darwinia/util</a></h1>
-<p><a href="https://github.com/darwinia-network/darwinia.js"><img src="https://github.com/darwinia-network/darwinia.js/workflows/Node.js%20CI/badge.svg" alt="Node.js CI" /></a></p>
-<h2><a class="header" href="#spec-2" id="spec-2">SPEC</a></h2>
-<p>Utils for developing darwinia javascript library.</p>
-<h3><a class="header" href="#config-1" id="config-1">Config</a></h3>
-<pre><code class="language-javascript">import { API, Config } from &quot;@darwinia-network/util&quot;;
-
-/**
- * @return {API} api - generate API automatically
- */
-export async function autoAPI(): Promise&lt;API&gt; {
-    const cfg = new Config();
-    const seed = await API.seed(cfg.seed);
-    return await API.new(seed, cfg.node, cfg.types);
-}
-
-</code></pre>
-<p>The config root of <code>darwinia.js</code> is at <code>~/.darwinia</code>, once you <code>new Config()</code>, the config
-files will generate automatically.</p>
-<pre><code class="language-json">// ~/.darwinia/config.json
-{
-  &quot;shadow&quot;: &quot;shadow service api, refer github.com/darwini-network/darwinia.go&quot;,
-  &quot;node&quot;: &quot;darwinia node, should start with `ws://` or `wss://`, eg: ws://0.0.0.0:9944&quot;,
-  &quot;seed&quot;: &quot;darwinia account seed, eg: //Alice&quot;
-}
-</code></pre>
-<p>BTW, the <code>types.json</code> in at <code>~/.darwinia/types.json</code>, update it if we are outdated, the source
-of <code>types.json</code> is <a href="https://github.com/darwinia-network/darwinia/blob/master/runtime/crab/types.json">here</a></p>
-<h3><a class="header" href="#logger" id="logger">Logger</a></h3>
-<pre><code class="language-javascript">import { log } from &quot;@darwinia-network/darwinia.js&quot;;
-
-(() =&gt; {
-    log.ox(&quot;Javascript is the best programming language!&quot;);
-})();
-</code></pre>
-<table><thead><tr><th>method</th><th>param</th><th>description</th></tr></thead><tbody>
-<tr><td>log</td><td>(s: string)</td><td>info log</td></tr>
-<tr><td>log.err</td><td>(s: string)</td><td>error log</td></tr>
-<tr><td>log.ex</td><td>(s: string)</td><td>log error and exit process with 1</td></tr>
-<tr><td>log.ok</td><td>(s: string)</td><td>ok log</td></tr>
-<tr><td>log.ox</td><td>(s: string)</td><td>log ok and exit process with 0</td></tr>
-<tr><td>log.trace</td><td>(s: string)</td><td>trace log</td></tr>
-<tr><td>log.wait</td><td>(s: string)</td><td>wait log</td></tr>
-<tr><td>log.warn</td><td>(s: string)</td><td>warn log</td></tr>
-</tbody></table>
-<h4><a class="header" href="#loggerenv" id="loggerenv">LoggerEnv</a></h4>
-<p>Magic logger, the logger in <code>darwinia.js</code> is just like <code>env_logger</code> in Rust, you can set your
-logger environment by <code>LOGGER=XXX</code> for darwinia.js programs.</p>
-<p>Available Enviroments: <code>[ALL, INFO]</code></p>
-<ul>
-<li>ALL
-<ul>
-<li>Logger.Error,</li>
-<li>Logger.Event,</li>
-<li>Logger.Info,</li>
-<li>Logger.Ok,</li>
-<li>Logger.Trace,</li>
-<li>Logger.Wait,</li>
-<li>Logger.Warn,</li>
-</ul>
-</li>
-<li>INFO
-<ul>
-<li>Logger.Info</li>
-<li>Logger.Ok</li>
-<li>Logger.Error</li>
-</ul>
-</li>
-</ul>
-<h2><a class="header" href="#license-4" id="license-4">LICENSE</a></h2>
-<p>GPL-3.0</p>
-<h1><a class="header" href="#darwiniago" id="darwiniago">darwinia.go</a></h1>
-<p><a href="https://github.com/darwinia-network/darwinia.go"><img src="https://github.com/darwinia-network/darwinia.go/workflows/Golang%20CI/badge.svg" alt="Golang CI" /></a></p>
-<h2><a class="header" href="#installation" id="installation">Installation</a></h2>
-<p>Just supports OSX now</p>
-<pre><code># Tap darwinia homebrew
-brew tap darwinia-network/darwinia
-
-# Install
-brew install dargo
-</code></pre>
-<h2><a class="header" href="#contribute-and-build" id="contribute-and-build">Contribute and Build</a></h2>
-<pre><code># Clone darwinia.go
-git clone https://github.com/darwinia-network/darwinia.go.git
-
-# Make the binary
-cd darwinia.go/dargo &amp;&amp; make
-
-# Check the version
-./target/dargo version
-</code></pre>
-<h2><a class="header" href="#usage-3" id="usage-3">Usage</a></h2>
-<pre><code class="language-sh">$ dargo
-The way to Go
-
-Usage:
-  dargo [command]
-
-Available Commands:
-  epoch       Calculate epoch cache
-  header      Get eth block by number
-  help        Help about any command
-  proof       Proof the block by number
-  shadow      Start shadow service
-  version     Print the version number of dargo
-
-Flags:
-  -h, --help   help for dargo
-
-Use &quot;dargo [command] --help&quot; for more information about a command.
-
-</code></pre>
-<h2><a class="header" href="#shadow-rpc-examples" id="shadow-rpc-examples">Shadow RPC examples</a></h2>
-<p>Exports your <code>INFURA_KEY</code> to envrioment</p>
-<pre><code>export INFURA_KEY='&lt;your-infura-key&gt;'
-</code></pre>
-<p>Starts shadow service:</p>
-<pre><code># Start shadow service at port 3000
-dargo shadow 3000
-</code></pre>
-<p>Avaiable enviroment variables:</p>
-<table><thead><tr><th>Key</th><th>Description</th><th>default</th></tr></thead><tbody>
-<tr><td><code>INFURA_KEY</code></td><td>infura key, doesn't know what's <a href="https://infura.io">infura</a>?</td><td><code>&quot;&quot;</code></td></tr>
-<tr><td><code>SHADOW_GENESIS</code></td><td>shadow service will block all requests before <code>SHADOW_GENESIS</code></td><td><code>0</code></td></tr>
-</tbody></table>
-<p>The shadow service of dargo follows the <a href="https://github.com/darwinia-network/darwinia/wiki/Darwinia-offchain-worker-shadow-service-spec">spec</a>.</p>
-<h3><a class="header" href="#shadowgetethheaderbynumber" id="shadowgetethheaderbynumber">Shadow.GetEthHeaderByNumber</a></h3>
-<pre><code>curl -d '{&quot;method&quot;:&quot;shadow_getEthHeaderByNumber&quot;,&quot;params&quot;:{&quot;number&quot;: 0}}' http://127.0.0.1:3000
-</code></pre>
-<h3><a class="header" href="#shadowgetethheaderbyhash" id="shadowgetethheaderbyhash">Shadow.GetEthHeaderByHash</a></h3>
-<pre><code>curl -d '{&quot;method&quot;:&quot;shadow_getEthHeaderByHash&quot;,&quot;params&quot;:{&quot;hash&quot;: &quot;0x8d0dd9b1f5854bbdc60d06aa04e6e953000aa53f6c6486f18f08666bc17ea228&quot;}}' http://127.0.0.1:3000
-</code></pre>
-<h3><a class="header" href="#shadowgetethheaderwithproofbynumber" id="shadowgetethheaderwithproofbynumber">Shadow.GetEthHeaderWithProofByNumber</a></h3>
-<pre><code>curl -d '{&quot;method&quot;:&quot;shadow_getEthHeaderWithProofByNumber&quot;,&quot;params&quot;:{&quot;block_num&quot;: 1, &quot;transcation&quot;: false, &quot;options&quot;: {&quot;format&quot;: &quot;json&quot;}}}' http://127.0.0.1:3000
-</code></pre>
-<h3><a class="header" href="#shadowgetethheaderwithproofbyhash" id="shadowgetethheaderwithproofbyhash">Shadow.GetEthHeaderWithProofByHash</a></h3>
-<pre><code>curl -d '{&quot;method&quot;:&quot;shadow_getEthHeaderWithProofByHash&quot;,&quot;params&quot;:{&quot;hash&quot;: &quot;0x8d0dd9b1f5854bbdc60d06aa04e6e953000aa53f6c6486f18f08666bc17ea228&quot;, &quot;transcation&quot;: false, &quot;options&quot;: {&quot;format&quot;: &quot;json&quot;}}}' http://127.0.0.1:3000
-</code></pre>
-<h2><a class="header" href="#trouble-shooting" id="trouble-shooting">Trouble Shooting</a></h2>
-<p>Everytime you run <code>proof</code> in error, please delete <code>~/.ethashproof</code> and <code>~/.ethash</code> 
-and retry.</p>
-<h2><a class="header" href="#license-5" id="license-5">LICENSE</a></h2>
-<p>GPL-3.0</p>
 <h1><a class="header" href="#rfcs" id="rfcs">RFCs</a></h1>
-<table><thead><tr><th>rfc</th><th>title</th><th>status</th><th>desc</th></tr></thead><tbody>
-<tr><td><a href="./0001.html">0001</a></td><td>Darwinia Architecture</td><td></td><td></td></tr>
-<tr><td><a href="./0007.html">0007</a></td><td>Darwinia Staking Model</td><td></td><td></td></tr>
-<tr><td><a href="./0009.html">0009</a></td><td>Darwinia liquid kton reward</td><td>Abandoned</td><td>Dispatch Ring awards for Kton</td></tr>
-<tr><td><a href="./0010.html">0010</a></td><td>Darwinia Cross chain nft bridge protocol</td><td>Draft</td><td>Cross-chain NFT Bridge Protocol</td></tr>
-<tr><td><a href="./0011.html">0011</a></td><td>Using harberger tax to find price for xclaim vault collaterals</td><td>Abandoned</td><td>XClaim Based NFT Solution Using Harberger Tax</td></tr>
-<tr><td><a href="./0012.html">0012</a></td><td>Darwinia bridge core interoperation in chainrelay enabled blockchains</td><td>Draft</td><td>Darwinia Bridge Core - Interoperation in ChainRelay Enabled Blockchains</td></tr>
-<tr><td><a href="./0013.html">0013</a></td><td>Darwinia cross chain nft standards</td><td>Draft</td><td>Darwinia Cross-chain NFT Standards</td></tr>
-<tr><td><a href="./0014.html">0014</a></td><td>Darwinia token migration by cross chain redeem protocol</td><td>Draft</td><td>Darwinia Token Migration By Cross-chain Redeem Protocol</td></tr>
-</tbody></table>
 
                     </main>
 
@@ -698,11 +220,11 @@ and retry.</p>
         
         <!-- Livereload script (if served using the cli tool) -->
         <script type="text/javascript">
-            var socket = new WebSocket("ws://localhost:3001");
+            var socket = new WebSocket("ws://localhost:3000/__livereload");
             socket.onmessage = function (event) {
                 if (event.data === "reload") {
                     socket.close();
-                    location.reload(true); // force reload from server (not from cache)
+                    location.reload();
                 }
             };
 
@@ -715,10 +237,10 @@ and retry.</p>
         
 
         
-        
+
         
         <script type="text/javascript">
-            window.playpen_copyable = true;
+            window.playground_copyable = true;
         </script>
         
 
