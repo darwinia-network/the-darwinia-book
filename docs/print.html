@@ -7,12 +7,19 @@
         
         <meta name="robots" content="noindex" />
         
+        
+
+
+        <!-- Custom HTML head -->
+        
+
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
+        <link rel="icon" href="favicon.svg">
         <link rel="shortcut icon" href="favicon.png">
         <link rel="stylesheet" href="css/variables.css">
         <link rel="stylesheet" href="css/general.css">
@@ -21,8 +28,9 @@
 
         <!-- Fonts -->
         <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
 
         <!-- Highlight.js Stylesheets -->
         <link rel="stylesheet" href="highlight.css">
@@ -82,8 +90,8 @@
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <div id="sidebar-scrollbox" class="sidebar-scrollbox">
-                <ol class="chapter"><li class="expanded affix "><a href="index.html">Introduction</a></li><li class="spacer"></li><li class="expanded "><a href="concepts/index.html"><strong aria-hidden="true">1.</strong> Concepts</a></li><li><ol class="section"><li class="expanded "><a href="concepts/balances.html"><strong aria-hidden="true">1.1.</strong> Balances</a></li><li><ol class="section"><li class="expanded "><a href="concepts/imbalance.html"><strong aria-hidden="true">1.1.1.</strong> ImBalance</a></li></ol></li><li class="expanded "><a href="concepts/election.html"><strong aria-hidden="true">1.2.</strong> Election</a></li><li class="expanded "><a href="concepts/fee.html"><strong aria-hidden="true">1.3.</strong> Fee</a></li><li class="expanded "><a href="concepts/power.html"><strong aria-hidden="true">1.4.</strong> Power</a></li><li class="expanded "><a href="concepts/relay_chain.html"><strong aria-hidden="true">1.5.</strong> Relay Chain</a></li><li class="expanded "><a href="concepts/staking.html"><strong aria-hidden="true">1.6.</strong> Staking</a></li><li class="expanded "><a href="concepts/treasury.html"><strong aria-hidden="true">1.7.</strong> Treasury</a></li><li class="expanded "><a href="concepts/weights.html"><strong aria-hidden="true">1.8.</strong> Weights</a></li></ol></li><li class="expanded "><a href="crab/index.html"><strong aria-hidden="true">2.</strong> Darwinia Crab Network</a></li><li class="expanded "><a href="source/index.html"><strong aria-hidden="true">3.</strong> Source Code Trip</a></li><li><ol class="section"><li class="expanded "><a href="source/bin.html"><strong aria-hidden="true">3.1.</strong> bin</a></li><li class="expanded "><a href="source/client.html"><strong aria-hidden="true">3.2.</strong> client</a></li><li class="expanded "><a href="source/frame/index.html"><strong aria-hidden="true">3.3.</strong> frame</a></li><li><ol class="section"><li class="expanded "><a href="source/frame/balances.html"><strong aria-hidden="true">3.3.1.</strong> balances</a></li><li class="expanded "><a href="source/frame/chainrelay.html"><strong aria-hidden="true">3.3.2.</strong> chainrelay</a></li><li class="expanded "><a href="source/frame/elections_phragmen.html"><strong aria-hidden="true">3.3.3.</strong> elections-phragmen</a></li><li class="expanded "><a href="source/frame/staking.html"><strong aria-hidden="true">3.3.4.</strong> staking</a></li><li class="expanded "><a href="source/frame/support.html"><strong aria-hidden="true">3.3.5.</strong> support</a></li><li class="expanded "><a href="source/frame/treasury.html"><strong aria-hidden="true">3.3.6.</strong> treasury</a></li></ol></li><li class="expanded "><a href="source/primitives.html"><strong aria-hidden="true">3.4.</strong> primitives</a></li></ol></li><li class="expanded "><a href="rfcs.html"><strong aria-hidden="true">4.</strong> RFCs</a></li></ol>
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="intro.html">Introduction</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="getting-started.html"><strong aria-hidden="true">1.</strong> Getting Started</a></li><li class="chapter-item expanded "><a href="relay-system.html"><strong aria-hidden="true">2.</strong> Relay System</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="dj.html"><strong aria-hidden="true">2.1.</strong> dj</a></li><li class="chapter-item expanded "><a href="shadow.html"><strong aria-hidden="true">2.2.</strong> Shadow</a></li></ol></li><li class="chapter-item expanded "><a href="rfcs.html"><strong aria-hidden="true">3.</strong> RFCs</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -92,41 +100,40 @@
 
             <div class="page">
                 
-                <div id="menu-bar" class="menu-bar">
-                    <div id="menu-bar-sticky-container">
-                        <div class="left-buttons">
-                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                                <i class="fa fa-bars"></i>
-                            </button>
-                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                                <i class="fa fa-paint-brush"></i>
-                            </button>
-                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                                <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
-                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
-                            </ul>
-                            
-                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
-                                <i class="fa fa-search"></i>
-                            </button>
-                            
-                        </div>
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
 
-                        <h1 class="menu-title">the-darwinia-book</h1>
+                    <h1 class="menu-title">the-darwinia-book</h1>
 
-                        <div class="right-buttons">
-                            <a href="print.html" title="Print this book" aria-label="Print this book">
-                                <i id="print-button" class="fa fa-print"></i>
-                            </a>
-                            
-                            <a href="https://github.com/darwinia-network/the-darwinia-book" title="Git repository" aria-label="Git repository">
-                                <i id="git-repository-button" class="fa fa-github"></i>
-                            </a>
-                            
-                        </div>
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        <a href="https://github.com/darwinia-network/the-darwinia-book" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        
                     </div>
                 </div>
 
@@ -155,839 +162,118 @@
                 <div id="content" class="content">
                     <main>
                         <h1><a class="header" href="#introduction" id="introduction">Introduction</a></h1>
-<p>This <a href="https://darwinia-network.github.io/the-darwinia-book">book</a> is about <a href="https://github.com/darwinia-network/darwinia">Darwinia</a>, as an open application cross-chain protocol based on <a href="https://github.com/paritytech/substrate">Substrate</a>, <code>Darwinia</code> focuses on the construction of future Internet of Tokens, including the cross-chain of game tokens, NFT, Stablecoins, and Appchain.</p>
-<h2><a class="header" href="#architecture" id="architecture">Architecture</a></h2>
-<p>In the process of using <code>blockchain</code> technology to create new <code>DAPP</code>, we found several problems for the mass promotion and utilization of <code>blockchain</code> technology:</p>
-<ol>
-<li>The current blockchain infrastructure is not yet able to meet the requirements of user experience.</li>
-<li>Traditional game vendors lack blockchain experience.</li>
-<li>Blockchain games are split among different public chains.</li>
-</ol>
-<p>However, <code>blockchain games</code> or Dapps can easily perform <code>cross-chain</code> interactions for game inventories and game operations through the <code>Darwinia Network</code>. For example, <code>Cryptokitties</code> can transform its NFT (Kitties) on the <code>Ethereum</code> into NFT on <code>EOS</code> through the <code>Darwinia chain</code>; players on the <code>Ethereum</code> and players on the <code>EOS</code> can play <code>Evolution Land</code> game simultaneously through the <code>Darwinia Network</code>. <strong>At the same time, thanks to the Polkadot ecosystem, Darwinia Network can link to a wider range of games and players.</strong></p>
-<p>The architecture relationship of Darwinia Relay Chain, Darwinia AppChain, Polkadot Relay Chain, etc. is shown as below. </p>
-<p><img src="https://github.com/darwinia-network/rfcs/raw/master/RFC/zh_CN/images/0007-darwinia-architecture.jpeg" alt="Darwinia architecture" /></p>
-<h2><a class="header" href="#darwinia-relay-chain" id="darwinia-relay-chain">Darwinia Relay Chain</a></h2>
-<p><strong>Darwinia Relay Chain is the most important part of the Darwinia Network</strong>, it is also the hub of each App- Parachain, to this end, we divided the operating mode of Darwinia relay chain into <code>Solo mode</code> and <code>Polkadot connection mode</code>.</p>
-<h3><a class="header" href="#solo-mode" id="solo-mode">Solo Mode</a></h3>
-<p>Darwinia Network can choose to operate as an independent public-chain network and is responsible for its own consensus security, with its core business and application services, including the cross-chain functionality of each application chain, controlled by Darwinia Network itself.</p>
-<h3><a class="header" href="#polkadot-connection-mode" id="polkadot-connection-mode">Polkadot Connection Mode</a></h3>
-<p>In Polkadot connection mode, in addition to operating as a relay chain for Darwinia Network, it also serves as a Parachain for Polkadot.</p>
-<h2><a class="header" href="#economic-model" id="economic-model">Economic Model</a></h2>
-<h3><a class="header" href="#ring" id="ring">RING</a></h3>
-<p>The native token for the Darwinia Network is <code>RING</code>, <code>RING</code> can be used as gas for transactions. Gas include transaction fees, contract execution fees, network bandwidth charges, storage fees, and more.</p>
-<p><img src="https://github.com/darwinia-network/rfcs/raw/master/RFC/zh_CN/images/reward.jpeg" alt="Benefits" /></p>
-<h3><a class="header" href="#kton" id="kton">KTON</a></h3>
-<p>To encourage users to make long term commitments and pledge, users can choose to <strong>lock <code>RING</code> for 3 - 36 months</strong> in the process of Staking, and the system will offer a <code>KTON</code> token as reward for users participating in Staking. During the committed pledge period, users cannot unlock their RING. (Unless they utilise triple the amount of KTON as penalty).</p>
-<h2><a class="header" href="#community-ecosystem" id="community-ecosystem">Community Ecosystem</a></h2>
-<h3><a class="header" href="#protocol-researcher" id="protocol-researcher">Protocol Researcher</a></h3>
-<p>The protocol and standard research’s work is divided into <strong>two parts</strong>. <strong>The first part</strong> comes from the community. <code>Darwinia Network</code> accepts any <code>RFC</code> submission from the community, including new additions, improvements and modifications. These <code>RFCs</code> will be open to the community for full discussion and research to reach a consensus. <strong>The second part</strong> is from the <code>core research team</code>, which is responsible for organizing <code>RFCs</code>, organizing <code>RFC</code> peer audits and security audits, using <code>Darwinia Network</code> governance models and tools for protocol governance and voting, and forming a final agreement design draft for delivery to the protocol development team.</p>
-<h3><a class="header" href="#developer" id="developer">Developer</a></h3>
-<p>Develop and improve <code>Darwinia Network</code>, <code>Darwinia AppChain</code> and <code>related services</code>, and develop applications and services using the <code>Darwinia Network</code> and the <code>Darwinia AppChain</code>. Early community open source software development, especially important infrastructure software development (including network protocol design, protocol implementation, node software, wallet, browser, etc.), will be sponsored and supported by the Darwinia Network oundation, currently the main <code>Darwinia Network</code> open source software developer is <a href="https://itering.io">Itering Tech</a>.</p>
-<h3><a class="header" href="#dapp-developer" id="dapp-developer">Dapp Developer</a></h3>
-<p><code>Dapp developers</code> include developers who develop applications based on the <code>Darwinia Web Smart Contracts module</code>, as well as developers who develop Dapp on the public chain, such as blockchain games or Defi applications on platforms such as <code>Ethereum</code>, <code>TRON</code> or <code>EOS</code>. For the Dapp and game inventories on the public chain, bridge parachain of Darwinia Network can be connected to the Darwinia Network for <code>cross-chain</code> transfer operations.</p>
-<h3><a class="header" href="#appchain-developer" id="appchain-developer">AppChain Developer</a></h3>
-<p><code>Application chain developers</code> developing with the <code>Darwinia Web Application</code> Suite (Darwinia AppChain).</p>
-<h1><a class="header" href="#concepts" id="concepts">Concepts</a></h1>
-<p>Gather all Terminologies.</p>
-<pre><code class="language-text">                                                                               +--------------+                 +-----+
-                                                                   +-----+     | browser-demo |    +-----+      | src |
-                                                                   | bin |   * +--------------+    | res |    * +-----+   +-------+
-                                                                 * +-----+  *                      +-----+   *            | tests |
-                                                               *           *                     *          *           * +-------+
-                                                      +-----+ *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  
-                                                      | cli |
-                                                      +-----+                   +-----+                    +---------+
-                                                     *       +----------+       | rpc |    +---------+     | testing |
-                                                   *         | executor |     * +-----+    | runtime |   * +---------+
-                                                 *         * +----------+    *           * +---------+  * 
-                                               *          *                 *           *              *
-                                  +----------+  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *
-                                  | bin/node |
-                                  +----------+                  +------+
-                                 *                              | ring |      +------+
-                               *                              * +------+      | kton |
-                             *                               *              * +------+     +-------+ 
-                           *                   +----------+ *  *  *  *  *  *               | relay |      +--------+
-                         *                     | balances |                              * +-------+      | baking |
-                       *                     * +----------+                            *                * +--------+        +----------+
-                     *                     *                   +----------------+ *  *  *  *  *  *  *  *                    | treasury |
-                   *                     *                     | chainrelay/eth |                                         * +----------+
-                 *                     *                       +----------------+                                        *
-               *                     *                       *                                                          *
-             *           +-------+ *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  * 
-+----------+             | frame |     *              *                          *                 *                 *              *
-| darwinia |  *  *  *  * +-------+      * +--------+   *                          * +------------+  *                 * +---------+  *
-+----------+                              | claims |    * +--------------------+    | header-mmr |   * +---------+      | support |   * +---------+
-             *                            +--------+      | elections-phragmen |    +------------+     | staking |      +---------+     | vesting |
-               *                                          +--------------------+                       +---------+                      +---------+
-                 * 
-                   *
-                     * +-----------+
-                       | primtives |
-                       +-----------+ *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *
-                                         *                       *                 *                             *
-                                          * +----------------+    *                 * +----------------------+    *
-                                            | eth-primitives |     * +--------+       | merkle-patricia-trie |     * +----------+
-                                            +----------------+       | ethash |       +----------------------+       | phtagmen |
-                                                                     +--------+                                      +----------+
+<p>If you're reading this now, I mean, looking at these words on your screen, you might interest in our project <a href="https://github.com/darwinia-network/darwinia">Darwinia</a>, even want to contribute to us :)</p>
+<p>Deal, this <a href="https://darwinia-network.github.io/the-darwinia-book">book</a> is written for the Darwinia contributers!</p>
+<h2><a class="header" href="#getting-help" id="getting-help">Getting Help</a></h2>
+<ul>
+<li>Ask a question in the <a href="https://matrix.to/#/!HIyWQGUzgpkxswYMNi:matrix.org?via=matrix.org">Darwinia Technical Element Channel</a></li>
+<li>Ask a question in our <a href="https://t.me/DarwiniaDev">telegram</a> group</li>
+<li>Just raise an <a href="https://github.com/darwinia-network/the-darwinia-book/issues/new">issue</a></li>
+</ul>
+<h2><a class="header" href="#references" id="references">References</a></h2>
+<p>In case of the content of this book can not solve your questions, you can view</p>
+<ul>
+<li>Substrate
+<ul>
+<li>Substrate <a href="https://substrate.dev/recipes/">receipes</a>, the wonderful one</li>
+<li>The official API reference, <a href="https://substrate.dev/rustdocs/v2.0.0-rc6/sc_service/index.html">docs.rs</a></li>
+</ul>
+</li>
+<li>Darwinia
+<ul>
+<li><a href="https://docs.darwinia.network/docs/en/wp-home">WIKI</a> of Darwinia</li>
+<li>Run <code>cargo doc</code> under <code>darwinia</code> or <code>darwinia-common</code> project</li>
+</ul>
+</li>
+</ul>
+<h1><a class="header" href="#getting-started" id="getting-started">Getting Started</a></h1>
+<h2><a class="header" href="#download" id="download">Download</a></h2>
+<p>You can download the latest darwinia node from the latest <a href="https://github.com/darwinia-network/darwinia/releases">release</a>.</p>
+<h2><a class="header" href="#run-the-node" id="run-the-node">Run the Node</a></h2>
+<pre><code>$ ./darwinia --dev
 </code></pre>
-<h2><a class="header" href="#balances" id="balances">Balances</a></h2>
-<ul>
-<li>
-<p><strong>Existential Deposit:</strong> The minimum balance required to create or keep an account open. This prevents
-&quot;dust accounts&quot; from filling storage. When the free plus the reserved balance (i.e. the total balance)
-fall below this, then the account is said to be dead; and it loses its functionality as well as any
-prior history and all information on it is removed from the chain's state.
-No account should ever have a total balance that is strictly between 0 and the existential
-deposit (exclusive). If this ever happens, it indicates either a bug in this module or an
-erroneous raw mutation of storage.</p>
-</li>
-<li>
-<p><strong>Total Issuance:</strong> The total number of units in existence in a system.</p>
-</li>
-<li>
-<p><strong>Reaping an account:</strong> The act of removing an account by resetting its nonce. Happens after its
-total balance has become zero (or, strictly speaking, less than the Existential Deposit).</p>
-</li>
-<li>
-<p><strong>Free Balance:</strong> The portion of a balance that is not reserved. The free balance is the only
-balance that matters for most operations.</p>
-</li>
-<li>
-<p><strong>Reserved Balance:</strong> Reserved balance still belongs to the account holder, but is suspended.
-Reserved balance can still be slashed, but only after all the free balance has been slashed.</p>
-</li>
-<li>
-<p><strong>Imbalance:</strong> A condition when some funds were credited or debited without equal and opposite accounting.</p>
-</li>
-<li>
-<p><strong>Lock:</strong> A freeze on a specified amount of an account's free balance until a specified block number. Multiple
-locks always operate over the same funds, so they &quot;overlay&quot; rather than &quot;stack&quot;.</p>
-</li>
-</ul>
-<h2><a class="header" href="#staking" id="staking">Staking</a></h2>
-<ul>
-<li><strong>Staking</strong>: The process of locking up funds for some time, placing them at risk of slashing
-(loss) in order to become a rewarded maintainer of the network.</li>
-<li><strong>Validating</strong>: The process of running a node to actively maintain the network, either by
-producing blocks or guaranteeing finality of the chain.</li>
-<li><strong>Nominating</strong>: The process of placing staked funds behind one or more validators in order to
-share in any reward, and punishment, they take.</li>
-<li><strong>Stash account</strong>: The account holding an owner's funds used for staking.</li>
-<li><strong>Controller account</strong>: The account that controls an owner's funds for staking.</li>
-<li><strong>Era</strong>: A (whole) number of sessions, which is the period that the validator set (and each
-validator's active nominator set) is recalculated and where rewards are paid out.</li>
-<li><strong>Slash</strong>: The punishment of a staker by reducing its funds.</li>
-</ul>
-<h2><a class="header" href="#treasury" id="treasury">Treasury</a></h2>
-<ul>
-<li><strong>Proposal:</strong> A suggestion to allocate funds from the pot to a beneficiary.</li>
-<li><strong>Beneficiary:</strong> An account who will receive the funds from a proposal iff
-the proposal is approved.</li>
-<li><strong>Deposit:</strong> Funds that a proposer must lock when making a proposal. The
-deposit will be returned or slashed if the proposal is approved or rejected
-respectively.</li>
-<li><strong>Pot:</strong> Unspent funds accumulated by the treasury module.</li>
-</ul>
-<h1><a class="header" href="#balances-1" id="balances-1">Balances</a></h1>
-<p><code>Darwinia Balances</code> usually mean <code>KTON</code> and <code>RING</code>, just like what we have already learned from the <a href="concepts/../index.html">introduction</a>: </p>
-<ul>
-<li>
-<p><code>Ring</code> is the native token for the Darwinia Network, it can be used as gas for transactions.</p>
-</li>
-<li>
-<p><code>Kton</code> is the other kind token in <code>darwnia</code> that can be awarded by locking <code>RING</code> for 3 - 36 months in the process of Staking.</p>
-</li>
-</ul>
-<p><code>KTON</code> <strong>can be pledged to receive Staking power, so as to participate in POS mining as well</strong>. Users may Stake via pledging <code>KTON</code>. However, if the user takes back his or her staking <code>KTON</code>, then the related POS mining will be stopped, and it will take 14 days for the unpledged <code>KTON</code> to arrive.</p>
-<h1><a class="header" href="#imbalance" id="imbalance">ImBalance</a></h1>
-<blockquote>
-<p>Balances module simply reduces or increases its total issuance.</p>
-</blockquote>
-<p><code>Imbalances</code> can either be <strong>Positive</strong>(funds were added somewhere without being subtracted elsewhere - e.g. a reward) or <strong>Negative</strong>(funds deducted somewhere without an equal and opposite addition - e.g. a slash or system fee payment).</p>
-<p>Since they are unsigned, the actual type is always <code>Positive</code> or <code>Negative</code>. The trait makes no distinction except to define the Opposite type.</p>
-<p>New instances of zero value can be created (zero) and destroyed (drop_zero).</p>
-<p><code>Existing instances</code> can be split and merged either consuming self with merge or mutating self with subsume. If the target is an Option, then maybe <em>merge and maybe</em> subsume might work better. <code>Instances</code> can also be offset with an Opposite that is less than or equal to in value.</p>
-<p>You can always retrieve the raw balance value using peek.</p>
-<h1><a class="header" href="#election" id="election">Election</a></h1>
-<h2><a class="header" href="#term-and-round" id="term-and-round">Term and Round</a></h2>
-<p>The election happens in <em>rounds</em>: every <code>N</code> blocks, all previous members are retired and a new
-set is elected (which may or may not have an intersection with the previous set). Each round
-lasts for some number of blocks defined by <code>TermDuration</code> storage item. The words <em>term</em> and
-<em>round</em> can be used interchangeably in this context.</p>
-<p><code>TermDuration</code> might change during a round. This can shorten or extend the length of the round.
-The next election round's block number is never stored but rather always checked on the fly.
-Based on the current block number and <code>TermDuration</code>, the condition <code>BlockNumber % TermDuration == 0</code> being satisfied will always trigger a new election round.</p>
-<h2><a class="header" href="#voting" id="voting">Voting</a></h2>
-<p>Voters can vote for any set of the candidates by providing a list of account ids. Invalid votes
-(voting for non-candidates) are ignored during election. Yet, a voter <em>might</em> vote for a future
-candidate. Voters reserve a bond as they vote. Each vote defines a <code>value</code>. This amount is
-locked from the account of the voter and indicates the weight of the vote. Voters can update
-their votes at any time. This keeps the bond untouched but can
-optionally change the locked <code>value</code>. After a round, votes are kept and might still be valid for
-further rounds.</p>
-<p>Voters also report other voters as being defunct to earn their bond. A voter is defunct once all
-of the candidates that they have voted for are neither a valid candidate anymore nor a member.
-Upon reporting, if the target voter is actually defunct, the reporter will be rewarded by the
-voting bond of the target. The target will lose their bond and get removed. If the target is not
-defunct, the reporter is slashed and removed. </p>
-<h2><a class="header" href="#candidacy-and-members" id="candidacy-and-members">Candidacy and Members</a></h2>
-<p>Candidates also reserve a bond as they submit candidacy. A candidate cannot take their candidacy
-back. A candidate can end up in one of the below situations:</p>
-<ul>
-<li><strong>Winner</strong>: A winner is kept as a <em>member</em>. They must still have a bond in reserve and they
-are automatically counted as a candidate for the next election.</li>
-<li><strong>Runner-up</strong>: Runners-up are the best candidates immediately after the winners. The number
-of runners_up to keep is configurable. Runners-up are used, in order that they are elected,
-as replacements when a candidate is kicked by <code>[remove_member]</code>, or when an active member
-renounces their candidacy. Runners are automatically counted as a candidate for the next
-election.</li>
-<li><strong>Loser</strong>: Any of the candidate who are not a winner are left as losers. A loser might be an
-<em>outgoing member or runner</em>, meaning that they are an active member who failed to keep their
-spot. An outgoing will always lose their bond.</li>
-</ul>
-<h3><a class="header" href="#renouncing-candidacy" id="renouncing-candidacy">Renouncing candidacy.</a></h3>
-<p>All candidates, elected or not, can renounce their candidacy. A call to [<code>renounce_candidacy</code>]
-will always cause the candidacy bond to be refunded.</p>
-<p>Note that with the members being the default candidates for the next round and votes persisting
-in storage, the election system is entirely stable given no further input. This means that if
-the system has a particular set of candidates <code>C</code> and voters <code>V</code> that lead to a set of members
-<code>M</code> being elected, as long as <code>V</code> and <code>C</code> don't remove their candidacy and votes, <code>M</code> will keep
-being re-elected at the end of each round.</p>
-<h1><a class="header" href="#fee" id="fee">Fee</a></h1>
-<blockquote>
-<p>TODO</p>
-</blockquote>
-<h1><a class="header" href="#power" id="power">Power</a></h1>
-<h1><a class="header" href="#relay-chain" id="relay-chain">Relay Chain</a></h1>
-<p>As we know, a blockchain is a chain of blocks, or we call them decentralized ledgers, famous projects like Bitcoin and Ethereum both are members of blockchains.</p>
-<h2><a class="header" href="#polkadot" id="polkadot">Polkadot</a></h2>
-<p><code>Darwinia</code> is a <code>Relay Chain</code> of <code>Polkadot</code>, so the first question is, what is <code>Polkadot</code>?</p>
-<p>We can reach the explanation from its <a href="https://polkadot.network">official website</a>:</p>
-<blockquote>
-<p><code>Polkadot</code> is a network protocol that allows arbitrary data—not just tokens—to be transferred across blockchains.</p>
-<p>This means <code>Polkadot</code> is a true <strong>multi-chain application environment</strong> where things like <code>cross-chain</code> registries and <code>cross-chain</code> computation are possible.</p>
-</blockquote>
-<h2><a class="header" href="#relay-chain-1" id="relay-chain-1">Relay Chain</a></h2>
-<p><code>Polkadot</code>'s network structure contains <code>Parachains</code>, <code>Relay Chain</code> and <code>Bridges Chains</code>:</p>
-<h3><a class="header" href="#parachains" id="parachains">Parachains</a></h3>
-<blockquote>
-<p>application-specific blockchains</p>
-</blockquote>
-<p><code>Parachains</code> are the parallelizable blockchains (“para-chains”) that comprise the Polkadot network. Each parachain can have a unique architecture that best suits its application. Parachains are also used to parallelize transactions and achieve scalability. Parachains are connected and secured by the relay chain.</p>
-<h3><a class="header" href="#relay-chain-2" id="relay-chain-2">Relay chain</a></h3>
-<blockquote>
-<p>connects and validates parachains</p>
-</blockquote>
-<p>The <code>relay chain</code> connects the components of the Polkadot network. It provides security to parachains and relays messages between them, as well as bridge chains. The messages can be transactions or any arbitrary data.</p>
-<h3><a class="header" href="#bridges-chains" id="bridges-chains">Bridges chains</a></h3>
-<blockquote>
-<p>connect Polkadot to external blockchains</p>
-</blockquote>
-<p><code>Bridges</code> are special parachains that allow communication to independent blockchains that are not secured by Polkadot's relay chain and instead use their own security, like Bitcoin or Ethereum.</p>
-<h2><a class="header" href="#darwinia" id="darwinia">Darwinia</a></h2>
-<p><code>Darwinia</code> is a <code>relay chain</code> of <code>Polkadot</code> in some way, actually, what <code>Polkadot</code> and its <code>relay chain</code> can do, is what <code>Darwinia</code> supports!</p>
-<h1><a class="header" href="#staking-1" id="staking-1">Staking</a></h1>
-<h2><a class="header" href="#scenarios" id="scenarios">Scenarios</a></h2>
-<h3><a class="header" href="#staking-2" id="staking-2">Staking</a></h3>
-<p>Almost any interaction with the Staking module requires a process of <em><strong>bonding</strong></em> (also known as being a <em>staker</em>). To become <em>bonded</em>, a fund-holding account known as the <em>stash account</em>, which holds some or all of the funds that become frozen in place as part of the staking process, is paired with an active <strong>controller</strong> account, which issues instructions on how they shall be used.</p>
-<p>There are three possible roles that any staked account pair can be in: <code>Validator</code>, <code>Nominator</code> and <code>Idle</code> (defined in <code>StakerStatus</code>). There are three corresponding instructions to change between roles, namely: <code>validate</code>, <code>nominate</code>, and <code>chill</code>.</p>
-<h3><a class="header" href="#validating" id="validating">Validating</a></h3>
-<p>A <strong>validator</strong> takes the role of either validating blocks or ensuring their finality, maintaining the veracity of the network. A validator should avoid both any sort of malicious misbehavior and going offline. Bonded accounts that state interest in being a validator do NOT get immediately chosen as a validator. Instead, they are declared as a <em>candidate</em> and they <em>might</em> get elected at the <em>next era</em> as a validator. The result of the election is determined by nominators and their votes.</p>
-<h3><a class="header" href="#nomination" id="nomination">Nomination</a></h3>
-<p>A <strong>nominator</strong> does not take any <em>direct</em> role in maintaining the network, instead, it votes on a set of validators  to be elected. Once interest in nomination is stated by an account, it takes effect at the next election round. The funds in the nominator's stash account indicate the <em>weight</em> of its vote. Both the rewards and any punishment that a validator earns are shared between the validator and its nominators. This rule incentivizes the nominators to NOT vote for the misbehaving/offline validators as much as possible, simply because the nominators will also lose funds if they vote poorly.</p>
-<h3><a class="header" href="#rewards-and-slash" id="rewards-and-slash">Rewards and Slash</a></h3>
-<p>The <strong>reward and slashing</strong> procedure is the core of the Staking module, attempting to <em>embrace valid behavior</em> while <em>punishing any misbehavior or lack of availability</em>.</p>
-<p>Slashing can occur at any point in time, once misbehavior is reported. Once slashing is determined, a value is deducted from the balance of the validator and all the nominators who voted for this validator (values are deducted from the <em>stash</em> account of the slashed entity).</p>
-<p>Slashing logic is further described in the documentation of the <code>slashing</code> module.</p>
-<p>Similar to slashing, rewards are also shared among a validator and its associated nominators. Yet, the reward funds are not always transferred to the stash account and can be configured. See <a href="concepts/staking.html#reward-calculation">Reward Calculation</a> for more details.</p>
-<h3><a class="header" href="#chilling" id="chilling">Chilling</a></h3>
-<p>Finally, any of the roles above can choose to step back temporarily and just chill for a while. This means that if they are a nominator, they will not be considered as voters anymore and if they are validators, they will no longer be a candidate for the next election.</p>
-<h1><a class="header" href="#treasury-1" id="treasury-1">Treasury</a></h1>
-<blockquote>
-<p>TODO</p>
-</blockquote>
-<h1><a class="header" href="#weights" id="weights">Weights</a></h1>
-<p>A number of resources in darwinia can be limited, such as storage or computation. Weights exist to prevent individual components of the chain from consuming too much of any resource.</p>
-<h2><a class="header" href="#fee-1" id="fee-1">Fee</a></h2>
-<p>Consuming some weights should generally incur a <a href="concepts/./fee.html">fee</a>. </p>
-<h2><a class="header" href="#block-weight-and-length-limit" id="block-weight-and-length-limit">Block Weight and Length Limit</a></h2>
-<p>Aside from affecting fees, the main purpose of the weight system is to <strong>prevent a block from being filled with too many transactions</strong>. While processing transactions within a block, the System pallet accumulates both the total length of the block (sum of encoded transactions in bytes) and the total weight of the block. </p>
-<h2><a class="header" href="#common-used-weights-in-darwinia" id="common-used-weights-in-darwinia">Common used weights in darwinia</a></h2>
-<table><thead><tr><th>level</th><th>weight</th></tr></thead><tbody>
-<tr><td>0</td><td>10,000</td></tr>
-<tr><td>1</td><td>50,000</td></tr>
-<tr><td>2</td><td>100,000</td></tr>
-<tr><td>3</td><td>150,000</td></tr>
-<tr><td>4</td><td>200,000</td></tr>
-<tr><td>5</td><td>500,000</td></tr>
-<tr><td>6</td><td>750,000</td></tr>
-<tr><td>7</td><td>1,000,000</td></tr>
-<tr><td>8</td><td>2,000,000</td></tr>
-</tbody></table>
-<h2><a class="header" href="#weights-in-darwinia" id="weights-in-darwinia">Weights in darwinia</a></h2>
-<table><thead><tr><th>pallet</th><th>function</th><th>weight</th></tr></thead><tbody>
-<tr><td>balances</td><td>force_transfer</td><td>1,000,000</td></tr>
-<tr><td>balances</td><td>set_balance</td><td>1,000,000</td></tr>
-<tr><td>balances</td><td>transfer</td><td>1,000,000</td></tr>
-<tr><td>balances</td><td>transfer_keep_alive</td><td>1,000,000</td></tr>
-<tr><td>-</td><td></td><td></td></tr>
-<tr><td>elections-phragmen</td><td>remove_member</td><td>2,000,000</td></tr>
-<tr><td>elections-phragmen</td><td>renounce_candidacy</td><td>2,000,000</td></tr>
-<tr><td>elections-phragmen</td><td>report_defunct_voter</td><td>1,000,000</td></tr>
-<tr><td>elections-phragmen</td><td>summit_candidacy</td><td>500,000</td></tr>
-<tr><td>elections-phragmen</td><td>vote</td><td>100,000</td></tr>
-<tr><td>elections-phragmen</td><td>remove_voter</td><td>10,000</td></tr>
-<tr><td>-</td><td></td><td></td></tr>
-<tr><td>staking</td><td>cancel_deferred_slashed</td><td>1,000,000</td></tr>
-<tr><td>staking</td><td>nominate</td><td>750,000</td></tr>
-<tr><td>staking</td><td>set_controller</td><td>750,000</td></tr>
-<tr><td>staking</td><td>validate</td><td>750,000</td></tr>
-<tr><td>staking</td><td>bond</td><td>500,000</td></tr>
-<tr><td>staking</td><td>bond_extra</td><td>500,000</td></tr>
-<tr><td>staking</td><td>chill</td><td>500,000</td></tr>
-<tr><td>staking</td><td>set_payee</td><td>500,000</td></tr>
-<tr><td>staking</td><td>unbond</td><td>400,000</td></tr>
-<tr><td>staking</td><td>force_unstake</td><td>10,000</td></tr>
-<tr><td>staking</td><td>set_invulnerables</td><td>10,000</td></tr>
-<tr><td>staking</td><td>force_new_era</td><td>5,000</td></tr>
-<tr><td>staking</td><td>force_new_era_always</td><td>5,000</td></tr>
-<tr><td>staking</td><td>force_no_eras</td><td>5,000</td></tr>
-<tr><td>staking</td><td>set_validator_count</td><td>5,000</td></tr>
-<tr><td>-</td><td></td><td></td></tr>
-<tr><td>treasury</td><td>propose_spend</td><td>500,000</td></tr>
-<tr><td>treasury</td><td>tip_new</td><td>150,000</td></tr>
-<tr><td>treasury</td><td>approve_proposal</td><td>100,000</td></tr>
-<tr><td>treasury</td><td>reject_proposal</td><td>100,000</td></tr>
-<tr><td>treasury</td><td>report_awesome</td><td>100,000</td></tr>
-<tr><td>treasury</td><td>close_tip</td><td>50,000</td></tr>
-<tr><td>treasury</td><td>retract_tip</td><td>50,000</td></tr>
-<tr><td>treasury</td><td>tip</td><td>50,000</td></tr>
-</tbody></table>
-<h1><a class="header" href="#darwinia-crab-network" id="darwinia-crab-network">Darwinia Crab Network</a></h1>
-<p>Follows the <a href="https://github.com/darwinia-network/darwinia/blob/develop/ROADMAP.md">ROADMAP</a>, <strong>Darwinia Crab Network</strong> is the next 
-version of <strong>Darwinia Network</strong>,  we're working hard to launch 
-it at the end of March now. This chapter lists all <code>todo</code> milestones 
-for <code>the Crab Network</code>, welcome to join us and launch the Crab Network
-together!</p>
-<h2><a class="header" href="#milestones" id="milestones">Milestones</a></h2>
-<table><thead><tr><th>Issue</th><th>Title</th><th>Category</th></tr></thead><tbody>
-<tr><td><a href="https://github.com/darwinia-network/darwinia/issues/26">26</a></td><td>Load Boot Configuration from File</td><td>Enhancement</td></tr>
-<tr><td><a href="https://github.com/darwinia-network/darwinia/issues/217">217</a></td><td>Failed to submit extrinsic: Transaction pool error: ...</td><td>Bug</td></tr>
-<tr><td><a href="https://github.com/darwinia-network/darwinia/issues/274">274</a></td><td>Refactoring Staking/Eth-Backing Tests</td><td>In progress</td></tr>
-<tr><td><a href="https://github.com/darwinia-network/darwinia/issues/290">290</a></td><td>Prepare for Crab Network, Settings</td><td>In progress</td></tr>
-<tr><td><a href="https://github.com/darwinia-network/darwinia/issues/368">368</a></td><td>Prepare for Crab Network, Settings</td><td>Question</td></tr>
-</tbody></table>
-<h1><a class="header" href="#source-code-trip" id="source-code-trip">Source Code Trip</a></h1>
-<pre><code class="language-sh">$ tree darwinia -I '|src|target|LICENSE|*.*|'
-.
-├── bin
-│   └── node
-│       ├── cli
-│       │   ├── bin
-│       │   └── res
-│       ├── executor
-│       ├── primitives
-│       ├── rpc
-│       ├── rpc-client
-│       └── runtime
-├── client
-│   └── cli
-├── frame
-│   ├── balances
-│   │   ├── kton
-│   │   └── ring
-│   ├── chainrelay
-│   │   └── eth
-│   │       ├── backing
-│   │       └── relay
-│   ├── elections-phragmen
-│   ├── staking
-│   ├── support
-│   └── treasury
-└── primitives
-    ├── ethash
-    ├── merkle-patricia-trie
-    │   └── benches
-    ├── phragmen
-    └── sp-eth-primitives
+<p>As developers, we strongly recommend you guys to clean the storge every you run the node,
+keep our node clean, for example:</p>
+<pre><code>$ rm -rf tmp &amp;&amp; ./darwinia --dev -d tmp
 </code></pre>
-<ul>
-<li><a href="source/./bin.html">bin</a></li>
-<li><a href="source/./client.html">client</a></li>
-<li><a href="source/./frame/README.html">frame</a>
-<ul>
-<li><a href="source/./frame/balances.html">balances</a></li>
-<li><a href="source/./frame/chainrelay.html">chainrelay</a></li>
-<li><a href="source/./frame/elections_phragmen.html">elections-phragmen</a></li>
-<li><a href="source/./frame/staking.html">staking</a></li>
-<li><a href="source/./frame/support.html">support</a></li>
-<li><a href="source/./frame/treasury.html">treasury</a></li>
-</ul>
-</li>
-<li><a href="source/./primitives.html">primitives</a></li>
-</ul>
-<h1><a class="header" href="#bin" id="bin">bin</a></h1>
-<blockquote>
-<p><a href="https://github.com/darwinia-network/darwinia/tree/develop/bin/node">darwinia/bin/node</a></p>
-</blockquote>
-<h2><a class="header" href="#darwiniabinnodecli" id="darwiniabinnodecli"><code>darwinia/bin/node/cli</code></a></h2>
-<p>Darwinia CLI library.</p>
-<p>This package has two Cargo features:</p>
-<ul>
-<li>
-<p><code>cli</code> (default): exposes functions that parse command-line options, then start and run the
-node as a CLI application.</p>
-</li>
-<li>
-<p><code>browser</code>: exposes the content of the <code>browser</code> module, which consists of exported symbols
-that are meant to be passed through the <code>wasm-bindgen</code> utility and called from JavaScript.
-Despite its name the produced WASM can theoretically also be used from NodeJS, although this
-hasn't been tested.</p>
-</li>
-</ul>
-<h2><a class="header" href="#darwiniabinnodeexecutor" id="darwiniabinnodeexecutor"><code>darwinia/bin/node/executor</code></a></h2>
-<p>A <code>CodeExecutor</code> specialization which uses natively compiled runtime when the wasm to be executed is equivalent to the natively compiled code.</p>
-<h2><a class="header" href="#darwiniabinnodeprimitives" id="darwiniabinnodeprimitives"><code>darwinia/bin/node/primitives</code></a></h2>
-<p>Low-level types used throughout the Substrate code.</p>
-<h2><a class="header" href="#darwiniabinnoderpc-client" id="darwiniabinnoderpc-client"><code>darwinia/bin/node/rpc-client</code></a></h2>
-<p>Example darwinia RPC client code.</p>
-<p>This module shows how you can write a Rust RPC client that connects to a running darwinia node and use staticly typed RPC wrappers.</p>
-<h2><a class="header" href="#darwiniabinnoderpc" id="darwiniabinnoderpc"><code>darwinia/bin/node/rpc</code></a></h2>
-<p>A collection of node-specific RPC methods.</p>
-<p>Since <code>darwinia</code> core functionality makes no assumptions about the modules used inside the runtime, so do RPC methods defined in <code>sc-rpc</code> crate. It means that <code>client/rpc</code> can't have any methods that need some strong assumptions about the particular runtime.</p>
-<p>The RPCs available in this crate however can make some assumptions about how the runtime is constructed and what <code>SRML</code> modules are part of it. Therefore all node-runtime-specific RPCs can be placed here or imported from corresponding <code>SRML</code> RPC definitions.</p>
-<h2><a class="header" href="#darwiniabinnoderuntime" id="darwiniabinnoderuntime"><code>darwinia/bin/node/runtime</code></a></h2>
-<p>The Darwinia runtime. This can be compiled with <code>#[no_std]</code>, ready for Wasm.</p>
-<h1><a class="header" href="#client" id="client">client</a></h1>
-<blockquote>
-<p><a href="https://github.com/darwinia-network/darwinia/tree/develop/bin">darwinia/bin/client</a></p>
-</blockquote>
-<h2><a class="header" href="#darwiniabinclientcli" id="darwiniabinclientcli"><code>darwinia/bin/client/cli</code></a></h2>
-<p>Parse command line interface arguments and prepares the command for execution.</p>
-<p>Before returning, this function performs various initializations, such as initializing the panic handler and the logger, or increasing the limit for file descriptors.</p>
-<h3><a class="header" href="#remarks" id="remarks">Remarks</a></h3>
-<p><code>CC</code> is a custom subcommand. This needs to be an <code>enum</code>! If no custom subcommand is required, <code>NoCustom</code> can be used as type here.</p>
-<p><code>RP</code> are custom parameters for the run command. This needs to be a <code>struct</code>! The custom parameters are visible to the user as if they were normal run command parameters. If no custom parameters are required, <code>NoCustom</code> can be used as type here.</p>
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
-</span><span class="boring">fn main() {
-</span>pub fn parse_and_prepare&lt;'a, CC, RP, I&gt;(
-	version: &amp;'a VersionInfo,
-	impl_name: &amp;'static str,
-	args: I,
-) -&gt; ParseAndPrepare&lt;'a, CC, RP&gt;
-where
-	CC: StructOpt + Clone + GetSharedParams,
-	RP: StructOpt + Clone + StructOptInternal,
-	I: IntoIterator,
-	&lt;I as IntoIterator&gt;::Item: Into&lt;std::ffi::OsString&gt; + Clone,
-{
-	let full_version = sc_service::config::full_version_from_strs(version.version, version.commit);
+<h2><a class="header" href="#chain-status" id="chain-status">Chain Status</a></h2>
+<p>You can visit <a href="https://apps.darwinia.network/#/account">Apps</a> and set the node address to your local node to view the chain status.</p>
+<h3><a class="header" href="#note" id="note">Note</a></h3>
+<p>Don't forget to update the <code>types.json</code> of your node, you can find the latest one <a href="https://github.com/darwinia-network/darwinia-common/blob/master/bin/node-template/runtime/darwinia_types.json">here</a>.</p>
+<h1><a class="header" href="#relay-system" id="relay-system">Relay System</a></h1>
+<p>As a bridge chain based on substrate, <code>Relay System</code> is the core feature of <code>Darwinia</code>.</p>
+<p>Currently we supports relaying <code>RING</code> token of Ethereum into Darwinia, the process is like:</p>
+<pre><code>               Redeem          Deposit
+     
+User        -&gt; Contract     -&gt; Contract
 
-	sp_panic_handler::set(version.support_url, &amp;full_version);
-	let matches = CoreParams::&lt;CC, RP&gt;::clap()
-		.name(version.executable_name)
-		.author(version.author)
-		.about(version.description)
-		.version(&amp;(full_version + &quot;\n&quot;)[..])
-		.setting(AppSettings::GlobalVersion)
-		.setting(AppSettings::ArgsNegateSubcommands)
-		.setting(AppSettings::SubcommandsNegateReqs)
-		.get_matches_from(args);
-	let cli_args = CoreParams::&lt;CC, RP&gt;::from_clap(&amp;matches);
-	fdlimit::raise_fd_limit();
+- - - - - - - - - - - - - - - - - - - - &lt; Darwinia
 
-	let args = match cli_args {
-		params::CoreParams::Run(params) =&gt; ParseAndPrepare::Run(ParseAndPrepareRun {
-			params,
-			impl_name,
-			version,
-		}),
-		params::CoreParams::BuildSpec(params) =&gt; {
-			ParseAndPrepare::BuildSpec(ParseAndPrepareBuildSpec { params, version })
-		}
-		params::CoreParams::ExportBlocks(params) =&gt; {
-			ParseAndPrepare::ExportBlocks(ParseAndPrepareExport { params, version })
-		}
-		params::CoreParams::ImportBlocks(params) =&gt; {
-			ParseAndPrepare::ImportBlocks(ParseAndPrepareImport { params, version })
-		}
-		params::CoreParams::CheckBlock(params) =&gt; ParseAndPrepare::CheckBlock(CheckBlock { params, version }),
-		params::CoreParams::PurgeChain(params) =&gt; ParseAndPrepare::PurgeChain(ParseAndPreparePurge { params, version }),
-		params::CoreParams::Revert(params) =&gt; ParseAndPrepare::RevertChain(ParseAndPrepareRevert { params, version }),
-		params::CoreParams::Custom(params) =&gt; ParseAndPrepare::CustomCommand(params),
-	};
-	init_logger(
-		args.shared_params()
-			.and_then(|p| p.log.as_ref())
-			.map(|v| v.as_ref())
-			.unwrap_or(&quot;&quot;),
-	);
-	args
-}
-<span class="boring">}
-</span></code></pre></pre>
-<h1><a class="header" href="#frame" id="frame">frame</a></h1>
-<blockquote>
-<p><a href="https://github.com/darwinia-network/darwinia/tree/develop/frame">darwinia/frame</a></p>
-</blockquote>
-<p>The <a href="https://substrate.dev/docs/en/conceptual/runtime/frame">Framework</a> for Runtime Aggregation of Modularized Entities (<code>FRAME</code>) is a set of modules (called <code>pallets</code>) and support libraries that simplify runtime development. <code>Pallets</code> are individual modules within <code>FRAME</code> that host domain-specific logic.</p>
-<p><code>FRAME</code> provides some helper modules to interact with Substrate Primitives, which provide the interface to the core client.</p>
-<h1><a class="header" href="#balances-module" id="balances-module">Balances Module</a></h1>
-<p>The Balances module provides functionality for handling accounts and balances.</p>
+Relayer     -&gt; Handle       -&gt; Handle
+</code></pre>
+<p>As contributers of Darwinia, we need to know the concreted implementation of the relay system,
+how could we mock this?</p>
+<p>Assume that you have already set up your Darwinia development node, we also need <a href="./shadow.html">Shadow</a> and <a href="./dj.html">DJ</a> which are the data service and the relayer tool.</p>
+<p>Fine, Let's go to the next chapter.</p>
+<h1><a class="header" href="#dj" id="dj">DJ</a></h1>
+<p><a href="https://github.com/darwinia-network/dj"><img src="https://github.com/darwinia-network/dj/workflows/nodejs/badge.svg" alt="dj" /></a>
+<a href="https://www.npmjs.com/package/@darwinia/dj"><img src="https://img.shields.io/npm/v/@darwinia/dj" alt="dj" /></a>
+<a href="https://choosealicense.com/licenses/gpl-3.0/"><img src="https://img.shields.io/crates/l/darwinia-shadow.svg" alt="LICENSE" /></a></p>
+<p>DJ is the relayer tool of Darwinia, it contains several listeners to handle the
+relay process.</p>
+<h2><a class="header" href="#how-to-test" id="how-to-test">How to test?</a></h2>
+<h3><a class="header" href="#easy-version" id="easy-version">Easy version</a></h3>
+<pre><code class="language-shell">$ npm i -g @darwinia/dj
+$ dj -v
+</code></pre>
+<p>Run the commands above and we'll start testing the relay bridge.</p>
+<h3><a class="header" href="#hack-version" id="hack-version">Hack version</a></h3>
+<pre><code class="language-shell">$ git clone https://github.com/darwinia-network/dj.git
+$ cd dj &amp;&amp; yarn &amp;&amp; ts-node index.ts
+</code></pre>
+<h2><a class="header" href="#listeners" id="listeners">Listeners</a></h2>
+<h3><a class="header" href="#1-ethereum-transaction-listener" id="1-ethereum-transaction-listener">1. Ethereum Transaction Listener</a></h3>
+<p>The first listener of DJ is the <code>Ethereum transaction listener</code>, which will
+listen the Ethereum and discover transactions interacting with Darwinia contract.</p>
+<h3><a class="header" href="#2-relay-listener" id="2-relay-listener">2. Relay Listener</a></h3>
+<p>The <code>relay listener</code> triggers every a fixed time range.</p>
+<h4><a class="header" href="#ethereum-to-darwinia" id="ethereum-to-darwinia">Ethereum to Darwinia</a></h4>
+<p>If the <code>Ethereum Transaction Listener</code> has discovered transactions, it'll batch
+and send all of them to Darwinia for verifying.</p>
+<p>As the transactions are verified, the relay process is almost done.</p>
+<h4><a class="header" href="#darwinia-to-ethereum" id="darwinia-to-ethereum">Darwinia to Ethereum</a></h4>
+<p>This listener checks the events of Darwinia as well, DJ will send transactions
+to Darwinia contract in Ethereum while we discovered some events like <code>ISSUING</code>.</p>
+<p>And this will swap Darwinia RING to Ethereum RING.</p>
+<h3><a class="header" href="#3-guard-listener" id="3-guard-listener">3. Guard Listener</a></h3>
+<p>The part is a protection system for checking the relayed data, if you run
+<code>DJ</code> with <code>council</code> account or <code>sudo</code> account, the <code>guard Listener</code> will
+trigger.</p>
+<h1><a class="header" href="#shadow" id="shadow">Shadow</a></h1>
+<p><a href="https://github.com/darwinia-network/shadow"><img src="https://github.com/darwinia-network/shadow/workflows/shadow/badge.svg" alt="rust" /></a>
+<a href="https://crates.io/crates/darwinia_shadow"><img src="https://img.shields.io/crates/v/darwinia-shadow.svg" alt="crate" /></a>
+<a href="https://docs.rs/darwinia_shadow/"><img src="https://img.shields.io/badge/current-docs-brightgreen.svg" alt="doc" /></a>
+<a href="https://choosealicense.com/licenses/gpl-3.0/"><img src="https://img.shields.io/crates/l/darwinia-shadow.svg" alt="LICENSE" /></a></p>
+<p>The shadow service for relayers and verify workers to retrieve header data and generate proof. Shadow will index the data it needs from blockchain nodes, such as Ethereum and Darwinia.</p>
+<h2><a class="header" href="#how-to-test-1" id="how-to-test-1">How to test?</a></h2>
+<h3><a class="header" href="#easy-version-1" id="easy-version-1">Easy version</a></h3>
+<p>Just use the open shadow service at:</p>
 <ul>
-<li><code>balances::Trait</code></li>
-<li><code>Call</code></li>
-<li><code>Module</code></li>
+<li><a href="https://shadow.darwinia.network">https://shadow.darwinia.network</a></li>
+<li><a href="https://testnet.shadow.darwinia.network">https://testnet.shadow.darwinia.network</a></li>
 </ul>
-<h2><a class="header" href="#overview" id="overview">Overview</a></h2>
-<p>The Balances module provides functions for:</p>
-<ul>
-<li>Getting and setting free balances.</li>
-<li>Retrieving total, reserved and unreserved balances.</li>
-<li>Repatriating a reserved balance to a beneficiary account that exists.</li>
-<li>Transferring a balance between accounts (when not reserved).</li>
-<li>Slashing an account balance.</li>
-<li>Account creation and removal.</li>
-<li>Managing total issuance.</li>
-<li>Setting and managing locks.</li>
-</ul>
-<h3><a class="header" href="#terminology" id="terminology">Terminology</a></h3>
-<ul>
-<li>
-<p><strong>Existential Deposit:</strong> The minimum balance required to create or keep an account open. This prevents
-&quot;dust accounts&quot; from filling storage. When the free plus the reserved balance (i.e. the total balance)
-fall below this, then the account is said to be dead; and it loses its functionality as well as any
-prior history and all information on it is removed from the chain's state.
-No account should ever have a total balance that is strictly between 0 and the existential
-deposit (exclusive). If this ever happens, it indicates either a bug in this module or an
-erroneous raw mutation of storage.</p>
-</li>
-<li>
-<p><strong>Total Issuance:</strong> The total number of units in existence in a system.</p>
-</li>
-<li>
-<p><strong>Reaping an account:</strong> The act of removing an account by resetting its nonce. Happens after its
-total balance has become zero (or, strictly speaking, less than the Existential Deposit).</p>
-</li>
-<li>
-<p><strong>Free Balance:</strong> The portion of a balance that is not reserved. The free balance is the only
-balance that matters for most operations.</p>
-</li>
-<li>
-<p><strong>Reserved Balance:</strong> Reserved balance still belongs to the account holder, but is suspended.
-Reserved balance can still be slashed, but only after all the free balance has been slashed.</p>
-</li>
-<li>
-<p><strong>Imbalance:</strong> A condition when some funds were credited or debited without equal and opposite accounting
-(i.e. a difference between total issuance and account balances). Functions that result in an imbalance will
-return an object of the <code>Imbalance</code> trait that can be managed within your runtime logic. (If an imbalance is
-simply dropped, it should automatically maintain any book-keeping such as total issuance.)</p>
-</li>
-<li>
-<p><strong>Lock:</strong> A freeze on a specified amount of an account's free balance until a specified block number. Multiple
-locks always operate over the same funds, so they &quot;overlay&quot; rather than &quot;stack&quot;.</p>
-</li>
-</ul>
-<h3><a class="header" href="#implementations" id="implementations">Implementations</a></h3>
-<p>The Balances module provides implementations for the following traits. If these traits provide the functionality
-that you need, then you can avoid coupling with the Balances module.</p>
-<ul>
-<li><code>Currency</code>: Functions for dealing with a
-fungible assets system.</li>
-<li><code>ReservableCurrency</code>:
-Functions for dealing with assets that can be reserved from an account.</li>
-<li><code>LockableCurrency</code>: Functions for
-dealing with accounts that allow liquidity restrictions.</li>
-<li><code>Imbalance</code>: Functions for handling
-imbalances between total issuance in the system and account balances. Must be used when a function
-creates new funds (e.g. a reward) or destroys some funds (e.g. a system fee).</li>
-<li><code>IsDeadAccount</code>: Determiner to say whether a
-given account is unused.</li>
-</ul>
-<h2><a class="header" href="#interface" id="interface">Interface</a></h2>
-<h3><a class="header" href="#dispatchable-functions" id="dispatchable-functions">Dispatchable Functions</a></h3>
-<ul>
-<li><code>transfer</code> - Transfer some liquid free balance to another account.</li>
-<li><code>set_balance</code> - Set the balances of a given account. The origin of this call must be root.</li>
-</ul>
-<h2><a class="header" href="#usage" id="usage">Usage</a></h2>
-<p>The following examples show how to use the Balances module in your custom module.</p>
-<h3><a class="header" href="#examples-from-the-frame" id="examples-from-the-frame">Examples from the FRAME</a></h3>
-<p>The Contract module uses the <code>Currency</code> trait to handle gas payment, and its types inherit from <code>Currency</code>:</p>
-<pre><pre class="playpen"><code class="language-rust">use frame_support::traits::Currency;
-<span class="boring">pub trait Trait: frame_system::Trait {
-</span><span class="boring">	type Currency: Currency&lt;Self::AccountId&gt;;
-</span><span class="boring">}
-</span>
-pub type BalanceOf&lt;T&gt; = &lt;&lt;T as Trait&gt;::Currency as Currency&lt;&lt;T as frame_system::Trait&gt;::AccountId&gt;&gt;::Balance;
-pub type NegativeImbalanceOf&lt;T&gt; = &lt;&lt;T as Trait&gt;::Currency as Currency&lt;&lt;T as frame_system::Trait&gt;::AccountId&gt;&gt;::NegativeImbalance;
-
-<span class="boring">fn main() {}
-</span></code></pre></pre>
-<p>The Staking module uses the <code>LockableCurrency</code> trait to lock a stash account's funds:</p>
-<pre><pre class="playpen"><code class="language-rust">use frame_support::traits::{WithdrawReasons, LockableCurrency};
-use sp_runtime::traits::Bounded;
-pub trait Trait: frame_system::Trait {
-	type Currency: LockableCurrency&lt;Self::AccountId, Moment=Self::BlockNumber&gt;;
-}
-<span class="boring">struct StakingLedger&lt;T: Trait&gt; {
-</span><span class="boring">	stash: &lt;T as frame_system::Trait&gt;::AccountId,
-</span><span class="boring">	total: &lt;&lt;T as Trait&gt;::Currency as frame_support::traits::Currency&lt;&lt;T as frame_system::Trait&gt;::AccountId&gt;&gt;::Balance,
-</span><span class="boring">	phantom: std::marker::PhantomData&lt;T&gt;,
-</span><span class="boring">}
-</span><span class="boring">const STAKING_ID: [u8; 8] = *b&quot;staking &quot;;
-</span>
-fn update_ledger&lt;T: Trait&gt;(
-	controller: &amp;T::AccountId,
-	ledger: &amp;StakingLedger&lt;T&gt;
-) {
-	T::Currency::set_lock(
-		STAKING_ID,
-		&amp;ledger.stash,
-		ledger.total,
-		WithdrawReasons::all()
-	);
-	// &lt;Ledger&lt;T&gt;&gt;::insert(controller, ledger); // Commented out as we don't have access to Staking's storage here.
-}
-<span class="boring">fn main() {}
-</span></code></pre></pre>
-<h2><a class="header" href="#genesis-config" id="genesis-config">Genesis config</a></h2>
-<p>The Balances module depends on the <a href="source/frame/./struct.GenesisConfig.html"><code>GenesisConfig</code></a>.</p>
-<h2><a class="header" href="#assumptions" id="assumptions">Assumptions</a></h2>
-<ul>
-<li>Total issued balanced of all accounts should be less than <code>Trait::Balance::max_value()</code>.</li>
-</ul>
-<h1><a class="header" href="#chain-relay" id="chain-relay">Chain Relay</a></h1>
-<h2><a class="header" href="#darwiniaframechainrelayeth" id="darwiniaframechainrelayeth"><code>darwinia/frame/chainrelay/eth</code></a></h2>
-<p>Prototype module for bridging in ethereum pow blockchain, including <code>mainet</code> and <code>ropsten</code>.</p>
-<h1><a class="header" href="#phragmen-election-module" id="phragmen-election-module">Phragmen Election Module</a></h1>
-<p>An election module based on sequential phragmen.</p>
-<h3><a class="header" href="#term-and-round-1" id="term-and-round-1">Term and Round</a></h3>
-<p>The election happens in <em>rounds</em>: every <code>N</code> blocks, all previous members are retired and a new
-set is elected (which may or may not have an intersection with the previous set). Each round
-lasts for some number of blocks defined by <code>TermDuration</code> storage item. The words <em>term</em> and
-<em>round</em> can be used interchangeably in this context.</p>
-<p><code>TermDuration</code> might change during a round. This can shorten or extend the length of the round.
-The next election round's block number is never stored but rather always checked on the fly.
-Based on the current block number and <code>TermDuration</code>, the condition <code>BlockNumber % TermDuration == 0</code> being satisfied will always trigger a new election round.</p>
-<h3><a class="header" href="#voting-1" id="voting-1">Voting</a></h3>
-<p>Voters can vote for any set of the candidates by providing a list of account ids. Invalid votes
-(voting for non-candidates) are ignored during election. Yet, a voter <em>might</em> vote for a future
-candidate. Voters reserve a bond as they vote. Each vote defines a <code>value</code>. This amount is
-locked from the account of the voter and indicates the weight of the vote. Voters can update
-their votes at any time by calling <code>vote()</code> again. This keeps the bond untouched but can
-optionally change the locked <code>value</code>. After a round, votes are kept and might still be valid for
-further rounds. A voter is responsible for calling <code>remove_voter</code> once they are done to have
-their bond back and remove the lock.</p>
-<p>Voters also report other voters as being defunct to earn their bond. A voter is defunct once all
-of the candidates that they have voted for are neither a valid candidate anymore nor a member.
-Upon reporting, if the target voter is actually defunct, the reporter will be rewarded by the
-voting bond of the target. The target will lose their bond and get removed. If the target is not
-defunct, the reporter is slashed and removed. To prevent being reported, voters should manually
-submit a <code>remove_voter()</code> as soon as they are in the defunct state.</p>
-<h3><a class="header" href="#candidacy-and-members-1" id="candidacy-and-members-1">Candidacy and Members</a></h3>
-<p>Candidates also reserve a bond as they submit candidacy. A candidate cannot take their candidacy
-back. A candidate can end up in one of the below situations:</p>
-<ul>
-<li><strong>Winner</strong>: A winner is kept as a <em>member</em>. They must still have a bond in reserve and they
-are automatically counted as a candidate for the next election.</li>
-<li><strong>Runner-up</strong>: Runners-up are the best candidates immediately after the winners. The number
-of runners_up to keep is configurable. Runners-up are used, in order that they are elected,
-as replacements when a candidate is kicked by <code>[remove_member]</code>, or when an active member
-renounces their candidacy. Runners are automatically counted as a candidate for the next
-election.</li>
-<li><strong>Loser</strong>: Any of the candidate who are not a winner are left as losers. A loser might be an
-<em>outgoing member or runner</em>, meaning that they are an active member who failed to keep their
-spot. An outgoing will always lose their bond.</li>
-</ul>
-<h5><a class="header" href="#renouncing-candidacy-1" id="renouncing-candidacy-1">Renouncing candidacy.</a></h5>
-<p>All candidates, elected or not, can renounce their candidacy. A call to [<code>renounce_candidacy</code>]
-will always cause the candidacy bond to be refunded.</p>
-<p>Note that with the members being the default candidates for the next round and votes persisting
-in storage, the election system is entirely stable given no further input. This means that if
-the system has a particular set of candidates <code>C</code> and voters <code>V</code> that lead to a set of members
-<code>M</code> being elected, as long as <code>V</code> and <code>C</code> don't remove their candidacy and votes, <code>M</code> will keep
-being re-elected at the end of each round.</p>
-<h3><a class="header" href="#module-information" id="module-information">Module Information</a></h3>
-<ul>
-<li><code>election_sp_phragmen::Trait</code></li>
-<li><code>Call</code></li>
-<li><code>Module</code></li>
-</ul>
-<p>An election module based on sequential phragmen.</p>
-<h1><a class="header" href="#staking-module" id="staking-module">Staking Module</a></h1>
-<p>The Staking module is used to manage funds at stake by network maintainers.</p>
-<ul>
-<li><code>staking::Trait</code></li>
-<li><code>Call</code></li>
-<li><code>Module</code></li>
-</ul>
-<h2><a class="header" href="#overview-1" id="overview-1">Overview</a></h2>
-<p>The Staking module is the means by which a set of network maintainers (known as <em>authorities</em> in some contexts and <em>validators</em> in others) are chosen based upon those who voluntarily place funds under deposit. Under deposit, those funds are rewarded under normal operation but are held at pain of <em>slash</em> (expropriation) should the staked maintainer be found not to be discharging its duties properly.</p>
-<h3><a class="header" href="#terminology-1" id="terminology-1">Terminology</a></h3>
-<!-- Original author of paragraph: @gavofyork -->
-<ul>
-<li>Staking: The process of locking up funds for some time, placing them at risk of slashing
-(loss) in order to become a rewarded maintainer of the network.</li>
-<li>Validating: The process of running a node to actively maintain the network, either by
-producing blocks or guaranteeing finality of the chain.</li>
-<li>Nominating: The process of placing staked funds behind one or more validators in order to
-share in any reward, and punishment, they take.</li>
-<li>Stash account: The account holding an owner's funds used for staking.</li>
-<li>Controller account: The account that controls an owner's funds for staking.</li>
-<li>Era: A (whole) number of sessions, which is the period that the validator set (and each
-validator's active nominator set) is recalculated and where rewards are paid out.</li>
-<li>Slash: The punishment of a staker by reducing its funds.</li>
-</ul>
-<h3><a class="header" href="#goals" id="goals">Goals</a></h3>
-<!-- Original author of paragraph: @gavofyork -->
-<p>The staking system in Substrate NPoS is designed to make the following possible:</p>
-<ul>
-<li>Stake funds that are controlled by a cold wallet.</li>
-<li>Withdraw some, or deposit more, funds without interrupting the role of an entity.</li>
-<li>Switch between roles (nominator, validator, idle) with minimal overhead.</li>
-</ul>
-<h3><a class="header" href="#scenarios-1" id="scenarios-1">Scenarios</a></h3>
-<h4><a class="header" href="#staking-3" id="staking-3">Staking</a></h4>
-<p>Almost any interaction with the Staking module requires a process of <em><strong>bonding</strong></em> (also known as being a <em>staker</em>). To become <em>bonded</em>, a fund-holding account known as the <em>stash account</em>, which holds some or all of the funds that become frozen in place as part of the staking process, is paired with an active <strong>controller</strong> account, which issues instructions on how they shall be used.</p>
-<p>An account pair can become bonded using the <code>bond</code> call.</p>
-<p>Stash accounts can change their associated controller using the <code>set_controller</code> call.</p>
-<p>There are three possible roles that any staked account pair can be in: <code>Validator</code>, <code>Nominator</code> and <code>Idle</code> (defined in <code>StakerStatus</code>). There are three corresponding instructions to change between roles, namely: <code>validate</code>, <code>nominate</code>, and <code>chill</code>.</p>
-<h4><a class="header" href="#validating-1" id="validating-1">Validating</a></h4>
-<p>A <strong>validator</strong> takes the role of either validating blocks or ensuring their finality, maintaining the veracity of the network. A validator should avoid both any sort of malicious misbehavior and going offline. Bonded accounts that state interest in being a validator do NOT get immediately chosen as a validator. Instead, they are declared as a <em>candidate</em> and they <em>might</em> get elected at the <em>next era</em> as a validator. The result of the election is determined by nominators and their votes.</p>
-<p>An account can become a validator candidate via the <code>validate</code> call.</p>
-<h4><a class="header" href="#nomination-1" id="nomination-1">Nomination</a></h4>
-<p>A <strong>nominator</strong> does not take any <em>direct</em> role in maintaining the network, instead, it votes on a set of validators  to be elected. Once interest in nomination is stated by an account, it takes effect at the next election round. The funds in the nominator's stash account indicate the <em>weight</em> of its vote. Both the rewards and any punishment that a validator earns are shared between the validator and its nominators. This rule incentivizes the nominators to NOT vote for the misbehaving/offline validators as much as possible, simply because the nominators will also lose funds if they vote poorly.</p>
-<p>An account can become a nominator via the <code>nominate</code> call.</p>
-<h4><a class="header" href="#rewards-and-slash-1" id="rewards-and-slash-1">Rewards and Slash</a></h4>
-<p>The <strong>reward and slashing</strong> procedure is the core of the Staking module, attempting to <em>embrace valid behavior</em> while <em>punishing any misbehavior or lack of availability</em>.</p>
-<p>Slashing can occur at any point in time, once misbehavior is reported. Once slashing is determined, a value is deducted from the balance of the validator and all the nominators who voted for this validator (values are deducted from the <em>stash</em> account of the slashed entity).</p>
-<p>Slashing logic is further described in the documentation of the <code>slashing</code> module.</p>
-<p>Similar to slashing, rewards are also shared among a validator and its associated nominators. Yet, the reward funds are not always transferred to the stash account and can be configured. See <a href="source/frame/staking.html#reward-calculation">Reward Calculation</a> for more details.</p>
-<h4><a class="header" href="#chilling-1" id="chilling-1">Chilling</a></h4>
-<p>Finally, any of the roles above can choose to step back temporarily and just chill for a while. This means that if they are a nominator, they will not be considered as voters anymore and if they are validators, they will no longer be a candidate for the next election.</p>
-<p>An account can step back via the <code>chill</code> call.</p>
-<h2><a class="header" href="#interface-1" id="interface-1">Interface</a></h2>
-<h3><a class="header" href="#dispatchable-functions-1" id="dispatchable-functions-1">Dispatchable Functions</a></h3>
-<p>The dispatchable functions of the Staking module enable the steps needed for entities to accept and change their role, alongside some helper functions to get/set the metadata of the module.</p>
-<h3><a class="header" href="#public-functions" id="public-functions">Public Functions</a></h3>
-<p>The Staking module contains many public storage items and (im)mutable functions.</p>
-<h2><a class="header" href="#usage-1" id="usage-1">Usage</a></h2>
-<h3><a class="header" href="#example-rewarding-a-validator-by-id" id="example-rewarding-a-validator-by-id">Example: Rewarding a validator by id.</a></h3>
-<pre><pre class="playpen"><code class="language-rust">use frame_support::{decl_module, dispatch};
-use frame_system::{self as system, ensure_signed};
-use darwinia_staking::{self as staking};
-
-pub trait Trait: staking::Trait {}
-
-decl_module! {
-	pub struct Module&lt;T: Trait&gt; for enum Call where origin: T::Origin {
-		/// Reward a validator.
-		pub fn reward_myself(origin) -&gt; dispatch::DispatchResult {
-			let reported = ensure_signed(origin)?;
-			&lt;staking::Module&lt;T&gt;&gt;::reward_by_ids(vec![(reported, 10)]);
-			Ok(())
-		}
-	}
-}
-<span class="boring">fn main() { }
-</span></code></pre></pre>
-<h2><a class="header" href="#implementation-details" id="implementation-details">Implementation Details</a></h2>
-<h3><a class="header" href="#slot-stake" id="slot-stake">Slot Stake</a></h3>
-<p>The term <code>SlotStake</code> will be used throughout this section. It refers to a value calculated at the end of each era, containing the <em>minimum value at stake among all validators.</em> Note that a validator's value at stake might be a combination of the validator's own stake and the votes it received. See <code>Exposure</code> for more details.</p>
-<h3><a class="header" href="#reward-calculation" id="reward-calculation">Reward Calculation</a></h3>
-<p>Validators and nominators are rewarded at the end of each era. The total reward of an era is calculated using the era duration and the staking rate (the total amount of tokens staked by nominators and validators, divided by the total token supply). It aims to incentivise toward a defined staking rate. The full specification can be found <a href="https://research.web3.foundation/en/latest/polkadot/Token%20Economics.html#inflation-model">here</a>.</p>
-<p>Total reward is split among validators and their nominators depending on the number of points they received during the era. Points are added to a validator using <code>reward_by_ids</code> or <code>reward_by_indices</code>.</p>
-<p><code>Module</code> implements <code>pallet_authorship::EventHandler</code> to add reward points to block producer and block producer of referenced uncles.</p>
-<p>The validator and its nominator split their reward as following:</p>
-<p>The validator can declare an amount, named <code>commission</code>, that does not get shared with the nominators at each reward payout through its <code>ValidatorPrefs</code>. This value gets deducted from the total reward that is paid to the validator and its nominators. The remaining portion is split among the validator and all of the nominators that nominated the validator, proportional to the value staked behind this validator (<em>i.e.</em> dividing the <code>own</code> or <code>others</code> by <code>total</code> in <code>Exposure</code>).</p>
-<p>All entities who receive a reward have the option to choose their reward destination through the <code>Payee</code> storage item (see <code>set_payee</code>), to be one of the following:</p>
-<ul>
-<li>Controller account, (obviously) not increasing the staked value.</li>
-<li>Stash account, not increasing the staked value.</li>
-<li>Stash account, also increasing the staked value.</li>
-</ul>
-<h3><a class="header" href="#additional-fund-management-operations" id="additional-fund-management-operations">Additional Fund Management Operations</a></h3>
-<p>Any funds already placed into stash can be the target of the following operations:</p>
-<p>The controller account can free a portion (or all) of the funds using the <code>unbond</code> call. Note that the funds are not immediately accessible. Instead, a duration denoted by <code>BondingDurationInEra</code>(in number of eras) must pass until the funds can actually be removed. Once the
-<code>BondingDurationInEra</code> is over, the <code>withdraw_unbonded</code>
-call can be used to actually withdraw the funds.</p>
-<p>Note that there is a limitation to the number of fund-chunks that can be scheduled to be unlocked in the future via <code>unbond</code>. In case this maximum(<code>MAX_UNLOCKING_CHUNKS</code>) is reached, the bonded account <em>must</em> first wait until a successful call to <code>withdraw_unbonded</code> to remove some of the chunks.</p>
-<h3><a class="header" href="#election-algorithm" id="election-algorithm">Election Algorithm</a></h3>
-<p>The current election algorithm is implemented based on Phragmén. The reference implementation can be found <a href="https://github.com/w3f/consensus/tree/master/NPoS">here</a>.</p>
-<p>The election algorithm, aside from electing the validators with the most stake value and votes, tries to divide the nominator votes among candidates in an equal manner. To further assure this, an optional post-processing can be applied that iteratively normalizes the nominator staked values until the total difference among votes of a particular nominator are less than a threshold.</p>
-<h2><a class="header" href="#genesisconfig" id="genesisconfig">GenesisConfig</a></h2>
-<p>The Staking module depends on the <code>GenesisConfig</code>.</p>
-<h2><a class="header" href="#related-modules" id="related-modules">Related Modules</a></h2>
-<ul>
-<li>Balances: Used to manage values at stake.</li>
-<li>Session: Used to manage sessions. Also, a list of new validators is stored in the Session module's <code>Validators</code> at the end of each era.p</li>
-</ul>
-<h1><a class="header" href="#support" id="support">Support</a></h1>
-<p>Shared <code>structs</code> and <code>traits</code>.</p>
-<h1><a class="header" href="#treasury-module" id="treasury-module">Treasury Module</a></h1>
-<p>The Treasury module provides a &quot;pot&quot; of funds that can be managed by stakeholders in the
-system and a structure for making spending proposals from this pot.</p>
-<ul>
-<li><code>treasury::Trait</code></li>
-<li><code>Call</code></li>
-</ul>
-<h2><a class="header" href="#overview-2" id="overview-2">Overview</a></h2>
-<p>The Treasury Module itself provides the pot to store funds, and a means for stakeholders to
-propose, approve, and deny expenditures.  The chain will need to provide a method (e.g.
-inflation, fees) for collecting funds.</p>
-<p>By way of example, the Council could vote to fund the Treasury with a portion of the block
-reward and use the funds to pay developers.</p>
-<h3><a class="header" href="#terminology-2" id="terminology-2">Terminology</a></h3>
-<ul>
-<li><strong>Proposal:</strong> A suggestion to allocate funds from the pot to a beneficiary.</li>
-<li><strong>Beneficiary:</strong> An account who will receive the funds from a proposal iff
-the proposal is approved.</li>
-<li><strong>Deposit:</strong> Funds that a proposer must lock when making a proposal. The
-deposit will be returned or slashed if the proposal is approved or rejected
-respectively.</li>
-<li><strong>Pot:</strong> Unspent funds accumulated by the treasury module.</li>
-</ul>
-<h2><a class="header" href="#interface-2" id="interface-2">Interface</a></h2>
-<h3><a class="header" href="#dispatchable-functions-2" id="dispatchable-functions-2">Dispatchable Functions</a></h3>
-<ul>
-<li><code>propose_spend</code> - Make a spending proposal and stake the required deposit.</li>
-<li><code>set_pot</code> - Set the spendable balance of funds.</li>
-<li><code>configure</code> - Configure the module's proposal requirements.</li>
-<li><code>reject_proposal</code> - Reject a proposal, slashing the deposit.</li>
-<li><code>approve_proposal</code> - Accept the proposal, returning the deposit.</li>
-</ul>
-<h2><a class="header" href="#genesisconfig-1" id="genesisconfig-1">GenesisConfig</a></h2>
-<p>The Treasury module depends on the <code>GenesisConfig</code></p>
-<h1><a class="header" href="#primitives" id="primitives">primitives</a></h1>
-<blockquote>
-<p><a href="https://github.com/darwinia-network/darwinia/tree/develop/primitives">darwinia/primitives</a></p>
-</blockquote>
-<h2><a class="header" href="#darwiniaprimitivesethash" id="darwiniaprimitivesethash"><code>darwinia/primitives/ethash</code></a></h2>
-<p>Apache-2 licensed Ethash implementation.</p>
-<h2><a class="header" href="#darwiniaprimitivesmerkle-patricia-trie" id="darwiniaprimitivesmerkle-patricia-trie"><code>darwinia/primitives/merkle-patricia-trie</code></a></h2>
-<p>Merkle patricia trie</p>
-<h2><a class="header" href="#darwiniaprimitivesphragmen" id="darwiniaprimitivesphragmen"><code>darwinia/primitives/phragmen</code></a></h2>
-<p>Rust implementation of the Phragmén election algorithm. This is used in several SRML modules to
-optimally distribute the weight of a set of voters among an elected set of candidates. In the
-context of staking this is mapped to validators and nominators.</p>
-<p>The algorithm has two phases:</p>
-<ul>
-<li>Sequential phragmen: performed in [<code>elect</code>] function which is first pass of the distribution
-The results are not optimal but the execution time is less.</li>
-<li>Equalize post-processing: tries to further distribute the weight fairly among candidates.
-Incurs more execution time.</li>
-</ul>
-<p>The main objective of the assignments done by phragmen is to maximize the minimum backed
-candidate in the elected set.</p>
-<ul>
-<li>Reference [implementation][4]</li>
-<li>Further [details][5]</li>
-</ul>
-<h2><a class="header" href="#darwiniaprimitivessp-eth-primitives" id="darwiniaprimitivessp-eth-primitives"><code>darwinia/primitives/sp-eth-primitives</code></a></h2>
-<p>Ethereum primitives</p>
+<h3><a class="header" href="#hack-version-1" id="hack-version-1">Hack version</a></h3>
+<pre><code class="language-shell">$ git clone https://github.com/darwinia-network/shadow.git
+$ cd shadow &amp;&amp; cargo run -- run -v
+</code></pre>
+<h2><a class="header" href="#proofs" id="proofs">Proofs</a></h2>
+<p>Shadow service generates proofs for relay system, <code>Ethash Proof</code>, <code>MMR Proof</code> and <code>Receipt Proof</code>.</p>
+<h3><a class="header" href="#ethash-proof" id="ethash-proof">Ethash Proof</a></h3>
+<p>The meaning of Ethash Proof is to verify the Ethereum block which is relaying to Darwinia is <strong>the Ethereum Block</strong>.</p>
+<h3><a class="header" href="#mmr-proof" id="mmr-proof">MMR Proof</a></h3>
+<p>MMR Proof describes the relationship betweeen the confirmed Ethereum block and the relaying Ethereum block, we have to pass this check.</p>
+<h3><a class="header" href="#receipt-proof" id="receipt-proof">Receipt Proof</a></h3>
+<p>THe Receipt Proof is for the Ethereum Transactions, for checking they are what they are, yep, transactions should be Ethereum transcations interacting with Darwinia Ethereum contract.</p>
 <h1><a class="header" href="#rfcs" id="rfcs">RFCs</a></h1>
 <table><thead><tr><th>rfc</th><th>title</th><th>status</th><th>desc</th></tr></thead><tbody>
 <tr><td><a href="./0001.html">0001</a></td><td>Darwinia Architecture</td><td></td><td></td></tr>
@@ -1022,29 +308,14 @@ candidate in the elected set.</p>
         </div>
 
         
-        <!-- Livereload script (if served using the cli tool) -->
-        <script type="text/javascript">
-            var socket = new WebSocket("ws://localhost:3001");
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload(true); // force reload from server (not from cache)
-                }
-            };
-
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
-        
 
         
 
         
-        
+
         
         <script type="text/javascript">
-            window.playpen_copyable = true;
+            window.playground_copyable = true;
         </script>
         
 

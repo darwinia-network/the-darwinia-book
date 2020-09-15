@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>RFCs - the-darwinia-book</title>
+        <title>dj - the-darwinia-book</title>
         
         
 
@@ -89,7 +89,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="intro.html">Introduction</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="getting-started.html"><strong aria-hidden="true">1.</strong> Getting Started</a></li><li class="chapter-item expanded "><a href="relay-system.html"><strong aria-hidden="true">2.</strong> Relay System</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="dj.html"><strong aria-hidden="true">2.1.</strong> dj</a></li><li class="chapter-item expanded "><a href="shadow.html"><strong aria-hidden="true">2.2.</strong> Shadow</a></li></ol></li><li class="chapter-item expanded "><a href="rfcs.html" class="active"><strong aria-hidden="true">3.</strong> RFCs</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="intro.html">Introduction</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="getting-started.html"><strong aria-hidden="true">1.</strong> Getting Started</a></li><li class="chapter-item expanded "><a href="relay-system.html"><strong aria-hidden="true">2.</strong> Relay System</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="dj.html" class="active"><strong aria-hidden="true">2.1.</strong> dj</a></li><li class="chapter-item expanded "><a href="shadow.html"><strong aria-hidden="true">2.2.</strong> Shadow</a></li></ol></li><li class="chapter-item expanded "><a href="rfcs.html"><strong aria-hidden="true">3.</strong> RFCs</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -159,28 +159,55 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#rfcs" id="rfcs">RFCs</a></h1>
-<table><thead><tr><th>rfc</th><th>title</th><th>status</th><th>desc</th></tr></thead><tbody>
-<tr><td><a href="./0001.html">0001</a></td><td>Darwinia Architecture</td><td></td><td></td></tr>
-<tr><td><a href="./0007.html">0007</a></td><td>Darwinia Staking Model</td><td></td><td></td></tr>
-<tr><td><a href="./0009.html">0009</a></td><td>Darwinia liquid kton reward</td><td>Abandoned</td><td>Dispatch Ring awards for Kton</td></tr>
-<tr><td><a href="./0010.html">0010</a></td><td>Darwinia Cross chain nft bridge protocol</td><td>Draft</td><td>Cross-chain NFT Bridge Protocol</td></tr>
-<tr><td><a href="./0011.html">0011</a></td><td>Using harberger tax to find price for xclaim vault collaterals</td><td>Abandoned</td><td>XClaim Based NFT Solution Using Harberger Tax</td></tr>
-<tr><td><a href="./0012.html">0012</a></td><td>Darwinia bridge core interoperation in chainrelay enabled blockchains</td><td>Draft</td><td>Darwinia Bridge Core - Interoperation in ChainRelay Enabled Blockchains</td></tr>
-<tr><td><a href="./0013.html">0013</a></td><td>Darwinia cross chain nft standards</td><td>Draft</td><td>Darwinia Cross-chain NFT Standards</td></tr>
-<tr><td><a href="./0014.html">0014</a></td><td>Darwinia token migration by cross chain redeem protocol</td><td>Draft</td><td>Darwinia Token Migration By Cross-chain Redeem Protocol</td></tr>
-</tbody></table>
+                        <h1><a class="header" href="#dj" id="dj">DJ</a></h1>
+<p><a href="https://github.com/darwinia-network/dj"><img src="https://github.com/darwinia-network/dj/workflows/nodejs/badge.svg" alt="dj" /></a>
+<a href="https://www.npmjs.com/package/@darwinia/dj"><img src="https://img.shields.io/npm/v/@darwinia/dj" alt="dj" /></a>
+<a href="https://choosealicense.com/licenses/gpl-3.0/"><img src="https://img.shields.io/crates/l/darwinia-shadow.svg" alt="LICENSE" /></a></p>
+<p>DJ is the relayer tool of Darwinia, it contains several listeners to handle the
+relay process.</p>
+<h2><a class="header" href="#how-to-test" id="how-to-test">How to test?</a></h2>
+<h3><a class="header" href="#easy-version" id="easy-version">Easy version</a></h3>
+<pre><code class="language-shell">$ npm i -g @darwinia/dj
+$ dj -v
+</code></pre>
+<p>Run the commands above and we'll start testing the relay bridge.</p>
+<h3><a class="header" href="#hack-version" id="hack-version">Hack version</a></h3>
+<pre><code class="language-shell">$ git clone https://github.com/darwinia-network/dj.git
+$ cd dj &amp;&amp; yarn &amp;&amp; ts-node index.ts
+</code></pre>
+<h2><a class="header" href="#listeners" id="listeners">Listeners</a></h2>
+<h3><a class="header" href="#1-ethereum-transaction-listener" id="1-ethereum-transaction-listener">1. Ethereum Transaction Listener</a></h3>
+<p>The first listener of DJ is the <code>Ethereum transaction listener</code>, which will
+listen the Ethereum and discover transactions interacting with Darwinia contract.</p>
+<h3><a class="header" href="#2-relay-listener" id="2-relay-listener">2. Relay Listener</a></h3>
+<p>The <code>relay listener</code> triggers every a fixed time range.</p>
+<h4><a class="header" href="#ethereum-to-darwinia" id="ethereum-to-darwinia">Ethereum to Darwinia</a></h4>
+<p>If the <code>Ethereum Transaction Listener</code> has discovered transactions, it'll batch
+and send all of them to Darwinia for verifying.</p>
+<p>As the transactions are verified, the relay process is almost done.</p>
+<h4><a class="header" href="#darwinia-to-ethereum" id="darwinia-to-ethereum">Darwinia to Ethereum</a></h4>
+<p>This listener checks the events of Darwinia as well, DJ will send transactions
+to Darwinia contract in Ethereum while we discovered some events like <code>ISSUING</code>.</p>
+<p>And this will swap Darwinia RING to Ethereum RING.</p>
+<h3><a class="header" href="#3-guard-listener" id="3-guard-listener">3. Guard Listener</a></h3>
+<p>The part is a protection system for checking the relayed data, if you run
+<code>DJ</code> with <code>council</code> account or <code>sudo</code> account, the <code>guard Listener</code> will
+trigger.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="shadow.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="relay-system.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
+                        
+                            <a rel="next" href="shadow.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
                         
 
                         <div style="clear: both"></div>
@@ -190,11 +217,15 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a rel="prev" href="shadow.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="relay-system.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
+                
+                    <a rel="next" href="shadow.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
                 
             </nav>
 
