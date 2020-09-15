@@ -89,7 +89,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="intro.html">Introduction</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="getting-started.html"><strong aria-hidden="true">1.</strong> Getting Started</a></li><li class="chapter-item expanded "><a href="relay-system.html" class="active"><strong aria-hidden="true">2.</strong> Relay System</a></li><li class="chapter-item expanded "><a href="common-tools.html"><strong aria-hidden="true">3.</strong> Common Tools</a></li><li class="chapter-item expanded "><a href="rfcs.html"><strong aria-hidden="true">4.</strong> RFCs</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="intro.html">Introduction</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="getting-started.html"><strong aria-hidden="true">1.</strong> Getting Started</a></li><li class="chapter-item expanded "><a href="relay-system.html" class="active"><strong aria-hidden="true">2.</strong> Relay System</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="shadow.html"><strong aria-hidden="true">2.1.</strong> Shadow</a></li><li class="chapter-item expanded "><a href="dj.html"><strong aria-hidden="true">2.2.</strong> dj</a></li></ol></li><li class="chapter-item expanded "><a href="rfcs.html"><strong aria-hidden="true">3.</strong> RFCs</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -160,6 +160,20 @@
                 <div id="content" class="content">
                     <main>
                         <h1><a class="header" href="#relay-system" id="relay-system">Relay System</a></h1>
+<p>As a bridge chain based on substrate, <code>Relay System</code> is the core feature of <code>Darwinia</code>.</p>
+<p>Currently we supports relaying <code>RING</code> token of Ethereum into Darwinia, the process is like:</p>
+<pre><code>               Redeem          Deposit
+     
+User        -&gt; Contract     -&gt; Contract
+
+- - - - - - - - - - - - - - - - - - - - &lt; Darwinia
+
+Relayer     -&gt; Handle       -&gt; Handle
+</code></pre>
+<p>As contributers of Darwinia, we need to know the concreted implementation of the relay system,
+how could we mock this?</p>
+<p>Assume that you have already set up your Darwinia development node, we also need <a href="./shadow.html">Shadow</a> and <a href="./dj.html">DJ</a> which are the data service and the relayer tool.</p>
+<p>Fine, Let's go to the next chapter.</p>
 
                     </main>
 
@@ -172,7 +186,7 @@
                         
 
                         
-                            <a rel="next" href="common-tools.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="shadow.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -190,7 +204,7 @@
                 
 
                 
-                    <a rel="next" href="common-tools.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="shadow.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 

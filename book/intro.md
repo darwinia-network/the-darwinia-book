@@ -13,7 +13,7 @@ Deal, this [book][book] is written for the Darwinia contributers!
 
 ## References
 
-In case of the content of this book can not solve your questions, you can check
+In case of the content of this book can not solve your questions, you can view
 
 + Substrate
   + Substrate [receipes][receipes], the wonderful one
