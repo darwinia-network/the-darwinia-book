@@ -91,7 +91,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="intro.html">Introduction</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="getting-started.html"><strong aria-hidden="true">1.</strong> Getting Started</a></li><li class="chapter-item expanded "><a href="relay-system.html"><strong aria-hidden="true">2.</strong> Relay System</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="shadow.html"><strong aria-hidden="true">2.1.</strong> Shadow</a></li><li class="chapter-item expanded "><a href="dj.html"><strong aria-hidden="true">2.2.</strong> dj</a></li></ol></li><li class="chapter-item expanded "><a href="rfcs.html"><strong aria-hidden="true">3.</strong> RFCs</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="intro.html">Introduction</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="getting-started.html"><strong aria-hidden="true">1.</strong> Getting Started</a></li><li class="chapter-item expanded "><a href="relay-system.html"><strong aria-hidden="true">2.</strong> Relay System</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="dj.html"><strong aria-hidden="true">2.1.</strong> dj</a></li><li class="chapter-item expanded "><a href="shadow.html"><strong aria-hidden="true">2.2.</strong> Shadow</a></li></ol></li><li class="chapter-item expanded "><a href="rfcs.html"><strong aria-hidden="true">3.</strong> RFCs</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -215,8 +215,31 @@ Relayer     -&gt; Handle       -&gt; Handle
 how could we mock this?</p>
 <p>Assume that you have already set up your Darwinia development node, we also need <a href="./shadow.html">Shadow</a> and <a href="./dj.html">DJ</a> which are the data service and the relayer tool.</p>
 <p>Fine, Let's go to the next chapter.</p>
+<h1><a class="header" href="#dj" id="dj">DJ</a></h1>
+<p><a href="https://github.com/darwinia-network/dj"><img src="https://github.com/darwinia-network/dj/workflows/nodejs/badge.svg" alt="dj" /></a>
+<a href="https://www.npmjs.com/package/@darwinia/dj"><img src="https://img.shields.io/npm/v/@darwinia/dj" alt="dj" /></a>
+<a href="https://choosealicense.com/licenses/gpl-3.0/"><img src="https://img.shields.io/crates/l/darwinia-shadow.svg" alt="LICENSE" /></a></p>
+<p>DJ is the relayer tool of Darwinia, it contains several listeners to handle the
+relay process.</p>
+<h2><a class="header" href="#how-to-test" id="how-to-test">How to test?</a></h2>
+<h3><a class="header" href="#easy-version" id="easy-version">Easy version</a></h3>
+<pre><code class="language-shell">$ npm i -g @darwinia/dj
+$ dj -v
+</code></pre>
+<p>Run the commands above and we'll start testing the relay bridge.</p>
+<h3><a class="header" href="#hack-version" id="hack-version">Hack version</a></h3>
+<pre><code class="language-shell">$ git clone https://github.com/darwinia-network/dj.git
+$ cd dj &amp;&amp; yarn &amp;&amp; ts-node index.ts
+</code></pre>
+<h2><a class="header" href="#listeners" id="listeners">Listeners</a></h2>
+<h3><a class="header" href="#1-ethereum-transaction-listener" id="1-ethereum-transaction-listener">1. Ethereum Transaction Listener</a></h3>
+<p>The first listener of DJ is the <code>Ethereum transaction listener</code>, which will listen the Ethereum and discover transactions interacting with Darwinia contract.</p>
+<h3><a class="header" href="#2-relay-listener" id="2-relay-listener">2. Relay Listener</a></h3>
+<p>The <code>relay listener</code> triggers every a fixed time range, if DJ has discovered transactions, it'll batch and send all of them to Darwinia for verifying.</p>
+<p>As the transactions are verified, the relay process is almost done.</p>
+<h3><a class="header" href="#3-guard-listener" id="3-guard-listener">3. Guard Listener</a></h3>
+<p>The part is a protection system for checking the relayed data, if you run <code>DJ</code> with <code>council</code> account or <code>sudo</code> account, the <code>guard Listener</code> will trigger.</p>
 <h1><a class="header" href="#shadow" id="shadow">Shadow</a></h1>
-<h1><a class="header" href="#dj" id="dj">dj</a></h1>
 <h1><a class="header" href="#rfcs" id="rfcs">RFCs</a></h1>
 <table><thead><tr><th>rfc</th><th>title</th><th>status</th><th>desc</th></tr></thead><tbody>
 <tr><td><a href="./0001.html">0001</a></td><td>Darwinia Architecture</td><td></td><td></td></tr>
