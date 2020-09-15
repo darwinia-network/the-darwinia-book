@@ -160,6 +160,30 @@
                 <div id="content" class="content">
                     <main>
                         <h1><a class="header" href="#shadow" id="shadow">Shadow</a></h1>
+<p><a href="https://github.com/darwinia-network/shadow"><img src="https://github.com/darwinia-network/shadow/workflows/shadow/badge.svg" alt="rust" /></a>
+<a href="https://crates.io/crates/darwinia_shadow"><img src="https://img.shields.io/crates/v/darwinia-shadow.svg" alt="crate" /></a>
+<a href="https://docs.rs/darwinia_shadow/"><img src="https://img.shields.io/badge/current-docs-brightgreen.svg" alt="doc" /></a>
+<a href="https://choosealicense.com/licenses/gpl-3.0/"><img src="https://img.shields.io/crates/l/darwinia-shadow.svg" alt="LICENSE" /></a></p>
+<p>The shadow service for relayers and verify workers to retrieve header data and generate proof. Shadow will index the data it needs from blockchain nodes, such as Ethereum and Darwinia.</p>
+<h2><a class="header" href="#how-to-test" id="how-to-test">How to test?</a></h2>
+<h3><a class="header" href="#easy-version" id="easy-version">Easy version</a></h3>
+<p>Just use the open shadow service at:</p>
+<ul>
+<li><a href="https://shadow.darwinia.network">https://shadow.darwinia.network</a></li>
+<li><a href="https://testnet.shadow.darwinia.network">https://testnet.shadow.darwinia.network</a></li>
+</ul>
+<h3><a class="header" href="#hack-version" id="hack-version">Hack version</a></h3>
+<pre><code class="language-shell">$ git clone https://github.com/darwinia-network/shadow.git
+$ cd shadow &amp;&amp; cargo run -- run -v
+</code></pre>
+<h2><a class="header" href="#proofs" id="proofs">Proofs</a></h2>
+<p>Shadow service generates proofs for relay system, <code>Ethash Proof</code>, <code>MMR Proof</code> and <code>Receipt Proof</code>.</p>
+<h3><a class="header" href="#ethash-proof" id="ethash-proof">Ethash Proof</a></h3>
+<p>The meaning of Ethash Proof is to verify the Ethereum block which is relaying to Darwinia is <strong>the Ethereum Block</strong>.</p>
+<h3><a class="header" href="#mmr-proof" id="mmr-proof">MMR Proof</a></h3>
+<p>MMR Proof describes the relationship betweeen the confirmed Ethereum block and the relaying Ethereum block, we have to pass this check.</p>
+<h3><a class="header" href="#receipt-proof" id="receipt-proof">Receipt Proof</a></h3>
+<p>THe Receipt Proof is for the Ethereum Transactions, for checking they are what they are, yep, transactions should be Ethereum transcations interacting with Darwinia Ethereum contract.</p>
 
                     </main>
 

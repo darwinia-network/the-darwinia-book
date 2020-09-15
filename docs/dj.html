@@ -177,12 +177,22 @@ $ cd dj &amp;&amp; yarn &amp;&amp; ts-node index.ts
 </code></pre>
 <h2><a class="header" href="#listeners" id="listeners">Listeners</a></h2>
 <h3><a class="header" href="#1-ethereum-transaction-listener" id="1-ethereum-transaction-listener">1. Ethereum Transaction Listener</a></h3>
-<p>The first listener of DJ is the <code>Ethereum transaction listener</code>, which will listen the Ethereum and discover transactions interacting with Darwinia contract.</p>
+<p>The first listener of DJ is the <code>Ethereum transaction listener</code>, which will
+listen the Ethereum and discover transactions interacting with Darwinia contract.</p>
 <h3><a class="header" href="#2-relay-listener" id="2-relay-listener">2. Relay Listener</a></h3>
-<p>The <code>relay listener</code> triggers every a fixed time range, if DJ has discovered transactions, it'll batch and send all of them to Darwinia for verifying.</p>
+<p>The <code>relay listener</code> triggers every a fixed time range.</p>
+<h4><a class="header" href="#ethereum-to-darwinia" id="ethereum-to-darwinia">Ethereum to Darwinia</a></h4>
+<p>If the <code>Ethereum Transaction Listener</code> has discovered transactions, it'll batch
+and send all of them to Darwinia for verifying.</p>
 <p>As the transactions are verified, the relay process is almost done.</p>
+<h4><a class="header" href="#darwinia-to-ethereum" id="darwinia-to-ethereum">Darwinia to Ethereum</a></h4>
+<p>This listener checks the events of Darwinia as well, DJ will send transactions
+to Darwinia contract in Ethereum while we discovered some events like <code>ISSUING</code>.</p>
+<p>And this will swap Darwinia RING to Ethereum RING.</p>
 <h3><a class="header" href="#3-guard-listener" id="3-guard-listener">3. Guard Listener</a></h3>
-<p>The part is a protection system for checking the relayed data, if you run <code>DJ</code> with <code>council</code> account or <code>sudo</code> account, the <code>guard Listener</code> will trigger.</p>
+<p>The part is a protection system for checking the relayed data, if you run
+<code>DJ</code> with <code>council</code> account or <code>sudo</code> account, the <code>guard Listener</code> will
+trigger.</p>
 
                     </main>
 

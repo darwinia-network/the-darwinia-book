@@ -233,13 +233,47 @@ $ cd dj &amp;&amp; yarn &amp;&amp; ts-node index.ts
 </code></pre>
 <h2><a class="header" href="#listeners" id="listeners">Listeners</a></h2>
 <h3><a class="header" href="#1-ethereum-transaction-listener" id="1-ethereum-transaction-listener">1. Ethereum Transaction Listener</a></h3>
-<p>The first listener of DJ is the <code>Ethereum transaction listener</code>, which will listen the Ethereum and discover transactions interacting with Darwinia contract.</p>
+<p>The first listener of DJ is the <code>Ethereum transaction listener</code>, which will
+listen the Ethereum and discover transactions interacting with Darwinia contract.</p>
 <h3><a class="header" href="#2-relay-listener" id="2-relay-listener">2. Relay Listener</a></h3>
-<p>The <code>relay listener</code> triggers every a fixed time range, if DJ has discovered transactions, it'll batch and send all of them to Darwinia for verifying.</p>
+<p>The <code>relay listener</code> triggers every a fixed time range.</p>
+<h4><a class="header" href="#ethereum-to-darwinia" id="ethereum-to-darwinia">Ethereum to Darwinia</a></h4>
+<p>If the <code>Ethereum Transaction Listener</code> has discovered transactions, it'll batch
+and send all of them to Darwinia for verifying.</p>
 <p>As the transactions are verified, the relay process is almost done.</p>
+<h4><a class="header" href="#darwinia-to-ethereum" id="darwinia-to-ethereum">Darwinia to Ethereum</a></h4>
+<p>This listener checks the events of Darwinia as well, DJ will send transactions
+to Darwinia contract in Ethereum while we discovered some events like <code>ISSUING</code>.</p>
+<p>And this will swap Darwinia RING to Ethereum RING.</p>
 <h3><a class="header" href="#3-guard-listener" id="3-guard-listener">3. Guard Listener</a></h3>
-<p>The part is a protection system for checking the relayed data, if you run <code>DJ</code> with <code>council</code> account or <code>sudo</code> account, the <code>guard Listener</code> will trigger.</p>
+<p>The part is a protection system for checking the relayed data, if you run
+<code>DJ</code> with <code>council</code> account or <code>sudo</code> account, the <code>guard Listener</code> will
+trigger.</p>
 <h1><a class="header" href="#shadow" id="shadow">Shadow</a></h1>
+<p><a href="https://github.com/darwinia-network/shadow"><img src="https://github.com/darwinia-network/shadow/workflows/shadow/badge.svg" alt="rust" /></a>
+<a href="https://crates.io/crates/darwinia_shadow"><img src="https://img.shields.io/crates/v/darwinia-shadow.svg" alt="crate" /></a>
+<a href="https://docs.rs/darwinia_shadow/"><img src="https://img.shields.io/badge/current-docs-brightgreen.svg" alt="doc" /></a>
+<a href="https://choosealicense.com/licenses/gpl-3.0/"><img src="https://img.shields.io/crates/l/darwinia-shadow.svg" alt="LICENSE" /></a></p>
+<p>The shadow service for relayers and verify workers to retrieve header data and generate proof. Shadow will index the data it needs from blockchain nodes, such as Ethereum and Darwinia.</p>
+<h2><a class="header" href="#how-to-test-1" id="how-to-test-1">How to test?</a></h2>
+<h3><a class="header" href="#easy-version-1" id="easy-version-1">Easy version</a></h3>
+<p>Just use the open shadow service at:</p>
+<ul>
+<li><a href="https://shadow.darwinia.network">https://shadow.darwinia.network</a></li>
+<li><a href="https://testnet.shadow.darwinia.network">https://testnet.shadow.darwinia.network</a></li>
+</ul>
+<h3><a class="header" href="#hack-version-1" id="hack-version-1">Hack version</a></h3>
+<pre><code class="language-shell">$ git clone https://github.com/darwinia-network/shadow.git
+$ cd shadow &amp;&amp; cargo run -- run -v
+</code></pre>
+<h2><a class="header" href="#proofs" id="proofs">Proofs</a></h2>
+<p>Shadow service generates proofs for relay system, <code>Ethash Proof</code>, <code>MMR Proof</code> and <code>Receipt Proof</code>.</p>
+<h3><a class="header" href="#ethash-proof" id="ethash-proof">Ethash Proof</a></h3>
+<p>The meaning of Ethash Proof is to verify the Ethereum block which is relaying to Darwinia is <strong>the Ethereum Block</strong>.</p>
+<h3><a class="header" href="#mmr-proof" id="mmr-proof">MMR Proof</a></h3>
+<p>MMR Proof describes the relationship betweeen the confirmed Ethereum block and the relaying Ethereum block, we have to pass this check.</p>
+<h3><a class="header" href="#receipt-proof" id="receipt-proof">Receipt Proof</a></h3>
+<p>THe Receipt Proof is for the Ethereum Transactions, for checking they are what they are, yep, transactions should be Ethereum transcations interacting with Darwinia Ethereum contract.</p>
 <h1><a class="header" href="#rfcs" id="rfcs">RFCs</a></h1>
 <table><thead><tr><th>rfc</th><th>title</th><th>status</th><th>desc</th></tr></thead><tbody>
 <tr><td><a href="./0001.html">0001</a></td><td>Darwinia Architecture</td><td></td><td></td></tr>
